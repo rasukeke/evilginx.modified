@@ -159,6 +159,9 @@ func (t *Terminal) DoWork() {
 			} else {
 				t.hlp.Print(0)
 			}
+		case "botdetection":
+			cmd_ok = true
+			t.cmdBotDetection(args[1:])
 		case "q", "quit", "exit":
 			do_quit = true
 			cmd_ok = true
@@ -1563,3 +1566,53 @@ func (t *Terminal) filterInput(r rune) (rune, bool) {
 	}
 	return r, true
 }
+
+func (t *Terminal) cmdBotDetection(args []string) {
+    if len(args) == 0 {
+        t.printBotDetectionHelp()
+        return
+    }
+    
+    switch args[0] {
+    case "enable":
+        t.proxy.EnableBotDetection()
+        log.Info("Bot detection enabled")
+    case "disable":
+        t.proxy.DisableBotDetection()
+        log.Info("Bot detection disabled")
+    case "stats":
+        stats := t.proxy.GetBotDetectionStats()
+        t.printBotDetectionStats(stats)
+    case "config":
+        t.printBotDetectionConfig()
+    default:
+        t.printBotDetectionHelp()
+    }
+}
+
+func (t *Terminal) printBotDetectionHelp() {
+    fmt.Println("Bot Detection Commands:")
+    fmt.Println("  botdetection enable   - Enable bot detection")
+    fmt.Println("  botdetection disable  - Disable bot detection")
+    fmt.Println("  botdetection stats    - Show detection statistics")
+    fmt.Println("  botdetection config   - Show current configuration")
+}
+
+func (t *Terminal) printBotDetectionStats(stats map[string]interface{}) {
+    fmt.Printf("Bot Detection Statistics:\n")
+    fmt.Printf("  Enabled: %v\n", stats["enabled"])
+    fmt.Printf("  Total Sessions: %v\n", stats["total_sessions"])
+    fmt.Printf("  Blocked Sessions: %v\n", stats["blocked_sessions"])
+    fmt.Printf("  JA4 Detections: %v\n", stats["ja4_detections"])
+    fmt.Printf("  Behavioral Detections: %v\n", stats["behavioral_detections"])
+}
+
+func (t *Terminal) printBotDetectionConfig() {
+    // Implementation depends on how you want to expose configuration
+    fmt.Println("Bot Detection Configuration:")
+    fmt.Println("  JA4 Detection: Enabled")
+    fmt.Println("  Behavioral Detection: Enabled")
+    fmt.Println("  Block Threshold: 0.6")
+}
+
+

