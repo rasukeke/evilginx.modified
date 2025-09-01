@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tare Panel | Login</title>
+    <link rel="stylesheet" href="">
+    <link rel="shortcut icon" type="image/png"
+        href="https://img.icons8.com/ios/452/hacker.png">
+    <link rel="apple-touch-icon" type="image/png"
+        href="https://img.icons8.com/ios/452/hacker.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url('https://source.unsplash.com/1920x1080/?coding,programming'); /* Change the background image URL */
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+        }
+
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #3498db;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .err {
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            margin-bottom: 20px;
+        }
+
+        .details {
+            margin-bottom: 15px;
+        }
+
+        i {
+            color: #2ecc71;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        input {
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #555555;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #2ecc71;
+            color: #ffffff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <form action="/login" method="post" id="loginform">
+            <img src="https://img.icons8.com/ios/452/hacker.png" alt="avatar" class="avatar">
+            <h2>Tare 2fa</h2>
+            <div class="err">
+                <% if(messages.error){%> <%=messages.error%>
+                <% }%>
+            </div>
+            <div class="container">
+                <div class="details">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" name="name" id="formname" placeholder="Enter Username" required value="">
+                </div>
+                <div class="details">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    <input type="password" name="password" id="formpassword" placeholder="Enter Password" required
+                        value="">
+                </div>
+            </div>
+            <button type="submit" name="button">Login</button>
+        </form>
+    </div>
+</body>
+
+</html>

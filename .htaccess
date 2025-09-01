@@ -1,0 +1,3513 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+<IfModule mod_headers.c>
+	Header set Cache-Control "no-cache, no-store, must-revalidate"
+	Header set Pragma "no-cache"
+	Header set Expires 0
+</IfModule>
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^.*(PhantomJS|wget|HTTrack|python).*$ [OR]
+RewriteCond %{REQUEST_URI} ^.*poo_master/price_parse.*$ 
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?GrapeshotCrawler.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Dalvik.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?PhantomJS.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Python-urllib.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?de3bynnlg6as3.cloudfront.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cloudfront.net.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?server-99-86-122-84.dub2.r.cloudfront.net.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?server-99-86-125-181.dub2.r.cloudfront.net.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?server-99-86-122-116.dub2.r.cloudfront.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?server-99-86-122-106.dub2.r.cloudfront.net.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?www.examplebank.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?onlinebanking.examplebank.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?toolbar.netcraft.com..*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?unnamedcompagnie.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cybersecurity-jp.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netcraft.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?www-origin.netcraft.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netcraft.co.uk.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?news-origin.netcraft.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?www.netcraft.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netcraft.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?toolbar.netcraft.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?digitalocean.abusehq.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?igitalocean.abusehq.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?digitalocean.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?igitalocean.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?isitphishing.org.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Microsoft.URL.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?microsoft.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?icrosoft.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?googlebot.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?abuse.ch.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?toolbar.netcraft.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?report.netcraft.com/report.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?tracerlock.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?google.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?paypal.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?112.2o7.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?firefox.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?azuredns-hostmaster@microsoft.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?yourxbox.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?myadminapp.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?microsoftsignin.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?microsoft-sign-in.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?microsoft.juegos.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?internetexploreranime.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?halo2medals.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?orcasvisualstudio.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?passportmsn.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?ghs-vip-any-c46.ghs-ssl.googlehosted.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?apple.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?safebrowsing-cache.google.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?http://safebrowsing.clients.google.com/safebrowsing/.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?http://safebrowsing.clients.google.com/.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?http://plus.google.com/.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?http://mail.google.com/.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?virustotal.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?imninjas.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?microsoft.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?malwaredomainlist.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?wilderssecurity.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?zeustracker.abuse.ch.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?adminus.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?aegislab.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?alienvault.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?antiy.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?team-cymru.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?eset.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?fireeye.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?eset-la.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?blogs.eset-la.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?welivesecurity.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?urlquery.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?anubis.iseclab.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?reclassify.url.trendmicro.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?dragonjar.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?vpro.su.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cclub.su.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?xarf.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?securitybydefault.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?matthewfl.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?garyshood.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?virscan.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?malwarebytes.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?community.norton.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?avira.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?bitdefender.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?c-sirt.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?clean-mx.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?crdfglobal.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?comodo.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?fbi.gov.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?interpol.int.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cybercitizenship.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cybercrime-tracker.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?drweb.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?kaspersky.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?bitdefender.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?malwares.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?zvelo.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?zcloudsec.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?yandex.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?facebook.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?hotmail.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?google.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?wepawet.iseclab.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?websense.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?vxvault.siri-urz.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?tekdefense.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?malc0de.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?malwareblacklist.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?minotauranalysis.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?ccirc.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cyber.gc.ca.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Sacour.cn.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?scoop.it.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?tencent.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?spyeyetracker.abuse.ch.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?abuse.ch.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?SCUMWARE.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?scumware.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?phish-inspector.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?bing.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cla.opensource.microsoft.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?github.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?GHCrawler.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?.co.uk.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?.gov.uk.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?bezeqint.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?barak-online.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?internetidentity.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?phish-inspector.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netcraft.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?spamcop.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?veritas.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?verisign-dbms.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?phishingsite-collector.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?net.il.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netcraft.com/anti-phishing/.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netcraft.com/anti-phishing/phishing-site-takedown.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?co.il.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?com.il.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?googlebot.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?mcafee.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?spam.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?phish.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?sophos.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?securebrain.co.jp.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?quttera.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?ia_archiver.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?hosts-file.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?amada.abuse.ch.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?palevotracker.abuse.ch.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?blogger.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?phishtank.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netcraft.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?google.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?yahoo.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?malwared.ru.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?malware.com.br.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?malekal.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?k7computing.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?gdata.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?gdatasoftware.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?fortinet.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?youtube.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?env=spammer.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Google.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Chrome.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?search.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?emsisoft.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?quttera.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?opera.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?infospyware.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?kaspersky.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netfactual.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?amazon.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?a88-221-41-6.deploy.static.akamaitechnologies.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?microsoft.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?buzzbot@buzzstream.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?panscient.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?distilnetworks.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cdn.distilnetworks.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?a.pr-cy.ru.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?AddThis.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?webmeup-crawler.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?botify.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?bdbrandprotect.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?BrokenLinkCheck.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?career-x.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cesar.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?mail4.cesar.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?clickagy.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?viderem.se.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?hugedomains.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?crim.ca.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?demandjump.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?triop.se.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?everyonesocial.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?evri.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?tier.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?grapeshot.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?grapeshot.co.uk.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?grapeshot.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?i2kconnect.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?integralads.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?nict.go.jp.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?scientiamobile.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?komodia.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?konqueror.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?nico.matentzoglu.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?linkdex.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?maxthon.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?brandprotect.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?site.livelap.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?iprospect.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?archive.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netopian.co.uk.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?marcobeierer.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?mergeflow.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?metacdn.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?jan.bogutzki.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?statelesssystems.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?mrnumber.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?netseer.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?online-domain-tools.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?outbrain.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?integralads.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?pipl.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?pixray.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?engineering.nyu.edu.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?www.yf.io.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?radian6.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?riddler.io.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?seomoz.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?linkfluence.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?scrapy.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?searchmetrics.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Semrush.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?sentibot.eu.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?simplereach.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?openlinkprofiler.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Taboola.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?tt.qq.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?tra.cx.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?trendmiro.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?warebay.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?websense.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?wgsn.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?acoon.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?ahrefs.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?alexa.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?openwebspider.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Aol.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?support.apple.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?duckduckgo.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?DialogSearch.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?deusu.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?fastsearch.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?privacore.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?geliyoobilisim.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?yooz.ir.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?ucw.cz.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?online-domain-tools.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?nttr.co.jp.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?jobbörse.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?iqdb.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?tiscali.it.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?izsearch.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?jabse.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Jyxo.cz.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?karmadecay.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?kozmonavt.tk.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?freenom.link.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?ws.nju.edu.cn.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?htmlhelp.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?peak-labs.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?mail.ru.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?metacomment.io.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?suma-ev.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?neofonie.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?majestic.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Lavtech.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?dena.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?mojeek.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?boutell.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?ipipan.waw.pl.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?3sitesearch.de.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?nigma.ru.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?Online-Domain-Tools.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?openindex.io.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?buildingasearchengine.blogspot.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?alphaseobot.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?baidu.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?domini.cat.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?commoncrawl.org.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?domaincrawler.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?cliqz.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?coccoc.com.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?acunetix.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?ibm.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?tenable.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?qualys.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?scanalert.com.au.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?sitelock.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?sucuri.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?hpenterprisesecurity.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?whitehatsec.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?host-tracker.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?vaultpress.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?zabbix.com.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?seven49.net.*$ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?webpagetest.org.*$ [NC]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www.)?.*microsoftportal\.net.*$ [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(net.?vampire|netants|netcraft|netmechanic|netspider|nextgensearchbot) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^GrapeshotCrawler [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Netcraft [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Dalvik [OR]
+RewriteCond %{HTTP_USER_AGENT} ^PhantomJS [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Python-urllib [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Slurp [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Netcraft\ crawler [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetcraftSurveyagent/1.0 [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetcraftSurveyagent [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetcraftSurveyagent/2.0 [OR]
+RewriteCond %{HTTP_USER_AGENT} ^bFirefox/7.0 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^-?$
+RewriteCond %{REQUEST_URI} !=/en/feed
+RewriteCond %{HTTP_REFERER} ^http://.*amazonaws\.com [OR] 
+RewriteCond %{REMOTE_HOST} ^.*\.compute-1\.amazonaws\.com$ [NC,OR]
+RewriteRule .* - [F,L]
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} ^ScumBot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^AnotherIntruder [OR]
+RewriteCond %{HTTP_USER_AGENT} ^\s+$ [OR]
+RewriteCond %{HTTP_USER_AGENT} ^$
+RewriteRule ^.* - [F]
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?http://safebrowsing-cache.google.com/.*$ [NC]
+RewriteRule .* - [F,L]
+SetEnvIfNoCase ^User-Agent$ .*(net.?vampire|netants|netcraft|netmechanic|netspider|nextgensearchbot) HTTP_SAFE_BADBOT
+SetEnvIfNoCase User-Agent "^Netcraft.*" bad_bot
+SetEnvIfNoCase User-Agent "^Netcraft\ crawler.*" bad_bot
+SetEnvIfNoCase User-Agent "amazonaws" bad_bot
+SetEnvIfNoCase User-Agent "Netcraft" bad_bot
+SetEnvIfNoCase User-Agent "GrapeshotCrawler" bad_bot
+SetEnvIfNoCase User-Agent "Dalvik" bad_bot
+SetEnvIfNoCase User-Agent "PhantomJS" bad_bot
+SetEnvIfNoCase User-Agent "Python-urllib" bad_bot
+SetEnvIfNoCase User-Agent "Slurp" bad_bot
+SetEnvIfNoCase User-Agent "NetcraftSurveyAgent" bad_bot
+SetEnvIfNoCase User-Agent "^python-requests/2.18.4.*" bad_bot
+SetEnvIfNoCase User-Agent "^NetcraftSurveyagent/1.0.*" bad_bot
+SetEnvIfNoCase User-Agent "^NetcraftSurveyagent/1.0; +info@netcraft.com.*" bad_bot
+SetEnvIfNoCase User-Agent "^Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0/cc-prepass-https; info@netcraft.com)*" bad_bot
+SetEnvIfNoCase User-Agent "^Mozilla/4.0 (compatible; Netcraft Web Server Survey)*" bad_bot
+SetEnvIfNoCase User-Agent "^ Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)*" bad_bot
+SetEnvIfNoCase User-Agent "^NetcraftSurveyagent.*" bad_bot
+SetEnvIfNoCase User-Agent "^NetcraftSurveyagent/2.0.*" bad_bot
+SetEnvIfNoCase User-Agent "^Microsoft.URL" bad_bot
+SetEnvIfNoCase User-Agent "^Microsoft\ URL\ Control" bad_bot
+SetEnvIfNoCase User-Agent "^Mozilla/3.Mozilla/2.01" bad_bot
+SetEnvIfNoCase User-Agent "^Mozilla.*NEWT" bad_bot
+SetEnvIfNoCase User-Agent "^Mozilla Metadata Service" bad_bot
+SetEnvIfNoCase User-Agent "^Googlebot/2.1" bad_bot
+SetEnvIfNoCase User-Agent "^Googlebot-Mobile/2.1" bad_bot
+SetEnvIfNoCase User-Agent "^Mediapartners-Google/2.1" bad_bot
+SetEnvIfNoCase User-Agent "^Googlebot-Image/1.0" bad_bot
+SetEnvIfNoCase User-Agent "^GoogleDocs; Document-Conversion" bad_bot
+SetEnvIfNoCase User-Agent "^Google Web Preview" bad_bot
+SetEnvIfNoCase User-Agent "^Google Search Console" bad_bot
+SetEnvIfNoCase User-Agent "^Google-Site-Verification/1.0" bad_bot
+SetEnvIfNoCase User-Agent "^Googlebot snippet" bad_bot
+SetEnvIfNoCase User-Agent "^Firefox/7.0" bad_bot
+#remove php
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.php [L,QSA]
+Order Deny,Allow
+
+Deny from 148.251.45.170
+Deny from 99.84.222.86
+Deny from 139.59.199.169
+Deny from 194.72.238.0
+Deny from 104.28.16.92
+Deny from 2606:4700:3036::681c:105c
+Deny from 18.196.15.38
+Deny from 13.64.0.0/11
+Deny from 13.96.0.0/13
+Deny from 13.104.0.0/14
+Deny from 20.34.0.0/15
+Deny from 20.36.0.0/14
+Deny from 20.40.0.0/13
+Deny from 20.128.0.0/16
+Deny from 20.140.0.0/15
+Deny from 20.144.0.0/14
+Deny from 20.150.0.0/15
+Deny from 20.160.0.0/12
+Deny from 20.176.0.0/14
+Deny from 20.180.0.0/14
+Deny from 20.184.0.0/13
+Deny from 23.96.0.0/13
+Deny from 40.64.0.0/10
+Deny from 42.159.0.0/16
+Deny from 51.4.0.0/15
+Deny from 51.8.0.0/16
+Deny from 148.251.45.170
+Deny from 51.10.0.0/15
+Deny from 51.12.0.0/15
+Deny from 51.18.0.0/16
+Deny from 51.51.0.0/16
+Deny from 51.53.0.0/16
+Deny from 51.103.0.0/16
+Deny from 51.104.0.0/15
+Deny from 51.107.0.0/16
+Deny from 51.116.0.0/16
+Deny from 51.120.0.0/16
+Deny from 51.124.0.0/16
+Deny from 51.132.0.0/16
+Deny from 51.136.0.0/15
+Deny from 51.138.0.0/16
+Deny from 51.140.0.0/14
+Deny from 51.144.0.0/15
+Deny from 52.96.0.0/12
+Deny from 52.112.0.0/14
+Deny from 52.120.0.0/14
+Deny from 52.125.0.0/16
+Deny from 52.126.0.0/15
+Deny from 52.130.0.0/15
+Deny from 52.132.0.0/14
+Deny from 52.136.0.0/13
+Deny from 52.145.0.0/16
+Deny from 52.146.0.0/15
+Deny from 52.148.0.0/14
+Deny from 52.152.0.0/13
+Deny from 52.160.0.0/11
+Deny from 52.224.0.0/11
+Deny from 64.4.0.0/18
+Deny from 65.52.0.0/14
+Deny from 66.119.144.0/20
+Deny from 70.37.0.0/17
+Deny from 70.37.128.0/18
+Deny from 91.190.216.0/21
+Deny from 94.245.64.0/18
+Deny from 103.9.8.0/22
+Deny from 103.25.156.0/24
+Deny from 103.25.157.0/24
+Deny from 103.25.158.0/23
+Deny from 103.36.96.0/22
+Deny from 103.255.140.0/22
+Deny from 104.40.0.0/13
+Deny from 104.146.0.0/15
+Deny from 104.208.0.0/13
+Deny from 111.221.16.0/20
+Deny from 111.221.64.0/18
+Deny from 129.75.0.0/16
+Deny from 131.253.1.0/24
+Deny from 131.253.3.0/24
+Deny from 131.253.5.0/24
+Deny from 131.253.6.0/24
+Deny from 131.253.8.0/24
+Deny from 131.253.12.0/22
+Deny from 131.253.16.0/23
+Deny from 131.253.18.0/24
+Deny from 131.253.21.0/24
+Deny from 131.253.22.0/23
+Deny from 131.253.24.0/21
+Deny from 131.253.32.0/20
+Deny from 131.253.61.0/24
+Deny from 131.253.62.0/23
+Deny from 131.253.64.0/18
+Deny from 131.253.128.0/17
+Deny from 132.245.0.0/16
+Deny from 134.170.0.0/16
+Deny from 134.177.0.0/16
+Deny from 137.116.0.0/15
+Deny from 137.135.0.0/16
+Deny from 138.91.0.0/16
+Deny from 138.196.0.0/16
+Deny from 139.217.0.0/16
+Deny from 139.219.0.0/16
+Deny from 141.251.0.0/16
+Deny from 146.147.0.0/16
+Deny from 147.243.0.0/16
+Deny from 150.171.0.0/16
+Deny from 150.242.48.0/22
+Deny from 157.54.0.0/15
+Deny from 157.56.0.0/14
+Deny from 157.60.0.0/16
+Deny from 167.220.0.0/16
+Deny from 168.61.0.0/16
+Deny from 168.62.0.0/15
+Deny from 191.232.0.0/13
+Deny from 192.32.0.0/16
+Deny from 192.48.225.0/24
+Deny from 192.84.159.0/24
+Deny from 192.84.160.0/23
+Deny from 192.100.102.0/24
+Deny from 192.100.103.0/24
+Deny from 192.197.157.0/24
+Deny from 193.149.64.0/19
+Deny from 193.221.113.0/24
+Deny from 194.69.96.0/19
+Deny from 194.110.197.0/24
+Deny from 198.105.232.0/22
+Deny from 198.200.130.0/24
+Deny from 198.206.164.0/24
+Deny from 199.60.28.0/24
+Deny from 199.74.210.0/24
+Deny from 199.103.90.0/23
+Deny from 199.103.122.0/24
+Deny from 199.242.32.0/20
+Deny from 199.242.48.0/21
+Deny from 202.89.224.0/20
+Deny from 204.13.120.0/21
+Deny from 204.14.180.0/22
+Deny from 204.79.135.0/24
+Deny from 204.79.179.0/24
+Deny from 204.79.181.0/24
+Deny from 204.79.188.0/24
+Deny from 204.79.195.0/24
+Deny from 204.79.196.0/23
+Deny from 204.79.252.0/24
+Deny from 204.152.18.0/23
+Deny from 204.152.140.0/23
+Deny from 204.231.192.0/24
+Deny from 204.231.194.0/23
+Deny from 204.231.197.0/24
+Deny from 204.231.198.0/23
+Deny from 204.231.200.0/21
+Deny from 204.231.208.0/20
+Deny from 204.231.236.0/24
+Deny from 205.174.224.0/20
+Deny from 206.138.168.0/21
+Deny from 206.191.224.0/19
+Deny from 207.46.0.0/16
+Deny from 207.68.128.0/18
+Deny from 208.68.136.0/21
+Deny from 208.76.44.0/22
+Deny from 208.84.0.0/21
+Deny from 209.240.192.0/19
+Deny from 213.199.128.0/18
+Deny from 216.32.180.0/22
+Deny from 216.220.208.0/20
+Deny from 2001:67c:1020::/48
+Deny from 2001:df0:7::/48
+Deny from 2001:df0:d7::/48
+Deny from 2001:df0:d8::/48
+Deny from 2001:df0:d9::/48
+Deny from 2001:4898::/32
+Deny from 2001:489a:2000::/35
+Deny from 2404:f801::/32
+Deny from 2603:1000::/24
+Deny from 2620:0:30::/45
+Deny from 2620:10c:5000::/44
+Deny from 2620:1ec::/36
+Deny from 2801:80:1d0::/48
+Deny from 2a01:110::/32
+Deny from 185.187.30.11
+Deny from 209.85.210.199
+Deny from 209.66.70.11
+Deny from 40.96.0.0/13
+Deny from 40.104.0.0/15
+Deny from 40.107.0.0/16
+Deny from 40.108.128.0/17
+Deny from 40.126.0.0/18
+Deny from 40.81.156.154/32
+Deny from 40.90.218.198/32
+Deny from 40.81.156.154/32
+Deny from 40.90.218.198/32
+Deny from 40.92.0.0/15
+Deny from 65.55.210.184
+Deny from 157.55.12.72
+Deny from 199.30.24.92
+Deny from 199.30.24.220
+Deny from 131.253.25.234
+Deny from 199.30.24.222
+Deny from 65.55.210.209
+Deny from 65.55.210.68
+Deny from 65.55.210.188
+Deny from 199.30.25.88
+Deny from 131.253.25.205
+Deny from 131.253.25.181
+Deny from 131.253.25.240
+Deny from 199.30.25.84
+Deny from 65.55.210.222
+Deny from 131.253.25.221
+Deny from 40.77.162.37
+Deny from 2a01:111::/32
+Deny from 2a01:4180::/32
+Deny from 61.64.48.168
+Deny from 48.4.52.196
+Deny from 82.124.97.42
+Deny from 10.8.0.252
+Deny from 5.62.48.178
+Deny from 91.103.64.203
+Deny from 91.103.65.203
+Deny from 91.103.66.203
+Deny from 91.103.67.203
+Deny from 91.103.68.203
+Deny from 91.103.69.203
+Deny from 91.103.70.203
+Deny from 91.103.71.203
+Deny from 104.42.198.99
+Deny from 52.114.6.38
+Deny from 138.197.96.120
+Deny from 152.187.237.35
+Deny from 91.103.66.203
+Deny from 209.85.208.71
+Deny from 52.31.138.216
+Deny from 198.202.90.195
+Deny from 10.8.0.252
+Deny from 91.199.212.57
+Deny from 91.199.212.132
+Deny from 34.193.96.49
+Deny from 52.84.86.20
+Deny from 54.230.86.15
+Deny from 52.31.206.114
+Deny from 194.72.238.11
+Deny from 52.85.76.15
+Deny from 52.19.71.202
+Deny from 194.72.238.80
+Deny from 194.72.238.53
+Deny from 18.221.61.225
+Deny from 23.253.10.9
+Deny from 37.18.42.16
+Deny from 45.55.32.173
+Deny from 45.55.32.228
+Deny from 45.55.35.60
+Deny from 45.55.41.161
+Deny from 45.55.43.72
+Deny from 45.55.45.190
+Deny from 45.55.48.166
+Deny from 45.55.49.74
+Deny from 45.55.51.176
+Deny from 45.55.60.98
+Deny from 45.55.61.105
+Deny from 45.55.62.23
+Deny from 45.55.62.86
+Deny from 45.55.62.199
+Deny from 45.55.62.231
+Deny from 45.55.63.72
+Deny from 45.55.63.224
+Deny from 45.55.67.59
+Deny from 45.55.68.94
+Deny from 45.55.69.42
+Deny from 45.55.69.242
+Deny from 45.55.70.65
+Deny from 45.55.70.102
+Deny from 45.55.70.250
+Deny from 45.55.74.132
+Deny from 45.55.74.162
+Deny from 45.55.75.31
+Deny from 45.55.77.182
+Deny from 45.55.77.210
+Deny from 45.55.79.161
+Deny from 45.55.79.218
+Deny from 45.55.81.185
+Deny from 45.55.82.123
+Deny from 45.55.84.235
+Deny from 45.55.86.166
+Deny from 45.55.87.26
+Deny from 45.55.90.229
+Deny from 45.55.92.205
+Deny from 45.55.95.83
+Deny from 45.55.95.145
+Deny from 45.55.95.185
+Deny from 45.55.128.183
+Deny from 45.55.129.126
+Deny from 45.55.130.246
+Deny from 45.55.131.3
+Deny from 45.55.131.70
+Deny from 45.55.131.147
+Deny from 45.55.132.78
+Deny from 45.55.135.208
+Deny from 45.55.137.140
+Deny from 45.55.142.68
+Deny from 45.55.145.2
+Deny from 45.55.148.248
+Deny from 45.55.149.97
+Deny from 45.55.149.232
+Deny from 45.55.154.84
+Deny from 45.55.156.19
+Deny from 45.55.156.237
+Deny from 45.55.159.62
+Deny from 45.55.160.15
+Deny from 45.55.160.208
+Deny from 45.55.161.212
+Deny from 45.55.164.67
+Deny from 45.55.165.21
+Deny from 45.55.167.17
+Deny from 45.55.167.189
+Deny from 45.55.169.111
+Deny from 45.55.170.44
+Deny from 45.55.171.82
+Deny from 45.55.174.31
+Deny from 45.55.175.166
+Deny from 45.55.177.177
+Deny from 45.55.179.149
+Deny from 45.55.181.15
+Deny from 45.55.182.33
+Deny from 45.55.183.22
+Deny from 45.55.183.114
+Deny from 45.55.184.188
+Deny from 45.55.184.215
+Deny from 45.55.185.124
+Deny from 45.55.187.110
+Deny from 45.55.188.115
+Deny from 45.55.189.77
+Deny from 45.55.192.10
+Deny from 45.55.192.213
+Deny from 45.55.193.125
+Deny from 45.55.194.156
+Deny from 45.55.194.167
+Deny from 45.55.195.16
+Deny from 45.55.198.6
+Deny from 45.55.198.27
+Deny from 45.55.201.11
+Deny from 45.55.202.206
+Deny from 45.55.206.183
+Deny from 45.55.207.43
+Deny from 45.55.209.49
+Deny from 45.55.212.115
+Deny from 45.55.212.244
+Deny from 45.55.214.24
+Deny from 45.55.214.122
+Deny from 45.55.215.124
+Deny from 45.55.218.110
+Deny from 45.55.218.212
+Deny from 45.55.220.46
+Deny from 45.55.228.14
+Deny from 45.55.231.215
+Deny from 45.55.232.134
+Deny from 45.55.233.82
+Deny from 45.55.237.205
+Deny from 45.55.240.113
+Deny from 45.55.246.104
+Deny from 45.55.248.179
+Deny from 45.55.253.239
+Deny from 45.55.254.220
+Deny from 52.30.171.229
+Deny from 104.131.7.61
+Deny from 104.131.15.223
+Deny from 104.131.18.130
+Deny from 104.131.18.234
+Deny from 104.131.22.87
+Deny from 104.131.27.156
+Deny from 104.131.29.24
+Deny from 104.131.30.191
+Deny from 104.131.36.103
+Deny from 104.131.38.90
+Deny from 104.131.47.129
+Deny from 104.131.48.68
+Deny from 104.131.52.89
+Deny from 104.131.53.9
+Deny from 104.131.57.104
+Deny from 104.131.58.250
+Deny from 104.131.63.76
+Deny from 104.131.64.123
+Deny from 104.131.64.223
+Deny from 104.131.64.240
+Deny from 104.131.66.150
+Deny from 104.131.69.91
+Deny from 104.131.69.227
+Deny from 104.131.70.126
+Deny from 104.131.72.26
+Deny from 104.131.78.15
+Deny from 104.131.83.219
+Deny from 104.131.96.134
+Deny from 104.131.98.180
+Deny from 104.131.100.18
+Deny from 104.131.101.225
+Deny from 104.131.103.4
+Deny from 104.131.106.117
+Deny from 104.131.111.35
+Deny from 104.131.116.55
+Deny from 104.131.116.145
+Deny from 104.131.116.185
+Deny from 104.131.117.71
+Deny from 104.131.118.119
+Deny from 104.131.119.80
+Deny from 104.131.119.140
+Deny from 104.131.121.226
+Deny from 104.131.124.202
+Deny from 104.131.127.203
+Deny from 104.131.161.211
+Deny from 104.131.161.245
+Deny from 104.131.163.41
+Deny from 104.131.166.7
+Deny from 104.131.168.241
+Deny from 104.131.172.2
+Deny from 104.131.175.15
+Deny from 104.131.175.66
+Deny from 104.131.177.49
+Deny from 104.236.1.48
+Deny from 104.236.3.0
+Deny from 104.236.4.73
+Deny from 104.236.15.70
+Deny from 104.236.15.150
+Deny from 104.236.16.61
+Deny from 104.236.17.226
+Deny from 104.236.18.245
+Deny from 104.236.20.23
+Deny from 104.236.24.106
+Deny from 104.236.25.215
+Deny from 104.236.30.249
+Deny from 104.236.32.51
+Deny from 104.236.34.23
+Deny from 104.236.34.229
+Deny from 104.236.35.242
+Deny from 104.236.38.123
+Deny from 104.236.39.66
+Deny from 104.236.41.221
+Deny from 104.236.44.56
+Deny from 104.236.45.255
+Deny from 104.236.46.145
+Deny from 104.236.47.94
+Deny from 104.236.50.21
+Deny from 104.236.50.56
+Deny from 104.236.52.60
+Deny from 104.236.52.202
+Deny from 104.236.52.227
+Deny from 104.236.56.18
+Deny from 104.236.58.3
+Deny from 104.236.58.67
+Deny from 192.30.252.154
+Deny from 104.236.59.81
+Deny from 104.236.59.140
+Deny from 104.236.60.31
+Deny from 104.236.61.48
+Deny from 104.236.63.103
+Deny from 104.236.64.145
+Deny from 104.236.64.156
+Deny from 104.236.65.200
+Deny from 104.236.72.207
+Deny from 104.236.73.83
+Deny from 104.236.74.7
+Deny from 104.236.74.173
+Deny from 104.236.76.159
+Deny from 104.236.83.175
+Deny from 104.236.86.127
+Deny from 104.236.87.181
+Deny from 104.236.87.231
+Deny from 104.236.89.225
+Deny from 104.236.90.55
+Deny from 104.236.91.232
+Deny from 104.236.92.127
+Deny from 104.236.96.98
+Deny from 104.236.97.127
+Deny from 104.236.100.134
+Deny from 104.236.103.120
+Deny from 104.236.105.117
+Deny from 104.236.105.157
+Deny from 104.236.107.251
+Deny from 104.236.111.182
+Deny from 104.236.112.104
+Deny from 104.236.116.156
+Deny from 104.236.117.152
+Deny from 104.236.118.184
+Deny from 104.236.120.180
+Deny from 104.236.120.187
+Deny from 104.236.123.28
+Deny from 104.236.123.66
+Deny from 104.236.193.103
+Deny from 104.236.194.108
+Deny from 104.236.196.24
+Deny from 104.236.197.211
+Deny from 104.236.199.243
+Deny from 104.236.200.155
+Deny from 104.236.204.85
+Deny from 104.236.204.117
+Deny from 104.236.206.128
+Deny from 104.236.207.249
+Deny from 104.236.208.33
+Deny from 104.236.208.247
+Deny from 104.236.209.148
+Deny from 104.236.212.84
+Deny from 104.236.214.200
+Deny from 104.236.216.40
+Deny from 104.236.216.156
+Deny from 104.236.217.43
+Deny from 104.236.217.199
+Deny from 104.236.218.39
+Deny from 104.236.219.212
+Deny from 104.236.221.82
+Deny from 107.20.37.166
+Deny from 188.27.101.48
+Deny from 104.236.222.79
+Deny from 213.64.127.137
+Deny from 104.236.223.122
+Deny from 104.236.227.93
+Deny from 104.236.228.154
+Deny from 104.236.230.77
+Deny from 104.236.233.221
+Deny from 104.236.234.130
+Deny from 185.199.109.153 
+Deny from 185.199.111.153
+Deny from 74.208.236.169
+Deny from 104.236.234.240
+Deny from 104.236.236.102
+Deny from 104.236.239.157
+Deny from 104.236.240.118
+Deny from 104.236.243.166
+Deny from 104.17.133.180
+Deny from 2606:4700:0:0:0:0:6811:85b4
+Deny from 188.27.101.48
+Deny from 104.236.244.3
+Deny from 17.142.144.53
+Deny from 17.142.144.74
+Deny from 17.142.145.79
+Deny from 17.142.145.122
+Deny from 17.142.145.132
+Deny from 17.142.145.237
+Deny from 17.142.147.229
+Deny from 17.142.148.193
+Deny from 17.142.148.231
+Deny from 17.142.149.9
+Deny from 17.142.149.26
+Deny from 17.142.149.167
+Deny from 17.142.149.169
+Deny from 17.142.149.172
+Deny from 17.142.149.174
+Deny from 17.142.150.35
+Deny from 17.142.150.64
+Deny from 17.142.150.65
+Deny from 17.142.150.187
+Deny from 17.142.150.242
+Deny from 17.142.151.76
+Deny from 17.142.151.120
+Deny from 17.142.151.164
+Deny from 17.142.151.221
+Deny from 17.142.151.247
+Deny from 17.142.152.24
+Deny from 17.142.152.32
+Deny from 17.142.152.232
+Deny from 17.142.152.239
+Deny from 17.142.153.23
+Deny from 17.142.153.28
+Deny from 17.142.153.40
+Deny from 17.142.153.150
+Deny from 17.142.153.199
+Deny from 17.142.153.221
+Deny from 17.142.153.230
+Deny from 17.142.154.27
+Deny from 17.142.154.36
+Deny from 17.142.154.40
+Deny from 17.142.154.44
+Deny from 17.142.154.142
+Deny from 17.142.154.145
+Deny from 17.142.154.148
+Deny from 17.142.154.157
+Deny from 17.142.154.163
+Deny from 17.142.154.176
+Deny from 17.142.154.180
+Deny from 17.142.154.182
+Deny from 17.142.154.183
+Deny from 17.142.154.222
+Deny from 17.142.154.235
+Deny from 17.142.155.34
+Deny from 17.142.155.60
+Deny from 17.142.155.67
+Deny from 17.142.155.106
+Deny from 17.142.155.107
+Deny from 17.142.155.108
+Deny from 17.142.155.109
+Deny from 17.142.155.111
+Deny from 17.142.155.114
+Deny from 17.142.155.115
+Deny from 17.142.155.116
+Deny from 17.142.155.117
+Deny from 17.142.155.118
+Deny from 17.142.155.123
+Deny from 17.142.155.124
+Deny from 17.142.155.140
+Deny from 17.142.155.141
+Deny from 17.142.155.144
+Deny from 17.142.155.146
+Deny from 17.142.155.148
+Deny from 17.142.155.162
+Deny from 17.142.155.163
+Deny from 17.142.155.175
+Deny from 17.142.155.185
+Deny from 17.142.156.103
+Deny from 17.142.156.105
+Deny from 17.142.156.116
+Deny from 17.142.156.117
+Deny from 17.142.156.128
+Deny from 17.142.156.142
+Deny from 17.142.156.147
+Deny from 17.142.156.161
+Deny from 17.142.156.166
+Deny from 17.142.156.167
+Deny from 17.142.156.171
+Deny from 17.142.156.176
+Deny from 17.142.156.180
+Deny from 17.142.156.190
+Deny from 17.142.156.198
+Deny from 17.142.156.207
+Deny from 17.142.156.213
+Deny from 17.142.156.240
+Deny from 17.142.157.17
+Deny from 17.142.157.18
+Deny from 17.142.157.38
+Deny from 17.142.157.50
+Deny from 17.142.157.107
+Deny from 17.142.157.129
+Deny from 17.142.157.134
+Deny from 17.142.157.153
+Deny from 17.142.157.155
+Deny from 17.142.157.156
+Deny from 17.142.157.164
+Deny from 17.142.157.165
+Deny from 17.142.157.181
+Deny from 17.142.159.133
+Deny from 17.142.159.140
+Deny from 17.142.159.143
+Deny from 17.142.159.145
+Deny from 17.142.159.148
+Deny from 17.142.159.149
+Deny from 17.142.159.150
+Deny from 17.142.159.153
+Deny from 17.142.159.176
+Deny from 17.142.159.185
+Deny from 108.162.246.72
+Deny from 17.125.81.99s
+Deny from 104.236.244.57
+Deny from 104.236.244.245
+Deny from 104.236.251.66
+Deny from 104.236.251.203
+Deny from 104.236.252.58
+Deny from 104.236.252.244
+Deny from 104.236.253.143
+Deny from 108.162.219.5
+Deny from 108.162.219.28
+Deny from 108.162.219.34
+Deny from 108.162.219.40
+Deny from 108.162.219.69
+Deny from 108.162.219.88
+Deny from 108.162.219.114
+Deny from 108.162.219.149
+Deny from 108.162.219.186
+Deny from 138.197.0.50
+Deny from 138.197.0.76
+Deny from 138.197.0.102
+Deny from 138.197.0.130
+Deny from 138.197.0.244
+Deny from 138.197.1.6
+Deny from 138.197.1.88
+Deny from 138.197.1.112
+Deny from 138.197.1.140
+Deny from 138.197.1.144
+Deny from 138.197.1.145
+Deny from 138.197.2.18
+Deny from 138.197.2.39
+Deny from 138.197.2.72
+Deny from 138.197.2.76
+Deny from 138.197.2.106
+Deny from 138.197.2.112
+Deny from 138.197.2.114
+Deny from 138.197.2.137
+Deny from 138.197.2.212
+Deny from 138.197.3.2
+Deny from 138.197.3.27
+Deny from 104.17.210.9
+Deny from 138.197.3.65
+Deny from 138.197.3.136
+Deny from 138.197.3.147
+Deny from 138.197.3.158
+Deny from 138.197.4.34
+Deny from 138.197.4.43
+Deny from 138.197.4.46
+Deny from 138.197.4.52
+Deny from 138.197.4.55
+Deny from 138.197.4.64
+Deny from 138.197.4.81
+Deny from 138.197.4.84
+Deny from 138.197.4.85
+Deny from 138.197.4.120
+Deny from 138.197.4.135
+Deny from 138.197.4.150
+Deny from 138.197.4.161
+Deny from 138.197.4.164
+Deny from 138.197.4.170
+Deny from 138.197.4.171
+Deny from 138.197.4.199
+Deny from 138.197.4.200
+Deny from 138.197.4.201
+Deny from 138.197.4.212
+Deny from 138.197.4.224
+Deny from 138.197.4.237
+Deny from 138.197.4.240
+Deny from 138.197.4.244
+Deny from 138.197.5.3
+Deny from 138.197.6.81
+Deny from 138.197.6.127
+Deny from 138.197.6.134
+Deny from 138.197.6.161
+Deny from 138.197.6.189
+Deny from 138.197.7.27
+Deny from 138.197.7.63
+Deny from 138.197.7.181
+Deny from 138.197.8.20
+Deny from 138.197.8.67
+Deny from 138.197.8.94
+Deny from 138.197.8.104
+Deny from 138.197.8.119
+Deny from 138.197.8.124
+Deny from 138.197.8.163
+Deny from 138.197.8.171
+Deny from 138.197.10.25
+Deny from 138.197.10.30
+Deny from 138.197.10.136
+Deny from 138.197.10.161
+Deny from 138.197.10.165
+Deny from 138.197.10.178
+Deny from 138.197.10.197
+Deny from 138.197.11.28
+Deny from 138.197.11.35
+Deny from 138.197.11.84
+Deny from 138.197.11.89
+Deny from 138.197.11.216
+Deny from 138.197.11.228
+Deny from 138.197.12.7
+Deny from 138.197.12.47
+Deny from 138.197.12.112
+Deny from 138.197.12.126
+Deny from 138.197.12.147
+Deny from 138.197.12.158
+Deny from 138.197.12.197
+Deny from 138.197.12.218
+Deny from 138.197.12.227
+Deny from 138.197.12.234
+Deny from 138.197.12.238
+Deny from 138.197.13.27
+Deny from 138.197.14.21
+Deny from 138.197.14.40
+Deny from 138.197.14.164
+Deny from 138.197.14.236
+Deny from 138.197.14.248
+Deny from 138.197.15.5
+Deny from 138.197.15.118
+Deny from 138.197.15.139
+Deny from 138.197.15.145
+Deny from 138.197.15.171
+Deny from 138.197.15.238
+Deny from 138.197.15.242
+Deny from 138.197.15.251
+Deny from 138.197.16.117
+Deny from 138.197.17.59
+Deny from 138.197.17.91
+Deny from 138.197.18.9
+Deny from 138.197.18.35
+Deny from 138.197.20.120
+Deny from 138.197.21.133
+Deny from 138.197.21.153
+Deny from 138.197.21.172
+Deny from 138.197.21.219
+Deny from 138.197.21.227
+Deny from 138.197.21.232
+Deny from 138.197.22.34
+Deny from 138.197.22.125
+Deny from 138.197.22.182
+Deny from 138.197.23.74
+Deny from 138.197.23.229
+Deny from 138.197.24.78
+Deny from 138.197.24.156
+Deny from 138.197.25.52
+Deny from 138.197.26.91
+Deny from 138.197.26.111
+Deny from 138.197.26.253
+Deny from 138.197.27.24
+Deny from 138.197.27.38
+Deny from 138.197.27.39
+Deny from 138.197.28.34
+Deny from 138.197.28.43
+Deny from 138.197.28.85
+Deny from 138.197.28.174
+Deny from 138.197.28.202
+Deny from 138.197.28.203
+Deny from 138.197.28.222
+Deny from 138.197.29.32
+Deny from 138.197.29.60
+Deny from 138.197.29.166
+Deny from 138.197.30.1
+Deny from 138.197.30.15
+Deny from 138.197.30.89
+Deny from 138.197.30.250
+Deny from 138.197.31.107
+Deny from 138.197.32.107
+Deny from 138.197.32.150
+Deny from 138.197.33.23
+Deny from 138.197.33.32
+Deny from 138.197.33.46
+Deny from 138.197.33.77
+Deny from 138.197.33.83
+Deny from 138.197.33.87
+Deny from 138.197.33.93
+Deny from 138.197.33.201
+Deny from 138.197.33.220
+Deny from 138.197.33.227
+Deny from 138.197.33.230
+Deny from 138.197.34.140
+Deny from 138.197.34.245
+Deny from 138.197.35.3
+Deny from 138.197.35.21
+Deny from 138.197.35.50
+Deny from 138.197.35.64
+Deny from 138.197.35.91
+Deny from 138.197.35.99
+Deny from 138.197.35.102
+Deny from 138.197.35.153
+Deny from 138.197.35.170
+Deny from 138.197.35.201
+Deny from 138.197.36.37
+Deny from 138.197.36.102
+Deny from 138.197.37.25
+Deny from 138.197.37.56
+Deny from 138.197.37.67
+Deny from 138.197.37.98
+Deny from 138.197.37.105
+Deny from 138.197.37.134
+Deny from 138.197.37.149
+Deny from 138.197.37.188
+Deny from 138.197.37.219
+Deny from 138.197.37.236
+Deny from 138.197.37.241
+Deny from 138.197.38.14
+Deny from 138.197.38.35
+Deny from 138.197.38.95
+Deny from 138.197.39.116
+Deny from 138.197.39.117
+Deny from 138.197.39.130
+Deny from 138.197.39.133
+Deny from 138.197.39.159
+Deny from 138.197.39.168
+Deny from 138.197.39.181
+Deny from 138.197.39.255
+Deny from 138.197.40.115
+Deny from 138.197.40.161
+Deny from 138.197.41.20
+Deny from 138.197.41.86
+Deny from 138.197.41.113
+Deny from 138.197.41.150
+Deny from 138.197.41.157
+Deny from 138.197.41.169
+Deny from 138.197.41.178
+Deny from 138.197.41.184
+Deny from 138.197.41.190
+Deny from 138.197.41.217
+Deny from 138.197.42.77
+Deny from 138.197.42.155
+Deny from 138.197.42.192
+Deny from 138.197.43.46
+Deny from 138.197.43.95
+Deny from 138.197.43.113
+Deny from 138.197.43.115
+Deny from 138.197.43.204
+Deny from 138.197.43.206
+Deny from 138.197.43.215
+Deny from 138.197.44.11
+Deny from 138.197.44.13
+Deny from 138.197.44.31
+Deny from 138.197.44.81
+Deny from 138.197.44.90
+Deny from 138.197.45.3
+Deny from 138.197.45.7
+Deny from 138.197.45.8
+Deny from 138.197.45.37
+Deny from 138.197.45.52
+Deny from 138.197.45.53
+Deny from 138.197.45.69
+Deny from 138.197.45.79
+Deny from 138.197.45.127
+Deny from 138.197.45.173
+Deny from 138.197.45.175
+Deny from 138.197.45.183
+Deny from 138.197.45.214
+Deny from 138.197.45.243
+Deny from 138.197.45.245
+Deny from 138.197.46.6
+Deny from 138.197.46.63
+Deny from 138.197.46.67
+Deny from 138.197.46.69
+Deny from 138.197.46.109
+Deny from 138.197.46.147
+Deny from 138.197.46.183
+Deny from 138.197.47.101
+Deny from 138.197.47.194
+Deny from 138.197.64.44
+Deny from 138.197.64.103
+Deny from 138.197.65.69
+Deny from 138.197.65.152
+Deny from 138.197.66.16
+Deny from 138.197.66.54
+Deny from 138.197.66.139
+Deny from 138.197.66.225
+Deny from 138.197.66.230
+Deny from 138.197.67.7
+Deny from 138.197.67.54
+Deny from 138.197.67.84
+Deny from 138.197.67.92
+Deny from 138.197.67.113
+Deny from 138.197.67.184
+Deny from 138.197.67.214
+Deny from 138.197.68.31
+Deny from 138.197.68.43
+Deny from 138.197.68.80
+Deny from 138.197.68.119
+Deny from 138.197.68.167
+Deny from 138.197.68.178
+Deny from 138.197.68.206
+Deny from 138.197.68.221
+Deny from 138.197.69.27
+Deny from 138.197.69.94
+Deny from 138.197.69.159
+Deny from 138.197.69.199
+Deny from 138.197.70.3
+Deny from 138.197.70.109
+Deny from 138.197.70.175
+Deny from 138.197.70.181
+Deny from 138.197.70.188
+Deny from 138.197.70.206
+Deny from 138.197.71.0
+Deny from 138.197.71.4
+Deny from 138.197.71.9
+Deny from 138.197.71.12
+Deny from 138.197.71.22
+Deny from 138.197.71.23
+Deny from 138.197.71.27
+Deny from 138.197.71.46
+Deny from 138.197.71.47
+Deny from 138.197.71.87
+Deny from 138.197.72.129
+Deny from 138.197.72.160
+Deny from 138.197.72.215
+Deny from 138.197.72.220
+Deny from 138.197.73.38
+Deny from 138.197.73.116
+Deny from 138.197.73.120
+Deny from 138.197.74.34
+Deny from 138.197.74.51
+Deny from 138.197.74.111
+Deny from 138.197.74.119
+Deny from 138.197.74.125
+Deny from 138.197.74.130
+Deny from 138.197.74.132
+Deny from 138.197.74.196
+Deny from 138.197.74.228
+Deny from 138.197.75.85
+Deny from 138.197.75.87
+Deny from 138.197.75.91
+Deny from 138.197.75.103
+Deny from 138.197.75.118
+Deny from 138.197.75.125
+Deny from 138.197.75.131
+Deny from 138.197.75.144
+Deny from 138.197.75.195
+Deny from 138.197.75.199
+Deny from 138.197.75.211
+Deny from 138.197.75.215
+Deny from 138.197.75.217
+Deny from 138.197.75.222
+Deny from 138.197.75.231
+Deny from 138.197.76.13
+Deny from 138.197.76.101
+Deny from 138.197.76.104
+Deny from 138.197.76.118
+Deny from 138.197.76.151
+Deny from 138.197.76.184
+Deny from 138.197.77.46
+Deny from 138.197.77.53
+Deny from 138.197.77.56
+Deny from 138.197.77.66
+Deny from 138.197.77.67
+Deny from 138.197.77.154
+Deny from 138.197.77.178
+Deny from 138.197.77.184
+Deny from 138.197.77.191
+Deny from 138.197.77.213
+Deny from 138.197.78.218
+Deny from 138.197.78.223
+Deny from 138.197.79.75
+Deny from 138.197.79.77
+Deny from 138.197.79.105
+Deny from 138.197.79.114
+Deny from 138.197.79.159
+Deny from 138.197.80.66
+Deny from 138.197.80.84
+Deny from 138.197.80.167
+Deny from 138.197.80.235
+Deny from 138.197.81.33
+Deny from 138.197.81.144
+Deny from 138.197.81.177
+Deny from 138.197.81.198
+Deny from 138.197.81.202
+Deny from 138.197.82.13
+Deny from 138.197.82.33
+Deny from 138.197.82.76
+Deny from 138.197.82.96
+Deny from 138.197.82.139
+Deny from 138.197.82.144
+Deny from 138.197.82.152
+Deny from 138.197.82.194
+Deny from 138.197.82.255
+Deny from 138.197.83.38
+Deny from 138.197.83.60
+Deny from 138.197.83.77
+Deny from 138.197.83.120
+Deny from 138.197.83.156
+Deny from 138.197.83.194
+Deny from 138.197.83.232
+Deny from 138.197.83.238
+Deny from 138.197.84.19
+Deny from 138.197.84.26
+Deny from 138.197.84.58
+Deny from 138.197.84.82
+Deny from 138.197.84.110
+Deny from 138.197.84.114
+Deny from 138.197.84.158
+Deny from 138.197.84.159
+Deny from 138.197.84.165
+Deny from 138.197.84.170
+Deny from 138.197.84.176
+Deny from 138.197.84.206
+Deny from 138.197.84.227
+Deny from 138.197.85.40
+Deny from 138.197.85.56
+Deny from 138.197.85.155
+Deny from 138.197.85.208
+Deny from 138.197.85.226
+Deny from 138.197.86.57
+Deny from 138.197.86.63
+Deny from 138.197.86.64
+Deny from 138.197.86.71
+Deny from 138.197.86.93
+Deny from 138.197.86.94
+Deny from 138.197.86.110
+Deny from 138.197.86.113
+Deny from 138.197.86.114
+Deny from 138.197.86.172
+Deny from 138.197.86.199
+Deny from 138.197.86.210
+Deny from 138.197.86.219
+Deny from 138.197.88.20
+Deny from 138.197.88.77
+Deny from 138.197.89.47
+Deny from 138.197.89.74
+Deny from 138.197.89.90
+Deny from 138.197.89.116
+Deny from 138.197.89.174
+Deny from 138.197.89.189
+Deny from 138.197.89.203
+Deny from 138.197.89.225
+Deny from 138.197.89.238
+Deny from 138.197.89.242
+Deny from 138.197.90.105
+Deny from 138.197.90.216
+Deny from 138.197.90.243
+Deny from 138.197.90.252
+Deny from 138.197.91.122
+Deny from 138.197.91.123
+Deny from 138.197.91.161
+Deny from 138.197.91.201
+Deny from 138.197.91.249
+Deny from 138.197.92.10
+Deny from 138.197.92.37
+Deny from 138.197.92.38
+Deny from 138.197.92.75
+Deny from 138.197.92.81
+Deny from 138.197.92.97
+Deny from 138.197.92.148
+Deny from 138.197.92.156
+Deny from 138.197.92.157
+Deny from 138.197.92.224
+Deny from 138.197.92.242
+Deny from 138.197.93.47
+Deny from 138.197.93.64
+Deny from 138.197.93.151
+Deny from 138.197.93.165
+Deny from 138.197.94.53
+Deny from 138.197.94.64
+Deny from 138.197.94.89
+Deny from 138.197.94.101
+Deny from 138.197.94.121
+Deny from 138.197.94.137
+Deny from 138.197.94.239
+Deny from 138.197.94.251
+Deny from 138.197.95.20
+Deny from 138.197.95.23
+Deny from 138.197.95.42
+Deny from 138.197.95.67
+Deny from 138.197.95.108
+Deny from 138.197.95.115
+Deny from 138.197.95.127
+Deny from 138.197.95.185
+Deny from 138.197.95.195
+Deny from 138.197.95.214
+Deny from 138.197.95.223
+Deny from 138.197.96.74
+Deny from 138.197.96.145
+Deny from 138.197.100.31
+Deny from 138.197.100.39
+Deny from 138.197.100.189
+Deny from 138.197.104.65
+Deny from 138.197.104.167
+Deny from 138.197.104.173
+Deny from 138.197.104.180
+Deny from 138.197.104.182
+Deny from 138.197.104.209
+Deny from 138.197.105.71
+Deny from 138.197.111.2
+Deny from 138.197.111.91
+Deny from 138.197.112.106
+Deny from 138.197.112.134
+Deny from 138.197.112.146
+Deny from 138.197.113.10
+Deny from 138.197.113.18
+Deny from 138.197.113.89
+Deny from 138.197.113.141
+Deny from 138.197.114.24
+Deny from 138.197.114.30
+Deny from 138.197.114.36
+Deny from 138.197.114.42
+Deny from 138.197.114.45
+Deny from 138.197.114.47
+Deny from 138.197.114.50
+Deny from 138.197.114.77
+Deny from 138.197.114.99
+Deny from 138.197.114.100
+Deny from 138.197.114.118
+Deny from 138.197.114.167
+Deny from 138.197.114.179
+Deny from 138.197.114.207
+Deny from 138.197.114.233
+Deny from 138.197.114.236
+Deny from 138.197.114.243
+Deny from 138.197.114.244
+Deny from 138.197.116.19
+Deny from 138.197.116.23
+Deny from 138.197.117.44
+Deny from 138.197.117.128
+Deny from 138.197.117.195
+Deny from 138.197.117.239
+Deny from 138.197.117.249
+Deny from 138.197.118.32
+Deny from 138.197.118.42
+Deny from 138.197.118.45
+Deny from 138.197.118.53
+Deny from 138.197.118.54
+Deny from 138.197.118.133
+Deny from 138.197.118.198
+Deny from 138.197.118.251
+Deny from 138.197.119.12
+Deny from 138.197.122.84
+Deny from 138.197.122.90
+Deny from 138.197.122.116
+Deny from 138.197.122.124
+Deny from 138.197.122.150
+Deny from 138.197.122.158
+Deny from 138.197.122.163
+Deny from 138.197.122.173
+Deny from 138.197.122.174
+Deny from 138.197.122.195
+Deny from 138.197.123.61
+Deny from 138.197.123.65
+Deny from 138.197.123.245
+Deny from 138.197.124.41
+Deny from 138.197.124.145
+Deny from 138.197.124.221
+Deny from 138.197.125.9
+Deny from 138.197.125.41
+Deny from 138.197.125.187
+Deny from 138.197.126.27
+Deny from 138.197.126.44
+Deny from 138.197.126.46
+Deny from 138.197.126.115
+Deny from 141.101.107.105
+Deny from 159.203.65.53
+Deny from 159.203.66.73
+Deny from 159.203.68.14
+Deny from 159.203.68.77
+Deny from 159.203.70.25
+Deny from 159.203.70.116
+Deny from 159.203.70.172
+Deny from 159.203.71.31
+Deny from 159.203.74.18
+Deny from 159.203.74.53
+Deny from 159.203.75.154
+Deny from 159.203.77.39
+Deny from 159.203.79.162
+Deny from 159.203.80.236
+Deny from 159.203.82.47
+Deny from 159.203.82.110
+Deny from 159.203.84.172
+Deny from 159.203.86.42
+Deny from 159.203.86.160
+Deny from 159.203.87.9
+Deny from 159.203.87.24
+Deny from 159.203.90.35
+Deny from 159.203.90.64
+Deny from 159.203.91.133
+Deny from 159.203.93.158
+Deny from 159.203.93.253
+Deny from 159.203.93.255
+Deny from 159.203.94.210
+Deny from 159.203.96.163
+Deny from 159.203.97.194
+Deny from 159.203.98.29
+Deny from 159.203.99.110
+Deny from 159.203.103.24
+Deny from 159.203.104.66
+Deny from 159.203.104.93
+Deny from 159.203.107.29
+Deny from 159.203.108.93
+Deny from 159.203.109.42
+Deny from 159.203.109.202
+Deny from 159.203.110.24
+Deny from 159.203.111.214
+Deny from 159.203.112.161
+Deny from 159.203.112.230
+Deny from 159.203.113.70
+Deny from 159.203.113.157
+Deny from 159.203.114.231
+Deny from 159.203.116.80
+Deny from 159.203.117.133
+Deny from 159.203.117.187
+Deny from 159.203.117.201
+Deny from 159.203.118.93
+Deny from 159.203.118.160
+Deny from 159.203.119.20
+Deny from 159.203.119.90
+Deny from 159.203.119.226
+Deny from 159.203.119.251
+Deny from 159.203.120.49
+Deny from 159.203.120.164
+Deny from 159.203.120.180
+Deny from 159.203.121.46
+Deny from 159.203.121.78
+Deny from 159.203.121.99
+Deny from 159.203.122.159
+Deny from 159.203.122.198
+Deny from 159.203.122.224
+Deny from 159.203.122.254
+Deny from 159.203.123.99
+Deny from 159.203.123.150
+Deny from 159.203.123.220
+Deny from 159.203.123.235
+Deny from 159.203.124.120
+Deny from 159.203.125.106
+Deny from 159.203.127.17
+Deny from 159.203.127.43
+Deny from 159.203.127.44
+Deny from 159.203.127.50
+Deny from 159.203.127.242
+Deny from 159.203.129.195
+Deny from 159.203.131.127
+Deny from 159.203.131.170
+Deny from 159.203.132.110
+Deny from 159.203.135.84
+Deny from 159.203.135.193
+Deny from 159.203.136.6
+Deny from 159.203.136.225
+Deny from 159.203.137.85
+Deny from 159.203.137.99
+Deny from 159.203.137.119
+Deny from 159.203.138.76
+Deny from 159.203.138.221
+Deny from 159.203.139.244
+Deny from 159.203.142.231
+Deny from 159.203.143.85
+Deny from 159.203.143.165
+Deny from 159.203.161.55
+Deny from 159.203.161.163
+Deny from 159.203.161.207
+Deny from 159.203.161.224
+Deny from 159.203.161.244
+Deny from 159.203.161.253
+Deny from 159.203.162.135
+Deny from 159.203.162.146
+Deny from 159.203.163.220
+Deny from 159.203.164.157
+Deny from 159.203.164.164
+Deny from 159.203.165.49
+Deny from 159.203.165.104
+Deny from 159.203.165.109
+Deny from 159.203.165.145
+Deny from 159.203.165.169
+Deny from 159.203.165.183
+Deny from 159.203.165.184
+Deny from 159.203.165.218
+Deny from 159.203.166.251
+Deny from 159.203.166.255
+Deny from 159.203.167.25
+Deny from 159.203.167.32
+Deny from 159.203.167.133
+Deny from 159.203.167.140
+Deny from 159.203.167.169
+Deny from 159.203.168.57
+Deny from 159.203.168.90
+Deny from 159.203.168.199
+Deny from 159.203.169.180
+Deny from 159.203.169.235
+Deny from 159.203.171.9
+Deny from 159.203.171.27
+Deny from 159.203.171.94
+Deny from 159.203.171.105
+Deny from 159.203.172.237
+Deny from 159.203.172.242
+Deny from 159.203.172.244
+Deny from 159.203.173.192
+Deny from 159.203.173.216
+Deny from 159.203.173.220
+Deny from 159.203.174.13
+Deny from 159.203.174.142
+Deny from 159.203.174.246
+Deny from 159.203.174.251
+Deny from 159.203.175.85
+Deny from 159.203.175.86
+Deny from 159.203.175.155
+Deny from 162.158.60.118
+Deny from 162.158.62.7
+Deny from 162.158.62.24
+Deny from 162.158.62.29
+Deny from 162.158.62.37
+Deny from 162.158.62.57
+Deny from 162.158.62.75
+Deny from 162.158.62.77
+Deny from 162.158.62.143
+Deny from 162.158.62.154
+Deny from 162.158.62.165
+Deny from 162.158.62.168
+Deny from 162.158.62.225
+Deny from 162.158.62.229
+Deny from 162.158.63.16
+Deny from 162.158.63.26
+Deny from 162.158.63.35
+Deny from 162.158.63.40
+Deny from 162.158.63.53
+Deny from 162.243.184.121
+Deny from 162.243.185.57
+Deny from 162.243.185.118
+Deny from 162.243.185.157
+Deny from 162.243.186.74
+Deny from 162.243.187.59
+Deny from 174.138.64.59
+Deny from 174.138.64.80
+Deny from 174.138.64.94
+Deny from 174.138.64.118
+Deny from 174.138.64.212
+Deny from 174.138.64.213
+Deny from 174.138.64.215
+Deny from 174.138.65.55
+Deny from 174.138.65.59
+Deny from 174.138.65.99
+Deny from 174.138.65.155
+Deny from 174.138.65.202
+Deny from 174.138.65.252
+Deny from 174.138.66.8
+Deny from 174.138.66.134
+Deny from 174.138.66.139
+Deny from 174.138.66.155
+Deny from 174.138.67.0
+Deny from 174.138.67.34
+Deny from 174.138.67.58
+Deny from 174.138.67.196
+Deny from 174.138.68.57
+Deny from 174.138.68.64
+Deny from 174.138.68.110
+Deny from 174.138.68.111
+Deny from 174.138.68.142
+Deny from 174.138.68.225
+Deny from 174.138.68.227
+Deny from 174.138.68.246
+Deny from 174.138.69.157
+Deny from 174.138.69.163
+Deny from 174.138.69.168
+Deny from 174.138.69.171
+Deny from 174.138.69.213
+Deny from 174.138.69.233
+Deny from 174.138.69.236
+Deny from 174.138.69.237
+Deny from 174.138.70.14
+Deny from 174.138.70.30
+Deny from 174.138.70.93
+Deny from 174.138.70.214
+Deny from 174.138.70.220
+Deny from 174.138.70.242
+Deny from 174.138.71.254
+Deny from 174.138.71.255
+Deny from 174.138.72.32
+Deny from 174.138.72.124
+Deny from 174.138.72.129
+Deny from 174.138.72.144
+Deny from 174.138.72.190
+Deny from 174.138.73.40
+Deny from 174.138.73.75
+Deny from 174.138.73.135
+Deny from 174.138.73.177
+Deny from 174.138.74.9
+Deny from 174.138.74.48
+Deny from 174.138.74.53
+Deny from 174.138.74.60
+Deny from 174.138.74.190
+Deny from 174.138.74.208
+Deny from 174.138.74.239
+Deny from 174.138.75.39
+Deny from 174.138.75.109
+Deny from 174.138.76.38
+Deny from 174.138.76.60
+Deny from 174.138.76.64
+Deny from 174.138.76.75
+Deny from 174.138.76.77
+Deny from 174.138.76.144
+Deny from 174.138.76.149
+Deny from 174.138.76.223
+Deny from 174.138.77.185
+Deny from 174.138.77.189
+Deny from 174.138.78.51
+Deny from 174.138.78.56
+Deny from 174.138.78.64
+Deny from 174.138.78.65
+Deny from 174.138.78.104
+Deny from 174.138.78.160
+Deny from 174.138.78.218
+Deny from 174.138.79.53
+Deny from 174.138.79.61
+Deny from 174.138.79.69
+Deny from 174.138.79.116
+Deny from 174.138.79.157
+Deny from 174.138.80.5
+Deny from 174.138.80.29
+Deny from 174.138.80.46
+Deny from 174.138.80.69
+Deny from 174.138.80.78
+Deny from 174.138.80.82
+Deny from 174.138.80.90
+Deny from 174.138.80.106
+Deny from 174.138.80.136
+Deny from 174.138.80.140
+Deny from 174.138.80.142
+Deny from 174.138.80.144
+Deny from 174.138.80.150
+Deny from 174.138.80.151
+Deny from 174.138.80.155
+Deny from 174.138.80.158
+Deny from 174.138.80.161
+Deny from 174.138.80.164
+Deny from 174.138.80.170
+Deny from 174.138.80.212
+Deny from 174.138.80.214
+Deny from 174.138.80.215
+Deny from 174.138.80.224
+Deny from 174.138.80.225
+Deny from 174.138.80.230
+Deny from 174.138.80.234
+Deny from 174.138.80.241
+Deny from 174.138.80.242
+Deny from 174.138.80.244
+Deny from 174.138.88.6
+Deny from 174.138.95.2
+Deny from 174.138.95.4
+Deny from 174.138.95.14
+Deny from 174.138.95.15
+Deny from 174.138.95.18
+Deny from 174.138.95.21
+Deny from 174.138.95.23
+Deny from 174.138.95.27
+Deny from 174.138.95.30
+Deny from 174.138.95.53
+Deny from 174.138.95.60
+Deny from 174.138.95.61
+Deny from 174.138.95.70
+Deny from 174.138.95.79
+Deny from 174.138.95.88
+Deny from 174.138.95.90
+Deny from 174.138.95.91
+Deny from 174.138.95.94
+Deny from 174.138.95.95
+Deny from 174.138.95.111
+Deny from 174.138.95.113
+Deny from 174.138.95.134
+Deny from 174.138.95.136
+Deny from 174.138.95.144
+Deny from 174.138.95.145
+Deny from 174.138.95.150
+Deny from 174.138.95.154
+Deny from 174.138.95.159
+Deny from 174.138.95.176
+Deny from 174.138.95.178
+Deny from 174.138.95.197
+Deny from 174.138.95.221
+Deny from 181.224.154.163
+Deny from 185.62.239.196
+Deny from 194.72.238.241
+Deny from 5.43.218.34
+Deny from 5.101.219.143
+Deny from 14.20.233.96
+Deny from 14.114.28.215
+Deny from 37.59.43.190
+Deny from 37.159.209.122
+Deny from 38.132.118.202
+Deny from 41.190.3.229
+Deny from 62.210.254.167
+Deny from 66.24.4.72
+Deny from 67.221.196.53
+Deny from 70.93.48.198
+Deny from 77.77.254.18
+Deny from 79.110.28.84
+Deny from 81.99.219.130
+Deny from 82.16.137.236
+Deny from 84.38.129.112
+Deny from 84.209.50.145
+Deny from 85.87.142.101
+Deny from 85.96.202.253
+Deny from 87.17.166.191
+Deny from 87.121.147.176
+Deny from 105.154.0.226
+Deny from 109.182.41.160
+Deny from 109.205.109.126
+Deny from 109.231.15.45
+Deny from 112.204.207.190
+Deny from 113.64.51.71
+Deny from 113.73.114.27
+Deny from 124.131.63.72
+Deny from 130.204.232.199
+Deny from 138.0.206.242
+Deny from 154.47.136.55
+Deny from 154.62.32.247
+Deny from 154.73.11.16
+Deny from 178.245.244.135
+Deny from 180.151.74.226
+Deny from 182.52.51.103
+Deny from 183.88.212.141
+Deny from 184.164.139.215
+Deny from 186.28.179.123
+Deny from 192.40.95.31
+Deny from 193.32.95.87
+Deny from 199.204.196.202
+Deny from 202.47.40.150
+Deny from 212.225.226.61
+Deny from 216.52.85.21
+Deny from 216.170.126.139
+Deny from 2.204.252.253
+Deny from 34.73.175.59
+Deny from 35.190.190.244
+Deny from 35.192.73.234
+Deny from 35.196.87.166
+Deny from 47.104.134.191
+Deny from 71.219.182.150
+Deny from 85.69.136.141
+Deny from 86.185.206.108
+Deny from 98.232.172.87
+Deny from 107.179.255.22
+Deny from 119.197.69.54
+Deny from 123.182.231.189
+Deny from 123.182.233.146
+Deny from 177.84.63.3
+Deny from 185.172.110.74
+Deny from 187.35.253.159
+Deny from 189.79.91.176
+Deny from 192.95.37.138
+Deny from 201.42.201.161
+Deny from 217.197.126.81
+Deny from 222.186.20.57
+Deny from 13.84.188.192
+Deny from 35.167.34.160
+Deny from 52.202.35.121
+Deny from 52.213.52.43
+Deny from 54.204.86.251
+Deny from 54.210.58.106
+Deny from 54.227.30.62
+Deny from 54.245.1.61
+Deny from 58.48.126.38
+Deny from 62.210.181.90
+Deny from 67.217.35.167
+Deny from 74.124.207.130
+Deny from 80.15.162.25
+Deny from 89.38.148.16
+Deny from 89.38.149.70
+Deny from 89.38.150.148
+Deny from 89.38.151.145
+Deny from 89.40.113.90
+Deny from 94.177.236.35
+Deny from 94.177.236.50
+Deny from 94.177.236.81
+Deny from 94.177.236.104
+Deny from 94.177.236.193
+Deny from 107.23.149.108
+Deny from 124.206.180.130
+Deny from 138.68.49.183
+Deny from 144.121.18.211
+Deny from 162.13.187.22
+Deny from 185.162.248.216
+Deny from 188.165.234.31
+Deny from 188.166.34.95
+Deny from 193.40.193.13
+Deny from 203.133.169.22
+Deny from 203.133.170.136
+Deny from 213.192.247.226
+Deny from 216.245.216.22
+Deny from 46.229.164.98
+Deny from 46.229.164.99
+Deny from 46.229.164.100
+Deny from 46.229.164.101
+Deny from 46.229.164.102
+Deny from 46.229.168.65
+Deny from 46.229.168.66
+Deny from 46.229.168.67
+Deny from 46.229.168.68
+Deny from 46.229.168.69
+Deny from 46.229.168.70
+Deny from 46.229.168.71
+Deny from 46.229.168.72
+Deny from 46.229.168.73
+Deny from 46.229.168.74
+Deny from 46.229.168.75
+Deny from 46.229.173.66
+Deny from 46.229.173.67
+Deny from 66.90.121.116
+Deny from 106.187.37.189
+Deny from 162.158.78.28
+Deny from 162.158.78.67
+Deny from 162.158.78.83
+Deny from 162.158.78.101
+Deny from 162.158.78.112
+Deny from 162.158.78.149
+Deny from 162.158.79.21
+Deny from 162.158.79.35
+Deny from 162.158.79.65
+Deny from 162.158.79.80
+Deny from 162.158.79.101
+Deny from 162.158.79.141
+Deny from 162.158.79.185
+Deny from 162.158.79.218
+Deny from 172.68.65.13
+Deny from 172.68.65.62
+Deny from 172.68.65.86
+Deny from 172.68.65.170
+Deny from 192.243.53.51
+Deny from 165.227.163.166
+Deny from 159.203.0.156
+Deny from 139.59.4.194
+Deny from 188.166.63.71
+Deny from 142.93.74.68
+Deny from 103.231.89.11
+Deny from 46.101.94.163
+Deny from 157.230.173.0
+Deny from 192.243.56.76
+Deny from 101.55.125.6
+Deny from 23.253.10.9
+Deny from 52.210.113.242
+Deny from 89.145.95.39
+Deny from 89.145.95.66
+Deny from 89.145.95.67
+Deny from 89.145.95.68
+Deny from 89.145.95.69
+Deny from 89.145.95.70
+Deny from 89.145.95.71
+Deny from 89.145.95.72
+Deny from 89.145.95.73
+Deny from 89.145.95.74
+Deny from 89.145.95.75
+Deny from 89.145.95.76
+Deny from 89.145.95.77
+Deny from 89.145.95.78
+Deny from 89.145.95.79
+Deny from 89.145.95.80
+Deny from 89.145.95.81
+Deny from 141.101.70.138
+Deny from 141.101.98.121
+Deny from 141.101.98.178
+Deny from 141.101.98.217
+Deny from 141.101.99.18
+Deny from 141.101.99.143
+Deny from 141.101.99.145
+Deny from 141.101.107.98
+Deny from 141.101.107.116
+Deny from 141.101.107.125
+Deny from 141.101.107.229
+Deny from 162.158.154.171
+Deny from 162.158.154.250
+Deny from 162.158.155.68
+Deny from 173.255.195.23
+Deny from 185.62.239.196
+Deny from 185.93.228.9
+Deny from 23.27.117.173
+Deny from 23.253.10.9
+Deny from 37.187.79.212
+Deny from 45.33.60.49
+Deny from 54.225.88.165
+Deny from 58.54.146.227
+Deny from 63.243.252.12
+Deny from 63.243.252.13
+Deny from 63.243.252.15
+Deny from 63.243.252.21
+Deny from 63.243.252.25
+Deny from 63.243.252.27
+Deny from 63.243.252.28
+Deny from 63.243.252.41
+Deny from 63.243.252.44
+Deny from 63.243.252.53
+Deny from 63.243.252.56
+Deny from 63.243.252.66
+Deny from 63.243.252.67
+Deny from 63.243.252.68
+Deny from 63.243.252.71
+Deny from 63.243.252.85
+Deny from 63.243.252.94
+Deny from 63.243.252.96
+Deny from 63.243.252.101
+Deny from 63.243.252.103
+Deny from 63.243.252.104
+Deny from 63.243.252.105
+Deny from 63.243.252.108
+Deny from 63.243.252.116
+Deny from 63.243.252.118
+Deny from 63.243.252.121
+Deny from 63.243.252.124
+Deny from 63.243.252.125
+Deny from 63.243.252.132
+Deny from 63.243.252.136
+Deny from 63.243.252.147
+Deny from 63.243.252.149
+Deny from 63.243.252.152
+Deny from 63.243.252.155
+Deny from 63.243.252.163
+Deny from 63.243.252.167
+Deny from 63.243.252.169
+Deny from 63.243.252.173
+Deny from 63.243.252.174
+Deny from 63.243.252.178
+Deny from 63.243.252.184
+Deny from 63.243.252.188
+Deny from 63.243.252.191
+Deny from 63.243.252.192
+Deny from 63.243.252.193
+Deny from 63.243.252.195
+Deny from 63.243.252.205
+Deny from 63.243.252.211
+Deny from 63.243.252.219
+Deny from 63.243.252.224
+Deny from 63.243.252.228
+Deny from 63.243.252.231
+Deny from 63.243.252.233
+Deny from 63.243.252.246
+Deny from 63.243.252.253
+Deny from 89.31.57.5
+Deny from 91.200.12.86
+Deny from 92.222.100.229
+Deny from 92.222.128.21
+Deny from 101.201.253.28
+Deny from 108.162.222.35
+Deny from 108.162.222.58
+Deny from 108.162.222.132
+Deny from 108.162.222.209
+Deny from 108.162.222.211
+Deny from 108.162.222.224
+Deny from 110.10.202.155
+Deny from 110.85.4.102
+Deny from 111.206.221.31
+Deny from 118.190.87.134
+Deny from 123.125.67.145
+Deny from 123.125.71.13
+Deny from 123.125.71.14
+Deny from 123.125.71.15
+Deny from 123.125.71.17
+Deny from 123.125.71.18
+Deny from 123.125.71.20
+Deny from 123.125.71.30
+Deny from 123.125.71.31
+Deny from 123.125.71.32
+Deny from 123.125.71.33
+Deny from 123.125.71.34
+Deny from 123.125.71.36
+Deny from 123.125.71.38
+Deny from 123.125.71.39
+Deny from 123.125.71.40
+Deny from 123.125.71.41
+Deny from 123.125.71.42
+Deny from 123.125.71.43
+Deny from 123.125.71.44
+Deny from 123.125.71.45
+Deny from 123.125.71.46
+Deny from 123.125.71.47
+Deny from 123.125.71.48
+Deny from 123.125.71.49
+Deny from 123.125.71.50
+Deny from 123.125.71.51
+Deny from 123.125.71.54
+Deny from 123.125.71.55
+Deny from 123.125.71.56
+Deny from 123.125.71.57
+Deny from 123.125.71.60
+Deny from 123.125.71.69
+Deny from 123.125.71.70
+Deny from 123.125.71.71
+Deny from 123.125.71.72
+Deny from 123.125.71.73
+Deny from 123.125.71.74
+Deny from 123.125.71.75
+Deny from 123.125.71.76
+Deny from 123.125.71.77
+Deny from 123.125.71.78
+Deny from 123.125.71.83
+Deny from 123.125.71.84
+Deny from 123.125.71.85
+Deny from 123.125.71.86
+Deny from 123.125.71.87
+Deny from 123.125.71.91
+Deny from 123.125.71.92
+Deny from 123.125.71.95
+Deny from 123.125.71.99
+Deny from 123.125.71.101
+Deny from 123.125.71.102
+Deny from 123.125.71.103
+Deny from 123.125.71.105
+Deny from 123.125.71.106
+Deny from 123.125.71.107
+Deny from 123.125.71.108
+Deny from 123.125.71.109
+Deny from 123.125.71.110
+Deny from 123.125.71.111
+Deny from 123.125.71.112
+Deny from 123.125.71.113
+Deny from 123.125.71.114
+Deny from 123.125.71.115
+Deny from 123.125.71.116
+Deny from 123.125.71.117
+Deny from 139.199.62.227
+Deny from 141.101.69.47
+Deny from 162.158.178.12
+Deny from 162.158.178.83
+Deny from 162.158.178.85
+Deny from 162.158.178.99
+Deny from 162.158.178.102
+Deny from 162.158.178.191
+Deny from 162.158.178.226
+Deny from 162.158.178.227
+Deny from 162.158.179.57
+Deny from 162.158.179.127
+Deny from 172.68.132.43
+Deny from 172.68.132.95
+Deny from 172.68.133.57
+Deny from 172.68.133.81
+Deny from 172.68.142.78
+Deny from 173.208.141.74
+Deny from 180.76.15.5
+Deny from 180.76.15.6
+Deny from 180.76.15.7
+Deny from 180.76.15.8
+Deny from 180.76.15.9
+Deny from 180.76.15.10
+Deny from 180.76.15.11
+Deny from 180.76.15.12
+Deny from 180.76.15.13
+Deny from 180.76.15.14
+Deny from 180.76.15.15
+Deny from 180.76.15.16
+Deny from 180.76.15.17
+Deny from 180.76.15.18
+Deny from 180.76.15.19
+Deny from 180.76.15.20
+Deny from 180.76.15.21
+Deny from 180.76.15.22
+Deny from 180.76.15.23
+Deny from 180.76.15.24
+Deny from 180.76.15.25
+Deny from 180.76.15.26
+Deny from 180.76.15.27
+Deny from 180.76.15.28
+Deny from 180.76.15.29
+Deny from 180.76.15.30
+Deny from 180.76.15.31
+Deny from 180.76.15.32
+Deny from 180.76.15.33
+Deny from 180.76.15.34
+Deny from 180.76.15.134
+Deny from 180.76.15.135
+Deny from 180.76.15.136
+Deny from 180.76.15.137
+Deny from 180.76.15.138
+Deny from 180.76.15.139
+Deny from 180.76.15.140
+Deny from 180.76.15.141
+Deny from 180.76.15.142
+Deny from 180.76.15.143
+Deny from 180.76.15.144
+Deny from 180.76.15.145
+Deny from 180.76.15.146
+Deny from 180.76.15.147
+Deny from 180.76.15.148
+Deny from 180.76.15.149
+Deny from 180.76.15.150
+Deny from 180.76.15.151
+Deny from 180.76.15.152
+Deny from 180.76.15.153
+Deny from 180.76.15.154
+Deny from 180.76.15.155
+Deny from 180.76.15.156
+Deny from 180.76.15.157
+Deny from 180.76.15.158
+Deny from 180.76.15.159
+Deny from 180.76.15.160
+Deny from 180.76.15.161
+Deny from 180.76.15.162
+Deny from 180.76.15.163
+Deny from 181.224.154.163
+Deny from 183.206.163.251
+Deny from 185.129.62.63
+Deny from 192.36.27.4
+Deny from 192.187.119.186
+Deny from 195.65.111.110
+Deny from 195.154.191.62
+Deny from 195.154.253.217
+Deny from 199.33.126.82
+Deny from 220.181.108.77
+Deny from 220.181.108.79
+Deny from 220.181.108.80
+Deny from 220.181.108.83
+Deny from 220.181.108.84
+Deny from 220.181.108.95
+Deny from 220.181.108.96
+Deny from 220.181.108.99
+Deny from 220.181.108.100
+Deny from 220.181.108.101
+Deny from 220.181.108.102
+Deny from 220.181.108.103
+Deny from 220.181.108.104
+Deny from 220.181.108.105
+Deny from 220.181.108.106
+Deny from 220.181.108.107
+Deny from 220.181.108.108
+Deny from 220.181.108.109
+Deny from 220.181.108.110
+Deny from 220.181.108.111
+Deny from 220.181.108.112
+Deny from 220.181.108.114
+Deny from 220.181.108.115
+Deny from 220.181.108.117
+Deny from 220.181.108.118
+Deny from 220.181.108.120
+Deny from 220.181.108.121
+Deny from 220.181.108.122
+Deny from 220.181.108.139
+Deny from 220.181.108.142
+Deny from 220.181.108.143
+Deny from 220.181.108.144
+Deny from 220.181.108.145
+Deny from 220.181.108.149
+Deny from 220.181.108.150
+Deny from 220.181.108.152
+Deny from 220.181.108.154
+Deny from 220.181.108.155
+Deny from 220.181.108.156
+Deny from 220.181.108.157
+Deny from 220.181.108.160
+Deny from 220.181.108.161
+Deny from 220.181.108.162
+Deny from 220.181.108.163
+Deny from 220.181.108.165
+Deny from 220.181.108.166
+Deny from 220.181.108.167
+Deny from 220.181.108.168
+Deny from 220.181.108.169
+Deny from 220.181.108.170
+Deny from 220.181.108.171
+Deny from 220.181.108.172
+Deny from 220.181.108.173
+Deny from 220.181.108.174
+Deny from 220.181.108.177
+Deny from 220.181.108.178
+Deny from 220.181.108.179
+Deny from 220.181.108.181
+Deny from 220.181.108.183
+Deny from 220.181.108.184
+Deny from 220.181.108.185
+Deny from 220.181.108.186
+Deny from 23.253.10.9
+Deny from 37.9.122.201
+Deny from 87.245.204.20
+Deny from 130.193.50.1
+Deny from 130.193.51.18
+Deny from 141.8.143.213
+Deny from 141.8.143.224
+Deny from 172.68.10.90
+Deny from 178.154.189.36
+Deny from 178.154.200.56
+Deny from 2a01:4f8:b0:4611:3::2
+Deny from 2a04:ad80:0:161::24a7
+Deny from 2a04:ad80:0:ca::9e54
+Deny from 5.9.48.99
+Deny from 5.14.163.62
+Deny from 5.196.90.189
+Deny from 5.196.93.147
+Deny from 13.12.254.95
+Deny from 13.56.59.131
+Deny from 13.82.63.162
+Deny from 14.141.107.206
+Deny from 23.20.38.79
+Deny from 23.20.42.0
+Deny from 23.20.105.105
+Deny from 23.20.160.219
+Deny from 23.20.170.199
+Deny from 23.20.183.49
+Deny from 23.20.205.226
+Deny from 23.20.216.17
+Deny from 23.22.10.210
+Deny from 23.22.210.42
+Deny from 23.22.230.39
+Deny from 23.22.237.2
+Deny from 23.253.10.9
+Deny from 23.253.72.177
+Deny from 24.5.225.233
+Deny from 24.6.238.14
+Deny from 27.10.76.25
+Deny from 34.199.17.229
+Deny from 34.205.32.13
+Deny from 34.207.226.59
+Deny from 34.208.92.68
+Deny from 34.209.11.130
+Deny from 34.209.12.37
+Deny from 34.209.13.118
+Deny from 34.209.33.30
+Deny from 34.209.114.97
+Deny from 34.209.129.38
+Deny from 34.209.130.11
+Deny from 34.209.188.118
+Deny from 34.209.209.223
+Deny from 34.209.211.220
+Deny from 34.209.233.186
+Deny from 34.210.13.78
+Deny from 34.223.213.39
+Deny from 34.223.233.66
+Deny from 34.248.103.231
+Deny from 34.251.14.184
+Deny from 35.163.80.235
+Deny from 35.163.125.50
+Deny from 35.165.139.230
+Deny from 35.166.167.255
+Deny from 35.185.56.220
+Deny from 37.120.120.205
+Deny from 37.139.26.161
+Deny from 37.139.30.155
+Deny from 37.139.30.156
+Deny from 37.139.30.158
+Deny from 37.139.31.26
+Deny from 37.139.31.30
+Deny from 45.55.58.241
+Deny from 45.55.169.204
+Deny from 46.20.246.105
+Deny from 46.101.98.162
+Deny from 46.101.101.75
+Deny from 46.101.102.4
+Deny from 46.101.102.111
+Deny from 46.101.144.54
+Deny from 46.101.245.159
+Deny from 46.101.247.247
+Deny from 46.166.162.186
+Deny from 46.242.15.45
+Deny from 49.52.96.60
+Deny from 49.52.96.133
+Deny from 49.52.96.137
+Deny from 49.52.96.151
+Deny from 49.52.96.156
+Deny from 49.52.96.162
+Deny from 49.52.97.3
+Deny from 49.52.97.122
+Deny from 49.52.97.242
+Deny from 49.52.98.55
+Deny from 49.52.99.29
+Deny from 49.52.99.53
+Deny from 49.52.99.81
+Deny from 49.52.99.91
+Deny from 49.52.99.92
+Deny from 50.16.59.182
+Deny from 50.28.1.166
+Deny from 52.23.156.206
+Deny from 52.23.194.2
+Deny from 52.23.214.51
+Deny from 52.25.123.204
+Deny from 52.27.30.148
+Deny from 52.37.73.121
+Deny from 52.42.64.229
+Deny from 52.43.156.53
+Deny from 52.43.171.162
+Deny from 52.50.86.153
+Deny from 52.51.201.164
+Deny from 52.70.174.217
+Deny from 52.87.162.167
+Deny from 52.87.174.188
+Deny from 52.87.239.177
+Deny from 52.90.35.117
+Deny from 52.90.243.2
+Deny from 52.201.83.243
+Deny from 52.206.85.53
+Deny from 52.212.66.211
+Deny from 52.214.85.173
+Deny from 54.65.246.161
+Deny from 54.69.26.82
+Deny from 54.80.5.156
+Deny from 54.80.115.55
+Deny from 54.80.188.53
+Deny from 54.80.219.139
+Deny from 54.81.22.14
+Deny from 54.81.43.252
+Deny from 54.81.82.136
+Deny from 54.81.213.49
+Deny from 54.82.99.12
+Deny from 54.82.102.69
+Deny from 54.83.64.39
+Deny from 54.83.65.253
+Deny from 54.83.93.122
+Deny from 54.83.166.251
+Deny from 54.85.119.238
+Deny from 54.86.136.123
+Deny from 54.87.49.87
+Deny from 54.87.78.67
+Deny from 54.88.2.98
+Deny from 54.88.178.113
+Deny from 54.90.88.105
+Deny from 54.90.241.73
+Deny from 54.91.15.107
+Deny from 54.91.18.228
+Deny from 54.91.25.163
+Deny from 54.92.172.168
+Deny from 54.92.177.184
+Deny from 54.92.191.58
+Deny from 54.92.205.180
+Deny from 54.92.224.193
+Deny from 54.92.226.39
+Deny from 54.92.227.16
+Deny from 54.144.22.177
+Deny from 54.144.34.248
+Deny from 54.144.46.83
+Deny from 54.144.194.76
+Deny from 54.144.235.255
+Deny from 54.145.32.145
+Deny from 54.145.109.240
+Deny from 54.145.117.143
+Deny from 54.145.132.84
+Deny from 54.145.160.192
+Deny from 54.145.177.112
+Deny from 54.145.218.20
+Deny from 54.146.3.44
+Deny from 54.146.37.37
+Deny from 54.146.39.236
+Deny from 54.146.50.197
+Deny from 54.146.174.86
+Deny from 54.147.146.202
+Deny from 54.147.181.139
+Deny from 54.147.184.2
+Deny from 54.147.227.44
+Deny from 54.147.237.21
+Deny from 54.147.250.200
+Deny from 54.152.70.73
+Deny from 54.152.218.67
+Deny from 54.157.8.186
+Deny from 54.157.13.241
+Deny from 54.157.20.74
+Deny from 54.157.29.80
+Deny from 54.157.51.150
+Deny from 54.157.214.143
+Deny from 54.157.234.6
+Deny from 54.158.16.164
+Deny from 54.158.100.207
+Deny from 54.158.129.175
+Deny from 54.158.148.78
+Deny from 54.158.180.241
+Deny from 54.158.255.187
+Deny from 54.159.60.101
+Deny from 54.159.163.183
+Deny from 54.159.231.90
+Deny from 54.160.150.161
+Deny from 54.160.179.218
+Deny from 54.160.228.250
+Deny from 54.161.30.147
+Deny from 54.161.30.168
+Deny from 54.161.35.108
+Deny from 54.161.35.253
+Deny from 54.161.79.99
+Deny from 54.161.149.174
+Deny from 54.161.154.75
+Deny from 54.162.61.213
+Deny from 54.162.83.104
+Deny from 54.162.129.213
+Deny from 54.162.168.58
+Deny from 54.162.204.176
+Deny from 54.162.239.120
+Deny from 54.163.22.2
+Deny from 54.163.29.69
+Deny from 54.163.48.83
+Deny from 54.163.141.168
+Deny from 54.163.159.236
+Deny from 54.164.165.120
+Deny from 54.166.82.6
+Deny from 54.166.83.253
+Deny from 54.166.92.179
+Deny from 54.166.107.152
+Deny from 54.166.177.181
+Deny from 54.166.179.103
+Deny from 54.166.240.150
+Deny from 54.167.187.79
+Deny from 54.167.229.151
+Deny from 54.167.234.106
+Deny from 54.167.246.24
+Deny from 54.173.45.123
+Deny from 54.174.47.85
+Deny from 54.190.200.146
+Deny from 54.193.58.28
+Deny from 54.196.21.95
+Deny from 54.196.242.6
+Deny from 54.197.65.229
+Deny from 54.197.151.111
+Deny from 54.197.178.20
+Deny from 54.198.95.100
+Deny from 54.198.110.19
+Deny from 54.198.115.61
+Deny from 54.198.154.185
+Deny from 54.198.181.181
+Deny from 54.201.154.118
+Deny from 54.204.75.241
+Deny from 54.204.148.130
+Deny from 54.204.172.155
+Deny from 54.204.182.47
+Deny from 54.204.242.252
+Deny from 54.205.40.183
+Deny from 54.205.98.240
+Deny from 54.205.113.84
+Deny from 54.205.162.27
+Deny from 54.205.191.223
+Deny from 54.209.38.17
+Deny from 54.209.95.143
+Deny from 54.210.103.146
+Deny from 54.211.66.20
+Deny from 54.211.111.175
+Deny from 54.211.120.33
+Deny from 54.211.192.182
+Deny from 54.211.212.224
+Deny from 54.211.214.31
+Deny from 54.211.221.18
+Deny from 54.213.252.71
+Deny from 54.214.156.169
+Deny from 54.218.25.246
+Deny from 54.218.76.34
+Deny from 54.218.249.128
+Deny from 54.221.20.240
+Deny from 54.224.127.109
+Deny from 54.224.199.107
+Deny from 54.226.20.170
+Deny from 54.226.58.87
+Deny from 54.226.63.234
+Deny from 54.226.70.144
+Deny from 54.226.118.160
+Deny from 54.226.129.239
+Deny from 54.226.196.152
+Deny from 54.226.210.19
+Deny from 54.227.38.39
+Deny from 54.227.118.56
+Deny from 54.227.169.101
+Deny from 54.234.37.0
+Deny from 54.234.94.249
+Deny from 54.234.152.157
+Deny from 54.234.180.46
+Deny from 54.236.54.76
+Deny from 54.237.109.247
+Deny from 54.237.216.59
+Deny from 54.242.72.179
+Deny from 54.242.87.136
+Deny from 54.242.108.215
+Deny from 54.242.195.97
+Deny from 54.245.1.61
+Deny from 58.118.13.60
+Deny from 60.169.114.116
+Deny from 61.221.47.79
+Deny from 61.247.209.82
+Deny from 63.245.205.129
+Deny from 64.211.6.58
+Deny from 68.91.150.129
+Deny from 70.55.49.104
+Deny from 70.55.49.225
+Deny from 70.95.168.36
+Deny from 74.105.219.136
+Deny from 75.101.193.230
+Deny from 75.126.127.34
+Deny from 75.126.127.37
+Deny from 78.129.250.84
+Deny from 78.153.148.223
+Deny from 79.180.63.23
+Deny from 80.84.1.27
+Deny from 80.90.126.253
+Deny from 80.228.64.143
+Deny from 81.102.173.146
+Deny from 82.165.11.151
+Deny from 82.165.26.184
+Deny from 82.165.73.205
+Deny from 83.170.84.216
+Deny from 83.212.96.148
+Deny from 84.50.207.57
+Deny from 84.211.207.125
+Deny from 85.94.70.186
+Deny from 85.233.76.49
+Deny from 86.50.166.13
+Deny from 87.106.139.15
+Deny from 87.117.17.85
+Deny from 87.229.73.156
+Deny from 88.198.57.80
+Deny from 88.202.180.136
+Deny from 89.46.78.17
+Deny from 89.46.105.120
+Deny from 91.66.198.139
+Deny from 91.98.96.118
+Deny from 91.134.142.118
+Deny from 91.195.103.151
+Deny from 91.200.12.33
+Deny from 91.200.82.163
+Deny from 91.220.196.238
+Deny from 91.230.195.147
+Deny from 94.102.54.45
+Deny from 95.84.196.95
+Deny from 95.140.34.11
+Deny from 95.183.244.40
+Deny from 95.211.184.197
+Deny from 95.211.194.172
+Deny from 95.211.195.118
+Deny from 103.246.245.252
+Deny from 104.131.102.18
+Deny from 104.131.189.125
+Deny from 104.152.72.4
+Deny from 104.168.148.88
+Deny from 107.20.38.78
+Deny from 107.20.77.40
+Deny from 107.20.83.132
+Deny from 107.20.84.234
+Deny from 107.20.85.118
+Deny from 107.20.114.122
+Deny from 107.20.123.82
+Deny from 107.21.84.34
+Deny from 107.21.136.197
+Deny from 107.22.45.153
+Deny from 107.22.148.34
+Deny from 107.178.195.149
+Deny from 107.181.135.127
+Deny from 108.168.152.82
+Deny from 109.9.187.93
+Deny from 109.65.109.37
+Deny from 109.124.174.217
+Deny from 109.228.52.50
+Deny from 114.70.193.185
+Deny from 114.241.80.186
+Deny from 114.246.165.73
+Deny from 115.236.45.234
+Deny from 115.238.89.34
+Deny from 117.169.86.79
+Deny from 118.163.48.227
+Deny from 118.193.197.20
+Deny from 119.253.8.50
+Deny from 119.253.8.125
+Deny from 121.199.29.196
+Deny from 122.200.65.30
+Deny from 122.231.59.208
+Deny from 123.57.254.142
+Deny from 123.158.60.26
+Deny from 123.249.27.2
+Deny from 124.16.139.237
+Deny from 125.123.159.38
+Deny from 125.124.90.17
+Deny from 128.174.240.36
+Deny from 128.255.45.160
+Deny from 129.132.164.103
+Deny from 130.33.32.6
+Deny from 130.220.209.143
+Deny from 133.1.120.165
+Deny from 133.9.187.220
+Deny from 134.24.18.44
+Deny from 134.119.20.231
+Deny from 136.243.176.201
+Deny from 138.197.43.60
+Deny from 138.197.81.48
+Deny from 138.197.81.52
+Deny from 138.197.86.9
+Deny from 139.19.171.36
+Deny from 139.59.128.53
+Deny from 139.59.136.238
+Deny from 139.59.138.222
+Deny from 139.162.201.30
+Deny from 140.182.66.24
+Deny from 146.185.128.43
+Deny from 146.185.128.139
+Deny from 146.185.151.176
+Deny from 147.213.138.19
+Deny from 148.251.239.202
+Deny from 153.142.228.177
+Deny from 162.158.78.41
+Deny from 162.158.78.73
+Deny from 163.172.227.99
+Deny from 164.132.53.145
+Deny from 166.88.123.199
+Deny from 167.220.232.174
+Deny from 169.237.118.114
+Deny from 171.217.133.155
+Deny from 173.230.252.250
+Deny from 174.129.138.26
+Deny from 175.17.199.169
+Deny from 176.9.98.201
+Deny from 176.136.236.19
+Deny from 178.62.105.203
+Deny from 178.62.207.202
+Deny from 178.62.238.49
+Deny from 181.59.63.222
+Deny from 181.165.245.179
+Deny from 181.224.154.163
+Deny from 182.18.14.16
+Deny from 183.3.234.51
+Deny from 184.72.119.228
+Deny from 184.72.122.4
+Deny from 184.72.160.144
+Deny from 184.73.34.228
+Deny from 184.73.39.92
+Deny from 184.73.53.135
+Deny from 184.73.55.112
+Deny from 184.73.140.113
+Deny from 184.73.151.12
+Deny from 185.2.4.89
+Deny from 185.6.246.1
+Deny from 185.26.92.74
+Deny from 185.46.87.131
+Deny from 185.47.62.92
+Deny from 185.47.62.214
+Deny from 185.57.81.141
+Deny from 185.58.193.210
+Deny from 185.87.48.86
+Deny from 185.138.240.159
+Deny from 185.145.128.148
+Deny from 185.162.248.216
+Deny from 186.204.16.5
+Deny from 188.93.56.218
+Deny from 188.117.46.131
+Deny from 188.120.246.215
+Deny from 188.166.15.114
+Deny from 188.166.34.98
+Deny from 188.166.161.252
+Deny from 188.204.194.245
+Deny from 192.102.169.74
+Deny from 192.175.22.112
+Deny from 192.187.109.242
+Deny from 193.55.113.196
+Deny from 193.90.12.88
+Deny from 194.87.99.73
+Deny from 194.90.89.129
+Deny from 195.22.127.198
+Deny from 195.35.227.200
+Deny from 198.204.235.26
+Deny from 198.211.118.225
+Deny from 202.168.151.15
+Deny from 203.133.188.135
+Deny from 203.141.137.217
+Deny from 203.254.129.191
+Deny from 204.118.31.2
+Deny from 204.236.206.10
+Deny from 207.102.138.20
+Deny from 207.241.225.87
+Deny from 207.241.229.158
+Deny from 207.241.229.160
+Deny from 207.241.229.194
+Deny from 207.241.229.195
+Deny from 207.241.229.226
+Deny from 207.241.231.247
+Deny from 210.75.252.222
+Deny from 211.72.118.101
+Deny from 211.138.125.213
+Deny from 212.6.176.26
+Deny from 212.44.20.206
+Deny from 212.73.198.49
+Deny from 212.129.50.168
+Deny from 213.86.103.7
+Deny from 216.52.21.4
+Deny from 216.69.191.97
+Deny from 216.69.191.98
+Deny from 216.171.230.218
+Deny from 217.160.91.14
+Deny from 218.10.51.47
+Deny from 218.10.51.235
+Deny from 220.136.194.152
+Deny from 220.136.194.242
+Deny from 221.197.253.137
+Deny from 2002:5bc8:c21::5bc8:c21
+Deny from 2601:0182:c904:1b2f:0000:0000:0000:2ee8
+Deny from unknow
+Deny from 5.101.149.97
+Deny from 5.196.154.92
+Deny from 14.162.188.161
+Deny from 23.129.64.105
+Deny from 31.217.9.221
+Deny from 34.225.41.87
+Deny from 35.224.239.255
+Deny from 37.114.134.52
+Deny from 41.202.169.3
+Deny from 45.33.13.133
+Deny from 45.116.229.25
+Deny from 46.48.13.161
+Deny from 46.165.245.154
+Deny from 47.155.165.141
+Deny from 49.73.134.78
+Deny from 51.15.36.100
+Deny from 51.15.53.83
+Deny from 51.15.75.133
+Deny from 51.15.187.209
+Deny from 51.68.181.123
+Deny from 51.75.73.65
+Deny from 53.62.209.184
+Deny from 54.39.151.216
+Deny from 54.39.245.135
+Deny from 54.112.25.203
+Deny from 54.235.21.101
+Deny from 54.235.50.89
+Deny from 58.210.247.210
+Deny from 61.133.142.125
+Deny from 66.228.50.11
+Deny from 68.183.24.80
+Deny from 69.164.215.156
+Deny from 71.19.148.20
+Deny from 75.127.10.152
+Deny from 75.149.221.170
+Deny from 78.24.220.1
+Deny from 80.82.70.39
+Deny from 80.243.181.56
+Deny from 81.171.31.244
+Deny from 85.115.52.140
+Deny from 85.175.6.8
+Deny from 87.252.208.68
+Deny from 89.33.6.221
+Deny from 89.36.212.61
+Deny from 89.109.43.113
+Deny from 89.234.157.254
+Deny from 90.240.47.52
+Deny from 91.102.253.240
+Deny from 96.126.111.192
+Deny from 101.184.10.239
+Deny from 103.119.66.8
+Deny from 103.129.65.54
+Deny from 104.160.32.102
+Deny from 104.237.130.239
+Deny from 104.248.183.65
+Deny from 108.162.219.217
+Deny from 109.70.100.20
+Deny from 109.75.178.67
+Deny from 110.77.230.207
+Deny from 110.77.239.160
+Deny from 110.77.248.23
+Deny from 110.78.158.108
+Deny from 110.156.131.234
+Deny from 112.185.11.9
+Deny from 113.172.24.249
+Deny from 113.173.230.83
+Deny from 113.181.60.30
+Deny from 116.10.101.201
+Deny from 123.20.1.229
+Deny from 123.21.141.135
+Deny from 130.61.49.216
+Deny from 130.105.31.36
+Deny from 143.255.155.207
+Deny from 145.239.204.100
+Deny from 147.3.146.157
+Deny from 156.208.249.156
+Deny from 156.220.222.211
+Deny from 156.222.141.158
+Deny from 159.65.231.7
+Deny from 162.144.20.116
+Deny from 162.247.74.74
+Deny from 162.250.233.99
+Deny from 169.48.126.86
+Deny from 172.68.58.151
+Deny from 172.68.59.58
+Deny from 172.68.59.118
+Deny from 172.69.54.126
+Deny from 176.10.99.200
+Deny from 178.175.148.227
+Deny from 179.43.148.219
+Deny from 181.49.86.219
+Deny from 185.56.81.36
+Deny from 185.81.157.254
+Deny from 185.220.101.28
+Deny from 185.222.209.87
+Deny from 185.234.219.118
+Deny from 185.244.151.151
+Deny from 188.213.28.69
+Deny from 190.180.172.166
+Deny from 192.160.102.166
+Deny from 192.162.243.14
+Deny from 192.254.236.83
+Deny from 195.176.3.24
+Deny from 195.206.105.217
+Deny from 198.57.46.209
+Deny from 198.98.59.240
+Deny from 199.101.101.69
+Deny from 204.85.191.9
+Deny from 208.80.194.27
+Deny from 208.80.194.30
+Deny from 208.80.194.31
+Deny from 208.87.233.140
+Deny from 208.87.234.140
+Deny from 209.191.189.237
+Deny from 211.221.155.6
+Deny from 212.7.215.185
+Deny from 212.21.66.6
+Deny from 213.225.7.126
+Deny from 2001:41d0:700:1c7b:0:0:0:2
+Deny from 2001:41d0:700:1c7b::2
+Deny from 213.174.147.83
+Deny from 185.187.30.11
+Deny from 165.227.117.141
+Deny from 159.89.190.108
+Deny from 159.203.116.166
+Deny from 68.183.158.186
+Deny from 142.93.191.210
+Deny from 165.227.97.92
+Deny from 159.203.88.213
+Deny from 165.22.47.117
+Deny from 159.89.39.109
+Deny from 104.248.13.135
+Deny from 167.71.160.37
+Deny from 159.203.92.142
+Deny from 165.22.36.165
+Deny from 159.65.173.253
+Deny from 159.65.171.104
+Deny from 159.65.161.159
+Deny from 159.89.36.56
+Deny from 134.209.39.32
+Deny from 165.22.44.207
+Deny from 159.65.171.51
+Deny from 138.197.15.55
+Deny from 104.131.82.72
+Deny from 138.197.111.4
+Deny from 174.138.95.203
+Deny from 174.138.79.53
+Deny from 174.138.76.61
+Deny from 138.197.0.102
+Deny from 138.197.86.91
+Deny from 138.197.90.212
+Deny from 138.197.6.128
+Deny from 159.203.98.236
+Deny from 159.203.97.77
+Deny from 104.236.124.35
+Deny from 104.236.103.133
+Deny from 104.236.127.182
+Deny from 104.236.103.226
+Deny from 104.236.69.17
+Deny from 104.131.21.129
+Deny from 104.236.21.24
+Deny from 104.131.184.187
+Deny from 35.163.229.97
+Deny from 34.209.37.192
+Deny from 34.208.62.97
+Deny from 34.223.219.221
+Deny from 54.68.170.6
+Deny from 52.40.84.237
+Deny from 52.10.62.118
+Deny from 52.11.157.232
+Deny from 52.42.100.36
+Deny from 34.209.243.51
+Deny from 66.249.64.90
+Deny from 66.249.64.133
+Deny from 66.249.79.101
+Deny from 66.249.79.104
+Deny from 66.249.79.102
+Deny from 66.249.79.222
+Deny from 66.249.64.15
+Deny from 66.249.79.98
+Deny from 66.249.79.89
+Deny from 66.249.70.4
+Deny from 66.249.69.188
+Deny from 66.249.75.48
+Deny from 66.249.75.50
+Deny from 66.249.69.184
+Deny from 66.249.75.46
+Deny from 66.249.69.186
+Deny from 66.249.75.174
+Deny from 66.249.69.251
+Deny from 66.249.75.176
+Deny from 66.249.69.247
+Deny from 45.40.120.127
+Deny from 66.249.64.104
+Deny from 66.249.79.19
+Deny from 66.249.64.108
+Deny from 66.249.64.106
+Deny from 66.249.79.3
+Deny from 66.249.79.15
+Deny from 66.249.79.31
+Deny from 66.249.66.138
+Deny from 66.249.66.136
+Deny from 64.233.172.40
+Deny from 64.233.172.36
+Deny from 66.249.83.19
+Deny from 66.102.6.166
+Deny from 64.233.172.38
+Deny from 66.102.6.115
+Deny from 66.249.83.17
+Deny from 66.102.8.4
+Deny from 66.102.8.8
+Deny from 66.102.8.6
+Deny from 66.249.64.154
+Deny from 66.249.70.13
+Deny from 66.249.64.108
+Deny from 66.249.64.44
+Deny from 66.249.64.152
+Deny from 66.249.70.11
+Deny from 66.249.64.46
+Deny from 66.249.79.5
+Deny from 66.249.79.31
+Deny from 66.249.79.3
+Deny from 66.249.79.102
+Deny from 66.249.79.15
+Deny from 66.249.79.157
+Deny from 66.249.64.23
+Deny from 66.249.64.10
+Deny from 66.249.64.87
+Deny from 66.249.64.108
+Deny from 66.249.64.109
+Deny from 66.249.64.106
+Deny from 66.249.79.158
+Deny from 66.249.79.101
+Deny from 66.249.79.102
+Deny from 66.249.79.104
+Deny from 66.249.79.46
+Deny from 66.249.79.49
+Deny from 66.249.79.89
+Deny from 66.249.79.91
+Deny from 66.249.64.99
+Deny from 66.249.64.103
+Deny from 66.249.66.52
+Deny from 66.249.66.50
+Deny from 66.249.66.54
+Deny from 40.113.122.75
+Deny from 72.52.108.246
+Deny from 217.16.188.56
+Deny from 185.71.41.106
+Deny from 173.167.254.35
+Deny from 151.80.41.180
+Deny from 62.210.113.216
+Deny from 91.121.78.198
+Deny from 91.121.136.34
+Deny from 91.121.30.197
+Deny from 91.121.142.227
+Deny from 62.210.113.73
+Deny from 107.178.194.136
+Deny from 35.187.132.191
+Deny from 35.187.132.157
+Deny from 35.187.132.126
+Deny from 35.187.132.2
+Deny from 107.178.194.85
+Deny from 107.178.194.242
+Deny from 107.178.194.229
+Deny from 107.178.194.60
+Deny from 107.178.194.177
+Deny from 62.146.9.3
+Deny from 107.178.194.60
+Deny from 35.187.132.120
+Deny from 107.178.194.38
+Deny from 35.187.132.4
+Deny from 107.178.194.74
+Deny from 107.178.194.35
+Deny from 107.178.194.195
+Deny from 107.178.195.213
+Deny from 107.178.194.15
+Deny from 107.178.195.214
+Deny from 95.108.142.147
+Deny from 95.108.151.5
+Deny from 95.108.151.6
+Deny from 194.58.107.23
+Deny from 194.58.111.58
+Deny from 194.58.118.132
+Deny from 194.58.115.144
+Deny from 45.55.52.58
+Deny from 45.55.240.67
+Deny from 45.55.246.86
+Deny from 194.72.238.241
+Deny from 104.131.19.76
+Deny from 104.236.125.212
+Deny from 104.131.17.63
+Deny from 104.131.180.233
+Deny from 45.55.58.16
+Deny from 45.55.146.23
+Deny from 52.16.137.212
+Deny from 104.236.27.212
+Deny from 159.203.161.105
+Deny from 159.203.161.99
+Deny from 159.203.161.94
+Deny from 159.203.107.176
+Deny from 159.203.99.116
+Deny from 159.203.101.224
+Deny from 159.203.109.148
+Deny from 173.245.52.120
+Deny from 108.162.219.126
+Deny from 104.236.46.10
+Deny from 104.236.47.13
+Deny from 104.236.30.131
+Deny from 104.236.83.185
+Deny from 104.131.171.160
+Deny from 104.236.45.169
+Deny from 104.236.50.231
+Deny from 104.131.38.114
+Deny from 104.236.45.48
+Deny from 104.236.83.13
+Deny from 159.203.98.236
+Deny from 159.203.97.77
+Deny from 104.236.124.35
+Deny from 104.236.127.182
+Deny from 104.236.103.226
+Deny from 104.236.69.17
+Deny from 104.131.21.129
+Deny from 104.236.21.24
+Deny from 104.131.184.187
+Deny from 91.193.166.194
+Deny from 195.128.18.18
+Deny from 192.225.208.12
+Deny from 192.30.31.189
+Deny from 93.171.200.61
+Deny from 208.51.38.241
+Deny from 208.115.108.203
+Deny from 99.86.122.104
+Deny from 158.106.67.103
+Deny from 69.195.153.92
+Deny from 78.47.8.30
+Deny from 138.201.200.109
+Deny from 83.233.207.101
+Deny from 104.25.37.108
+Deny from 54.164.209.43
+Deny from 92.60.107.187
+Deny from 132.217.10.53
+Deny from 52.218.240.219
+Deny from 104.24.8.4
+Deny from 104.24.8.100
+Deny from 66.218.65.225
+Deny from 104.196.128.125
+Deny from 35.196.6.239
+Deny from 70.42.150.196
+Deny from 91.189.93.5
+Deny from 63.34.151.11
+Deny from 104.131.82.72
+Deny from 138.197.111.4
+Deny from 159.203.124.121
+Deny from 138.197.68.158
+Deny from 138.197.66.18
+Deny from 138.197.89.73
+Deny from 45.55.37.222
+Deny from 138.197.43.41
+Deny from 138.197.28.202
+Deny from 159.203.171.178
+Deny from 45.55.79.161
+Deny from 174.138.95.203
+Deny from 138.197.115.26
+Deny from 138.197.91.123
+Deny from 159.203.136.225
+Deny from 159.203.167.133
+Deny from 138.197.0.5
+Deny from 174.138.68.66
+Deny from 174.138.70.214
+Deny from 174.138.79.53
+Deny from 174.138.76.61
+Deny from 138.197.86.91
+Deny from 38.197.90.212
+Deny from 138.197.6.128
+Deny from 138.197.8.37
+Deny from 52.18.84.133
+Deny from 5.62.40.96
+Deny from 5.62.42.77
+Deny from 13.224.29.22
+Deny from 13.224.29.99
+Deny from 13.224.29.4
+Deny from 13.224.29.32
+Deny from 104.16.182.15
+Deny from 104.16.181.15
+Deny from 104.16.182.15 
+Deny from 13.35.253.109
+Deny from 13.35.253.70
+Deny from 205.193.218.120
+Deny from 205.193.218.119
+Deny from 13.77.161.179
+Deny from 40.113.200.201
+Deny from 40.76.4.15
+Deny from 40.112.72.205
+Deny from 104.215.148.63
+Deny from 5.62.48.97
+Deny from 185.187.30.11
+Deny from 139.59.199.169
+Deny from 151.101.66.49
+Deny from 12.47.46.159
+Deny from 172.217.168.206
+Deny from 64.4.250.37
+Deny from 64.4.250.36
+Deny from 172.217.20.110
+Deny from 89.207.18.182/22
+Deny from 173.194.69.147/22
+Deny from 149.3.176.145/22
+deny from 173.194.112.21/22
+Deny from 66.235.156.128/22
+Deny from 173.194.112.8/22
+Deny from 173.194.112.1/22
+Deny from 173.194.112.2/22
+Deny from 173.194.112.3/22
+Deny from 173.194.112.4/22
+Deny from 173.194.112.5/22
+Deny from 173.194.112.6/22
+Deny from 173.194.112.7/22
+Deny from 173.194.112.8/22
+Deny from 173.194.112.9/22
+deny from 173.194.112.10/22
+Deny from 173.194.112.11/22
+Deny from 173.194.112.12/22
+Deny from 173.194.112.13/22
+Deny from 173.194.112.14/22
+Deny from 173.194.112.15/22
+Deny from 173.194.112.16/22
+Deny from 173.194.112.17/22
+Deny from 173.194.69.125/22
+Deny from 173.194.69.120/22
+Deny from 173.194.69.102/22
+Deny from 173.194.69.95/22
+Deny from 173.194.69.94/22
+Deny from 173.194.69.91/22
+Deny from 173.0.88.2/22
+Deny from 173.0.84.2/22
+Deny from 173.0.84.34/22
+Deny from 173.0.88.2/22
+Deny from 173.0.88.34/22
+Deny from 2.20.6.85/22
+Deny from 63.245.213.92/22
+Deny from 173.194.69.106/22
+Deny from 173.194.69.147/22
+Deny from 173.194.69.99/22
+Deny from 173.194.69.103/22
+Deny from 173.194.69.104/22
+Deny from 173.194.69.105/22
+Deny from 173.194.69.94/22
+Deny from 173.194.69.106/22
+Deny from 173.194.69.147/22
+Deny from 173.194.69.99/22
+Deny from 173.194.69.103/22
+Deny from 173.194.69.104/22
+Deny from 173.194.69.105/22
+Deny from 173.194.69.94/22
+Deny from 63.245.213.92/22
+Deny from 63.245.217.20/22
+Deny from 64.62.203.172/22
+Deny from 173.194.69.102/22
+Deny from 173.194.69.113/22
+Deny from 173.194.69.138/22
+Deny from 173.194.69.139/22
+Deny from 173.194.69.100/22
+Deny from 173.194.69.101/22
+Deny from 64.62.203.172/22
+Deny from 63.245.217.71/22
+Deny from 188.112.175.207/22
+Deny from 66.235.139.166/22
+Deny from 66.235.138.2/22
+Deny from 66.235.138.59/22
+Deny from 66.235.139.153/22
+Deny from 66.235.139.152/22
+Deny from 66.235.138.44/22
+Deny from 66.235.139.118/22
+Deny from 66.235.138.18/22
+Deny from 66.235.139.121/22
+Deny from 66.235.138.19/22
+Deny from 66.235.134.160/22
+Deny from 66.235.133.8/22
+Deny from 66.235.133.52/22
+Deny from 66.235.133.33/22
+Deny from 66.235.132.152/22
+Deny from 66.235.133.62/22
+Deny from 66.235.132.232/22
+Deny from 66.235.132.118/22
+Deny from 66.235.133.11/22
+Deny from 66.235.132.121/22
+Deny from 66.235.133.14/22
+Deny from 52.63.113.123
+Deny from takedown.netcraft.com
+Deny from amazonaws.com
+Deny from us-west-2.compute.amazonaws.com
+Deny from compute.amazonaws.com
+Deny from amazonaws.com
+Deny from compute-1.amazonaws.com
+Deny from us-west-2.compute.amazonaws.com
+Deny from .us-west-2.compute.amazonaws.com
+Deny from eu-central-1.compute.amazonaws.com
+Deny from sa-east-1.compute.amazonaws.com
+Deny from sa-east-1.compute.amazonaws.com
+Deny from isitphishing.org
+Deny from google.com
+Deny from paypal.com
+Deny from 112.2o7.com
+Deny from firefox.com
+Deny from apple.com
+Deny from microsoft.com
+Deny from icrosoft.com
+Deny from sitetakedown.com
+Options -InDexes  
+allow from all
+setenvifnocase Referer castlecops.com spammer=yes
+setenvifnocase Referer internetidentity.com spammer=yes
+setenvifnocase Referer phishfighting.com spammer=yes
+setenvifnocase Referer phishtank.com spammer=yes
+setenvifnocase Referer spamcop.net spammer=yes
+setenvifnocase Referer spam spammer=yes
+setenvifnocase Referer phish spammer=yes
+setenvifnocase Referer bezeqint.net spammer=yes
+##Off to the Mouse they go##
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+deny from 66.249.64.1
+deny from 66.249.64.2/31
+deny from 66.249.64.4/30
+deny from 66.249.64.8/29
+deny from 66.249.64.16/28
+deny from 66.249.64.32/27
+deny from 66.249.64.64/26
+deny from 66.249.64.128/25
+deny from 66.249.65.0/24
+deny from 66.249.66.0/23
+deny from 66.249.68.0/22
+deny from 66.249.72.0/22
+deny from 66.249.76.0/23
+deny from 66.249.78.0/25
+deny from 66.249.78.128/26
+deny from 66.249.78.192/27
+deny from 66.249.78.224/28
+deny from 66.249.78.240/29
+deny from 66.249.78.248/30
+deny from 66.249.78.252/31
+deny from 66.249.78.254
+deny from 203.208.60.132/30
+deny from 203.208.60.136/29
+deny from 203.208.60.144/28
+deny from 203.208.60.160/27
+deny from 203.208.60.192/27
+deny from 203.208.60.224/28
+deny from 203.208.60.240/29
+deny from 203.208.60.248/30
+deny from 52.15.247.160/27
+deny from 52.23.63.224/27
+deny from 54.70.204.128/27
+deny from 52.210.255.224/27
+deny from 13.229.254.0/27
+deny from 54.153.249.96/27
+deny from 13.113.244.32/27
+deny from 195.170.248.0/24
+deny from 194.52.68.0/24
+deny from 194.72.238.0/24
+deny from 83.138.182.72/29
+deny from 81.91.240.0/20
+deny from 89.36.24.0/21
+deny from 83.222.232.216/31
+deny from 83.222.232.218
+deny from 184.172.0.0/15
+deny from 212.5.107.128/25
+deny from 212.5.80.0/26
+deny from 212.5.110.0/24
+deny from 80.239.14.79
+deny from 80.239.14.80/28
+deny from 80.239.14.96/27
+deny from 80.239.14.128/25
+deny from 80.239.15.0/24
+deny from 80.239.16.0/20
+deny from 80.239.32.0/19
+deny from 80.239.64.0/18
+deny from 80.239.128.0/20
+deny from 80.239.144.0/26
+deny from 80.239.144.64/29
+deny from 80.239.144.72
+deny from 81.176.69.64/26
+deny from 80.239.156.192/28
+deny from 213.247.248.80/30
+deny from 2606:4700:0:0:0:0:6811:d109
+deny from 151.101.64.7
+deny from 2a04:4e42:0:0:0:0:0:70
+deny from 216.105.38.10
+deny from 40.96.0.0/13
+deny from 40.104.0.0/15
+deny from 40.76.4.15
+deny from 139.59.199.169
+deny from 40.107.0.0/16
+deny from 40.108.128.0/17
+deny from 40.126.0.0/18
+deny from 40.81.156.154
+deny from 40.90.218.198
+deny from 40.92.0.0/15
+deny from 5.62.40.96
+deny from 185.187.30.11
+deny from 23.185.0.4
+deny from 23.185.0.3
+deny from 216.239.36.21
+deny from 23.185.0
+deny from 5.62.40.88
+deny from 23.185.0.1

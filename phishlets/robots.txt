@@ -1,0 +1,1563 @@
+User-agent: *
+Disallow: /
+User-agent: cache.google.com
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1
+Disallow: /
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+Disallow: /
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36
+Disallow: /
+User-agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36
+Disallow: /
+User-agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36
+Disallow: /
+User-agent: APIs-Google
+Disallow: /
+User-agent: AdsBot-Google-Mobile
+Disallow: /
+User-agent: AdsBot-Google-Mobile-Apps
+Disallow: /
+user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.45
+Disallow: /
+user-agent Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)
+Disallow: /
+user-agent Mozilla/5.0 compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com
+Disallow: /
+user-agent Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0/cc-prepass-https; +info@netcraft.com
+Disallow: /
+user-agent Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; info@netcraft.com)
+Disallow: /
+ser-agent Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)/
+Disallow: /
+user-agent Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info\@netcraft.com)
+Disallow: /
+user-agent mozilla/5.0 (compatible; netcraftsurveyagent/1.0; +info@netcraft.com)
+Disallow: /
+user-agent Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0;+ info@netcraft.com)
+Disallow: /
+user-agent robotNetcraftSurveyAgentMozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)
+Disallow: /
+user-agent mozilla/5.0 (compatible; netcraftsurveyagent/1.0/cc-prepass-https; +info@netcraft.com)
+Disallow: /
+user-agent mozilla/5.0 (compatible; netcraftsurveyagent/1.0; +info\@netcraft.com)
+Disallow: /
+User-agent: Netcraft SSL Server Survey - contact info@netcraft.com
+Disallow: /
+User-agent: Wget 1.13.4
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0/cc-prepass-https; info@netcraft.com)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; Netcraft Web Server Survey)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)
+Disallow: /
+User-agent: Python-requests 2.18.4
+Disallow: /
+User-agent: facebookexternalhit
+Disallow: /
+User-agent: Python-urllib
+Disallow: /
+User-agent: curl/7.47.0
+Disallow: /
+User-agent: Phantom.js bot
+Disallow: /
+User-agent: Netcraft crawler
+Disallow: /
+User-agent: Duppies
+Disallow: /
+User-agent: NetCarta CyberPilot Pro
+Disallow: /
+User-agent: CheckMarkNetwork/1.0
+Disallow: /
+User-agent: Netcraft Takedown Service
+Disallow: /
+User-agent: Netcraft Survey Bot 
+Disallow: /
+User-agent: Mozilla Metadata Service
+Disallow: /
+User-agent: Googlebot/2.1
+Disallow: /
+User-agent: Googlebot-Mobile/2.1
+Disallow: /
+User-agent: Mediapartners-Google/2.1
+Disallow: /
+User-agent: Googlebot-Image/1.0
+Disallow: /
+User-agent: GoogleDocs; Document-Conversion
+Disallow: /
+User-agent: Google Web Preview
+Disallow: /
+User-agent: Google Search Console
+Disallow: /
+User-agent: Google-Site-Verification/1.0
+Disallow: /
+User-agent: Googlebot snippet
+Disallow: /
+User-agent: Microsoft URL Control
+Disallow: /
+User-agent: Microsoft Data Access
+Disallow: /
+User-agent: 80legs
+Disallow: /
+User-agent: azure-bot-service-4.0
+Disallow: /
+User-agent: Netcraft Web Server Survey
+Disallow: /
+User-agent: Netcraft Spider
+Disallow: /
+User-agent: Netcraft SSL Server Survey
+Disallow: /
+User-agent: NetcraftSurveyagent/1.0
+Disallow: /
+User-agent: CloudFlare-AlwaysOnline/1.0 
+Disallow: /
+User-agent: NetcraftSurveyagent
+Disallow: /
+User-agent: NetcraftSurveyagent/2.0
+Disallow: /
+User-agent:  GHCrawler
+Disallow: /
+User-agent: CopyRightCheck
+Disallow: /
+User-agent: checkphish.ai
+Disallow: /
+User-agent: MSRBOT
+Disallow: /
+User-agent: Nekstbot
+Disallow: /
+User-agent: Abonti
+Disallow: /
+User-agent: ADmantX
+Disallow: /
+User-agent: AIBOT
+Disallow: /
+User-agent: NerdByNature.Bot
+Disallow: /
+User-agent: Netcraft
+Disallow: /
+User-agent: Net Vampire
+Disallow: /
+User-agent: Netcraft Takedown
+Disallow: /
+User-agent: groups.google.com
+Disallow: /
+User-agent: support.google.com
+Disallow: /
+User-agent: heimdalsecurity.com
+Disallow: /
+User-agent: TrendMicro
+Disallow: /
+User-agent: GData
+Disallow: /
+User-agent: DuckDuckGo
+Disallow: /
+User-agent: Yahoo-MMCrawler
+Disallow: /
+User-agent: Yandex
+Disallow: /
+User-agent: YandexBot
+Disallow: /
+User-agent: baiduspider
+Disallow: /
+User-agent: baiduspider-image
+Disallow: /
+User-agent: baiduspider-mobile
+Disallow: /
+User-agent: baiduspider-news
+Disallow: /
+User-agent: baiduspider-video
+Disallow: /
+User-agent: bingbot
+Disallow: /
+User-agent: msnbot-media
+Disallow: /
+User-agent: Xovi
+Disallow: /
+User-agent: adidxbot
+Disallow: /
+User-agent: Googlebot
+Disallow: /
+User-agent: Googlebot-Mobile
+Disallow: /
+User-agent: Googlebot-News
+Disallow: /
+User-agent: Googlebot-Video
+Disallow: /
+User-agent: Mediapartners-Google
+Disallow: /
+User-agent: Bkav
+Disallow: /
+User-agent: Ad-Aware
+Disallow: /
+User-agent: AhnLab-V3
+Disallow: /
+User-agent: Avast Mobile Security
+Disallow: /
+User-agent: Avira
+Disallow: /
+User-agent: Baidu
+Disallow: /
+User-agent: CAT-QuickHeal
+Disallow: /
+User-agent: McAfee
+Disallow: /
+User-agent: Microsoft.com
+Disallow: /
+User-agent: Panda
+Disallow: /
+User-agent: MSNBot
+Disallow: /
+User-agent: TrendMicro-HouseCall
+Disallow: /
+User-agent: VIPRE
+Disallow: /
+User-agent: ZoneAlarm
+Disallow: /
+User-agent: Acronis
+Disallow: /
+User-agent: Cybereason
+Disallow: /
+User-agent: eGambit
+Disallow: /
+User-agent: Palo Alto Networks
+Disallow: /
+User-agent: Sophos ML
+Disallow: /
+User-agent: Trapmine
+Disallow: /
+User-agent: Slurp
+Disallow: /
+User-agent: Teoma
+Disallow: /
+User-agent: Gigabot
+Disallow: /
+User-agent: Robozilla
+Disallow: /
+User-agent: Nutch
+Disallow: /
+User-agent: ia_archiver
+Disallow: /
+User-agent: yahoo-blogs/v3.9
+Disallow: /
+User-agent: Majestic-12
+Disallow: /
+User-agent: Majestic-SEO
+Disallow: /
+User-agent: DSearch
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: ScoutJet
+Disallow: /
+User-agent: spbot
+Disallow: /
+User-agent: linkdexbot
+Disallow: /
+User-agent: Lipperhey Spider
+Disallow: /
+User-agent: sistrix
+Disallow: /
+User-agent: MNSBot-Media
+Disallow: /
+User-agent: AdldxBot
+Disallow: /
+User-agent: BingPreview
+Disallow: /
+User-agent: Facebook
+Disallow: /
+User-agent: Twitter
+Disallow: /
+User-agent: Linkdln
+Disallow: /
+User-agent: TechnicalSEO.com
+Disallow: /
+User-agent: Moz (Mozscape/Freshscape)
+Disallow: /
+User-agent: OnCrawl
+Disallow: /
+User-agent: Chrome(Android Mobile)
+Disallow: /
+User-agent: Chrome(Windows Desktop)
+Disallow: /
+User-agent: Safari(iPhone)
+Disallow: /
+User-agent: NinjaBot
+Disallow: /
+User-agent: Googlebot-Image
+Disallow: /wp-content/uploads/
+User-agent: Adsbot-Google
+Disallow: /
+User-agent: SemrushBot-SA
+Disallow: /
+User-agent: Xenu?s
+Disallow: /
+User-agent: Xenu?s Link Sleuth 1.1c
+Disallow: /
+User-agent: NextGenSearchBot
+Disallow: /
+User-agent: Archive.org Bot
+Disallow: /
+# Block GigaBlast Spider from crawling site
+User-agent: GigaBlast Spider
+Disallow: /
+# Block ia_archiver-web.archive.org_bot from crawling site
+User-agent: ia_archiver-web.archive.org 
+Disallow: /
+# Block PicScout Crawler from crawling site 
+User-agent: PicScout
+Disallow: /
+# Block BLEXBot Crawler from crawling site 
+User-agent: BLEXBot Crawler
+Disallow: /
+# Block TinEye from crawling site 
+User-agent: TinEye
+Disallow: /
+User-agent: BLEXBot
+Disallow: /
+User-agent: UptimeRobot/2.0
+Disallow: /
+# Block Ezooms Robot
+User-agent: Ezooms Robot
+Disallow: /
+User-agent: netEstate NE Crawler (+http://www.website-datenbank.de/)
+Disallow: /
+# Block WiseGuys Robot
+User-agent: WiseGuys Robot
+Disallow: /
+# Block Turnitin Robot
+User-agent: Turnitin Robot
+Disallow: /
+# Block Heritrix
+User-agent: Heritrix
+Disallow: /
+User-agent: Pimonster
+Disallow: /
+# Block Eniro
+User-agent: ECCP/1.0 (search@eniro.com)
+Disallow: /
+# Block Psbot
+User-agent: Psbot
+Disallow: /
+# Block Youdao
+User-agent: YoudaoBot
+Disallow: /
+# Block NaverBot
+User-agent: NaverBot
+Disallow: /
+User-agent: Yeti
+Disallow: /
+# Block ZBot
+User-agent: ZBot
+Disallow: /
+# Block Vagabondo
+User-agent: Vagabondo
+Disallow: /
+# Block LinkWalker
+User-agent: LinkWalker
+Disallow: /
+# Block SimplePie
+User-agent: SimplePie
+Disallow: /
+# Block Wget
+User-agent: Wget
+Disallow: /
+# Block Pixray-Seeker
+User-agent: Pixray-Seeker
+Disallow: /
+# Block BoardReader
+User-agent: BoardReader
+Disallow: /
+# Block Quantify
+User-agent: Quantify
+Disallow: /
+# Block Cuam
+User-agent: Cuam
+Disallow: /
+# https://megaindex.com/crawler
+User-agent: MegaIndex.ru
+Disallow: /
+User-agent: megaindex.com
+Disallow: /
+User-agent: +http://megaindex.com/crawler
+Disallow: /
+User-agent: MegaIndex.ru/2.0
+Disallow: /
+User-agent: SISTRIX Crawler
+Disallow: /
+# Disallow: jobs.de-Robot
+User-agent: jobs.de-Robot
+Disallow: /
+# Backlink Analysis
+user-agent: AhrefsBot
+Disallow: /
+# Bot der Leipziger Unister Holding GmbH
+user-agent: UnisterBot
+Disallow: /
+# http://www.searchmetrics.com
+User-agent: SearchmetricsBot
+Disallow: /
+# http://www.majestic12.co.uk/projects/dsearch/mj12bot.php
+User-agent: MJ12bot
+Disallow: /
+# http://www.domaintools.com/webmasters/surveybot.php
+User-agent: SurveyBot
+Disallow: /
+user-agent: SEOdiver
+Disallow: /
+# http://www.wotbox.com/bot/
+User-agent: wotbox
+Disallow: /
+# http://www.opensiteexplorer.org/dotbot
+# http://moz.com/researchtools/ose/dotbot
+User-agent: dotbot
+Disallow: /
+# http://www.meanpath.com/meanpathbot.html
+User-agent: meanpathbot
+Disallow: /
+# http://www.backlinktest.com/crawler.html
+User-agent: BacklinkCrawler 
+Disallow: /
+# http://www.brandwatch.com/magpie-crawler/
+User-agent: magpie-crawler
+Disallow: /
+# http://filterdb.iss.net/crawler/
+User-agent: fr-crawler
+Disallow: /
+# http://www.cloudservermarket.com
+User-Agent: CloudServerMarketSpider
+Disallow: /
+# http://www.exalead.com
+User-agent: Exabot
+Disallow: /
+User-agent: SEOkicks-Robot
+Disallow: /
+# http://www.career-x.de/bot.html
+User-agent: careerbot
+Disallow: /
+# https://www.lipperhey.com/en/about/
+User-agent: Lipperhey-Kaus-Australis
+Disallow: /
+User-agent: seoscanners
+Disallow: /
+User-agent: MetaJobBot
+Disallow: /
+User-agent: Spiderbot
+Disallow: /
+User-agent: LinkStats
+Disallow: /
+User-agent: JobboerseBot
+Disallow: /
+User-agent: ICCrawler
+Disallow: /
+User-agent: Plista
+Disallow: /
+User-agent: Domain Re-Animator Bot
+Disallow: /
+# https://turnitin.com/robot/crawlerinfo.html
+User-agent: turnitinbot
+Disallow: /
+# http://help.coccoc.com/
+User-agent: coccoc
+Disallow: /
+# ubermetrics-technologies.com
+User-agent: um-IC
+Disallow: /
+# datenbutler.de
+User-agent: mindUpBot
+Disallow: /
+# http://searchgears.de/uber-uns/crawling-faq.html
+User-agent: sg-Orbiter
+Disallow: /
+# http://commoncrawl.org/faq/
+User-agent: CCBot
+Disallow: /
+# https://www.qwant.com/
+User-agent: Qwantify
+Disallow: /
+# http://linkfluence.net/
+User-agent: Kraken
+Disallow: /
+# http://www.botje.com/plukkie.htm
+User-agent: plukkie 
+Disallow: /
+# https://www.safedns.com/searchbot
+User-agent: SafeDNSBot
+Disallow: /
+# http://www.haosou.com/help/help_3_2.html
+User-agent: 360Spider
+Disallow: /
+# http://www.haosou.com/help/help_3_2.html
+User-agent: HaosouSpider
+Disallow: /
+# http://www.moz.com/dp/rogerbot
+User-agent: rogerbot
+Disallow: /
+# http://www.openhose.org/bot.html
+User-agent: OpenHoseBot
+Disallow: /
+# http://www.screamingfrog.co.uk/seo-spider/
+User-agent: Screaming Frog SEO Spider
+Disallow: /
+# http://thumbsniper.com
+User-agent: ThumbSniper
+Disallow: /
+# http://www.radian6.com/crawler
+User-agent: R6_CommentReader
+Disallow: /
+User-agent: ImplisenseBot
+Disallow: /
+# http://cliqz.com/company/cliqzbot
+User-agent: Cliqzbot
+Disallow: /
+# http://www.trendiction.com/en/publisher/bot
+User-Agent: trendictionbot
+Disallow: /
+# http://warebay.com/bot.html
+User-agent: WBSearchBot
+Disallow: /
+User-agent: www.openhose.org
+Disallow: /
+User-agent: AiHitBot
+Disallow: /
+User-agent: Aipbot
+Disallow: /
+User-agent: Alexibot
+Disallow: /
+User-agent: AllSubmitter
+Disallow: /
+User-agent: Alligator
+Disallow: /
+User-agent: Anarchie
+Disallow: /
+User-agent: Apexoo
+Disallow: /
+User-agent: Asterias
+Disallow: /
+User-agent: Attach
+Disallow: /
+User-agent: BBBike
+Disallow: /
+User-agent: Backlink-Ceck
+Disallow: /
+User-agent: BackDoorBot
+Disallow: /
+User-agent: BackStreet
+Disallow: /
+User-agent: BackWeb
+Disallow: /
+User-agent: yougetsignal
+Disallow: /
+User-agent: Artmixx Spider Bot
+Disallow: /
+User-agent: Baiduspider-render
+Disallow: /
+User-agent: AlphaBot
+Disallow: /
+User-agent: CATExplorador
+Disallow: /
+User-agent: CipaCrawler
+Disallow: /
+User-agent: coccocbot
+Disallow: /
+User-agent: Seekport Crawler
+Disallow: /
+User-agent: SemrushBot-BA
+Disallow: /
+User-agent: Xovibot
+Disallow: /
+User-agent: Cloudflare-AMP/1.0
+Disallow: /
+User-agent: Scrapy/1.6.0
+Disallow: /
+User-agent: Scrapy/1.5.1
+Disallow: /
+User-agent: Firefox/7.0
+Disallow: /.
+User-agent: *CFNetwork*
+Disallow: /
+User-agent: *Check&Get*
+Disallow: /
+User-agent: *E-Mail Address Extractor*
+Disallow: /
+User-agent: *grub*
+Disallow: /
+User-agent: *heritrix*
+Disallow: /
+User-agent: *HTTrack*
+Disallow: /
+User-agent: *ickHTTP*
+Disallow: /
+User-agent: *java*
+Disallow: /
+User-agent: *Larbin*
+Disallow: /
+User-agent: *libwww*
+Disallow: /
+User-agent: *maxamine.com--robot*
+Disallow: /
+User-agent: *MSIECrawler*
+Disallow: /
+User-agent: *naver*
+Disallow: /
+User-agent: *Netcraft Web Server Survey*
+Disallow: /
+User-agent: *Netcraft Webserver Survey*
+Disallow: /
+User-agent: *Nutch*
+Disallow: /
+User-agent: *PhotoStickies/*
+Disallow: /
+User-agent: *research*
+Disallow: /
+User-agent: *squid*
+Disallow: /
+User-agent: *TweakMASTER*
+Disallow: /
+User-agent: *WebGrabber*
+Disallow: /
+User-agent: *WinHttpRequest*
+Disallow: /
+User-agent: *www4mail/*
+Disallow: /
+User-agent: *Zeus*
+Disallow: /
+User-agent: 12345
+Disallow: /
+User-agent: 3D-FTP/*
+Disallow: /
+User-agent: 3wGet/*
+Disallow: /
+User-agent: 8484 Boston Project*
+Disallow: /
+User-agent: A .NET Web Crawler
+Disallow: /
+User-agent: A1 Website Download/1.* (*) miggibot
+Disallow: /
+User-agent: abot/*
+Disallow: /
+User-agent: AcadiaUniversityWebCensusClient
+Disallow: /
+User-agent: ActiveRefresh*
+Disallow: /
+User-agent: Ad Muncher*
+Disallow: /
+User-agent: AideRSS/2.0 (aiderss.com)
+Disallow: /
+User-agent: Amico Alpha * (*) Gecko/* AmicoAlpha/*
+Disallow: /
+User-agent: AndroidDownloadManager
+Disallow: /
+User-agent: annotate_google; http://ponderer.org/*
+Disallow: /
+User-agent: Anonymisiert*
+Disallow: /
+User-agent: Anonymizer/*
+Disallow: /
+User-agent: Anonymizied*
+Disallow: /
+User-agent: Anonymous*
+Disallow: /
+User-agent: Anonymous/*
+Disallow: /
+User-agent: Artera (Version *)
+Disallow: /
+User-agent: Atomic_Email
+Disallow: /
+User-agent: Atomic_Email_Hunter/*
+Disallow: /
+User-agent: AutoHotkey
+Disallow: /
+User-agent: AutoMate5
+Disallow: /
+User-agent: b2w/*
+Disallow: /
+User-agent: BackStreet Browser *
+Disallow: /
+User-agent: BasicHTTP/*
+Disallow: /
+User-agent: BDFetch
+Disallow: /
+User-agent: Beamer*
+Disallow: /
+User-agent: BilgiBot/*
+Disallow: /
+User-agent: BitBeamer/*
+Disallow: /
+User-agent: BitTorrent/*
+Disallow: /
+User-agent: BlockNote.Net
+Disallow: /
+User-agent: BlueCoat ProxySG
+Disallow: /
+User-agent: bot/* (bot; *bot@bot.bot)
+Disallow: /
+User-agent: Busiversebot/v1.0 (http://www.busiverse.com/bot.php)
+Disallow: /
+User-agent: Camcrawler*
+Disallow: /
+User-agent: CAST
+Disallow: /
+User-agent: CazoodleBot/*
+Disallow: /
+User-agent: CE-Preload
+Disallow: /
+User-agent: CerberianDrtrs/*
+Disallow: /
+User-agent: CFNetwork/*
+Disallow: /
+User-agent: CFSCHEDULE*
+Disallow: /
+User-agent: CherryPicker*/*
+Disallow: /
+User-agent: Chilkat/*
+Disallow: /
+User-agent: CMS crawler (?http://buytaert.net/crawler/)
+Disallow: /
+User-agent: CobWeb/*
+Disallow: /
+User-agent: Cocoal.icio.us/* (*)*
+Disallow: /
+User-agent: ColdFusion*
+Disallow: /
+User-agent: ContactBot/*
+Disallow: /
+User-agent: copyright sheriff (*)
+Disallow: /
+User-agent: CopyRightCheck*
+Disallow: /
+User-agent: Crawl_Application
+Disallow: /
+User-agent: CTerm/*
+Disallow: /
+User-agent: curl*
+Disallow: /
+User-agent: Custo*
+Disallow: /
+User-agent: CyberPatrol*
+Disallow: /
+User-agent: CydralSpider/*
+Disallow: /
+User-agent: cz32ts
+Disallow: /
+User-agent: DA *
+Disallow: /
+User-agent: DataCha0s/*
+Disallow: /
+User-agent: DataFountains/DMOZ Downloader*
+Disallow: /
+User-agent: DeepIndexer*
+Disallow: /
+User-agent: Der gro\xdfe BilderSauger*
+Disallow: /
+User-agent: Desktop Sidebar*
+Disallow: /
+User-agent: DISCo Pump *
+Disallow: /
+User-agent: DomainsBotBot/1.*
+Disallow: /
+User-agent: DotBot/* (http://www.dotnetdotcom.org/*)
+Disallow: /
+User-agent: Download Demon*
+Disallow: /
+User-agent: Download Express*
+Disallow: /
+User-agent: Download Master*
+Disallow: /
+User-agent: Download Ninja*
+Disallow: /
+User-agent: Download Wonder*
+Disallow: /
+User-agent: DownloadSession*
+Disallow: /
+User-agent: e-SocietyRobot(http://www.yama.info.waseda.ac.jp/~yamana/es/)
+Disallow: /
+User-agent: EasyDL/*
+Disallow: /
+User-agent: eCatch*
+Disallow: /
+User-agent: EmailCollector*
+Disallow: /
+User-agent: EMAILsearcher
+Disallow: /
+User-agent: EmailSiphon*
+Disallow: /
+User-agent: EmailWolf*
+Disallow: /
+User-agent: envolk/* (?http://www.envolk.com/envolk*)
+Disallow: /
+User-agent: envolk?ITS?spider/* (?http://www.envolk.com/envolk*)
+Disallow: /
+User-agent: Epsilon SoftWorks' MailMunky
+Disallow: /
+User-agent: eStyleSearch * (compatible; MSIE 6.0; Windows NT 5.0)
+Disallow: /
+User-agent: Exabot-Images/1.0
+Disallow: /
+User-agent: Exabot-Test/*
+Disallow: /
+User-agent: Exabot/2.0
+Disallow: /
+User-agent: Exabot/3.0
+Disallow: /
+User-agent: exactseek-pagereaper-* (crawler@exactseek.com)
+Disallow: /
+User-agent: Exalead NG/*
+Disallow: /
+User-agent: ExtractorPro*
+Disallow: /
+User-agent: Extreme Picture Finder
+Disallow: /
+User-agent: ezic.com http agent *
+Disallow: /
+User-agent: FairAd Client*
+Disallow: /
+User-agent: FANGCrawl/*
+Disallow: /
+User-agent: favorstarbot/*
+Disallow: /
+User-agent: FDM 1.x
+Disallow: /
+User-agent: Feed::Find/*
+Disallow: /
+User-agent: Feedfetcher-Google*
+Disallow: /
+User-agent: Feedfetcher-Google-iGoogleGadgets*
+Disallow: /
+User-agent: fetch libfetch/*
+Disallow: /
+User-agent: FGet*
+Disallow: /
+User-agent: findfiles.net/* (Robot;test_robot@gmx-topmail.de)
+Disallow: /
+User-agent: Flaming AttackBot*
+Disallow: /
+User-agent: FlashGet
+Disallow: /
+User-agent: FLATARTS_FAVICO
+Disallow: /
+User-agent: FollowSite.com (*)
+Disallow: /
+User-agent: Foobot*
+Disallow: /
+User-agent: Fooky.com/ScorpionBot/ScoutOut;*
+Disallow: /
+User-agent: Forschungsportal/*
+Disallow: /
+User-agent: FOTOCHECKER
+Disallow: /
+User-agent: FreshDownload/*
+Disallow: /
+User-agent: FyberSpider*
+Disallow: /
+User-agent: GameSpyHTTP/*
+Disallow: /
+User-agent: GetRight/*
+Disallow: /
+User-agent: GetRightPro/*
+Disallow: /
+User-agent: GetSmart/*
+Disallow: /
+User-agent: gnome-vfs/*
+Disallow: /
+User-agent: Go!Zilla*
+Disallow: /
+User-agent: Go-Ahead-Got-It*
+Disallow: /
+User-agent: Gozilla/*
+Disallow: /
+User-agent: gsa-crawler*
+Disallow: /
+User-agent: Gulper Web *
+Disallow: /
+User-agent: GurujiBot/1.*
+Disallow: /
+User-agent: Harvest/*
+Disallow: /
+User-agent: Hatena Antenna/*
+Disallow: /
+User-agent: Hatena Bookmark/*
+Disallow: /
+User-agent: Hatena RSS/*
+Disallow: /
+User-agent: Hatena::Crawler/*
+Disallow: /
+User-agent: HatenaScreenshot*
+Disallow: /
+User-agent: hcat/*
+Disallow: /
+User-agent: Healthbot/Health_and_Longevity_Project_(HealthHaven.com)
+Disallow: /
+User-agent: HiddenMarket-*
+Disallow: /
+User-agent: hitcrawler_0.*
+Disallow: /
+User-agent: HLoader
+Disallow: /
+User-agent: Holmes/*
+Disallow: /
+User-agent: HooWWWer/*
+Disallow: /
+User-agent: HTML2JPG Blackbox, http://www.html2jpg.com
+Disallow: /
+User-agent: HTMLParser/*
+Disallow: /
+User-agent: http generic
+Disallow: /
+User-agent: http://Anonymouse.org/*
+Disallow: /
+User-agent: http://arachnode.net*
+Disallow: /
+User-agent: http://hilfe.acont.de/bot.html ACONTBOT
+Disallow: /
+User-agent: httpclient*
+Disallow: /
+User-agent: httperf/*
+Disallow: /
+User-agent: HTTPFetch/*
+Disallow: /
+User-agent: HTTPGrab
+Disallow: /
+User-agent: HttpSession
+Disallow: /
+User-agent: httpunit/*
+Disallow: /
+User-agent: HyperEstraier/*
+Disallow: /
+User-agent: ia_archiver*
+Disallow: /
+User-agent: ICE_GetFile
+Disallow: /
+User-agent: IconSurf/2.*
+Disallow: /
+User-agent: iCopyright Conductor*
+Disallow: /
+User-agent: IE/6.01 (CP/M; 8-bit*)
+Disallow: /
+User-agent: iexplore.exe
+Disallow: /
+User-agent: iGetter/*
+Disallow: /
+User-agent: Inet - Eureka App
+Disallow: /
+User-agent: inetbot/* (?http://www.inetbot.com/bot.html)
+Disallow: /
+User-agent: INetURL/*
+Disallow: /
+User-agent: InetURL:/*
+Disallow: /
+User-agent: InfociousBot (?http://corp.infocious.com/tech_crawler.php)
+Disallow: /
+User-agent: Inne: Mozilla/4.0 (compatible; Cerberian Drtrs*)
+Disallow: /
+User-agent: Internet Exploiter/*
+Disallow: /
+User-agent: Internet Explore *
+Disallow: /
+User-agent: Internet Explorer *
+Disallow: /
+User-agent: Internet Ninja*
+Disallow: /
+User-agent: InternetArchive/*
+Disallow: /
+User-agent: IP*Works!*/*
+Disallow: /
+User-agent: IPiumBot laurion(dot)com
+Disallow: /
+User-agent: IRLbot/*
+Disallow: /
+User-agent: IrssiUrlLog/*
+Disallow: /
+User-agent: IWAgent/*
+Disallow: /
+User-agent: JetBrains Omea Reader*
+Disallow: /
+User-agent: JPluck/*
+Disallow: /
+User-agent: JUST-CRAWLER(*)
+Disallow: /
+User-agent: Kapere (http://www.kapere.com)
+Disallow: /
+User-agent: KBeeBot/0.*
+Disallow: /
+User-agent: Kevin http://*
+Disallow: /
+User-agent: Kolinka Forum Search (www.kolinka.com)
+Disallow: /
+User-agent: LetsCrawl.com/1.0*
+Disallow: /
+User-agent: Lincoln State Web Browser
+Disallow: /
+User-agent: Link Valet Online*
+Disallow: /
+User-agent: LinkextractorPro*
+Disallow: /
+User-agent: Links4US-Crawler,*
+Disallow: /
+User-agent: LMQueueBot/*
+Disallow: /
+User-agent: LOOQ/0.1*
+Disallow: /
+User-agent: Lorkyll *.* -- lorkyll@444.net
+Disallow: /
+User-agent: Lsearch/sondeur
+Disallow: /
+User-agent: LucidMedia ClickSense/4.?
+Disallow: /
+User-agent: lwp*
+Disallow: /
+User-agent: Made by ZmEu @ WhiteHat v0.* (www.WhiteHat.ro)
+Disallow: /
+User-agent: MapoftheInternet.com?(?http://MapoftheInternet.com)
+Disallow: /
+User-agent: MetaProducts Download Express/*
+Disallow: /
+User-agent: metatagsdir/*
+Disallow: /
+User-agent: MFC Foundation Class Library*
+Disallow: /
+User-agent: MFC_Tear_Sample
+Disallow: /
+User-agent: MFHttpScan
+Disallow: /
+User-agent: Microsoft BITS/*
+Disallow: /
+User-agent: Microsoft Data Access Internet Publishing Provider Cache Manager
+Disallow: /
+User-agent: Microsoft Data Access Internet Publishing Provider DAV*
+Disallow: /
+User-agent: Microsoft Data Access Internet Publishing Provider Protocol Discovery
+Disallow: /
+User-agent: Microsoft Internet Explorer
+Disallow: /
+User-agent: Microsoft Office Existence Discovery
+Disallow: /
+User-agent: Microsoft Office Protocol Discovery
+Disallow: /
+User-agent: Microsoft Office/* (*Picture Manager*)
+Disallow: /
+User-agent: Microsoft URL Control*
+Disallow: /
+User-agent: Microsoft Visio MSIE
+Disallow: /
+User-agent: Microsoft Windows Network Diagnostics
+Disallow: /
+User-agent: Microsoft-WebDAV-MiniRedir/*
+Disallow: /
+User-agent: Missigua Locator*
+Disallow: /
+User-agent: Mister PIX*
+Disallow: /
+User-agent: Mono Browser Capabilities Updater*
+Disallow: /
+User-agent: Moozilla
+Disallow: /
+User-agent: Morfeus Fucking Scanner
+Disallow: /
+User-agent: MovableType/*
+Disallow: /
+User-agent: Mozilla/* (compatible; linktiger/*; *http://www.linktiger.com*)
+Disallow: /
+User-agent: Mozilla/* (compatible; OffByOne; Windows*) Webster Pro V3.*
+Disallow: /
+User-agent: Mozilla/* (TuringOS; Turing Machine; 0.0)
+Disallow: /
+User-agent: Mozilla/0.9* no dos :) (Linux*)
+Disallow: /
+User-agent: Mozilla/2.0 (compatible; NEWT ActiveX; Win32)
+Disallow: /
+User-agent: Mozilla/3.0 (compatible; Indy Library)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; Advanced Email Extractor*)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; BorderManager*)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; BOTW Spider; *http://botw.org)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; Cerberian Drtrs*)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; Getleft*)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; http://search.thunderstone.com/texis/websearch/about.html)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; MSIE ?.0; SaferSurf*)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; MSIE 4.01; Vonna.com b o t)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; MSIE 6.0; Bluecoat DRTR)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; Scumbot/*; Linux/*)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; Spider; Linux)
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; Trend Micro tmdr 1.*
+Disallow: /
+User-agent: Mozilla/4.0 (compatible; Win32)
+Disallow: /
+User-agent: Mozilla/5.0 (*) Gecko/* Firefox/2.0 OneRiot/1.0 (http://www.oneriot.com)
+Disallow: /
+User-agent: Mozilla/5.0 (*) VoilaBot*
+Disallow: /
+User-agent: Mozilla/5.0 (*http://gnomit.com/) Gecko/* Gnomit/1.0
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; AboutUsBot/*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; archive.org_bot*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; BuzzRankingBot/*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Charlotte/*; *)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; ClixSense; http://www.clixsense.com/)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Crawly/1.*; +http://*/crawler.html)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; del.icio.us-thumbnails/*; *) KHTML/* (like Gecko)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; DKIMRepBot/*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; DotBot/*; http://www.dotnetdotcom.org/*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Exabot-Images/3.0*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Exabot/3.0*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; IPCheck Server Monitor*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; JadynAveBot; *http://www.jadynave.com/robot*
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; KaloogaBot; http://www.kalooga.com/info.html?page=crawler)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; LegalAnalysisAgent/1.*; http://www.legalx.net)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; MJ12bot/v1.*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; *info@netcraft.com)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; nextthing.org/*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; NGBot/*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; OsO;*
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; ScoutJet; +http://www.scoutjet.com/)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Scrubby/*; +http://www.scrubtheweb.com/abs/meta-check.html)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Seznam screenshot-generator 2.0;*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Speedy Spider; http://www.entireweb.com/about/search_tech/speedy_spider/)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Theophrastus/*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Twitturls; +http://twitturls.com)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Viralheat Bot/*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Webbot/*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Webscan v0.*; +http://otc.dyndns.org/webscan/)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; YodaoBot/1.*)
+Disallow: /
+User-agent: Mozilla/5.0 (compatible;YodaoBot-Image/1.*)
+Disallow: /
+User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X) Excel/12.*
+Disallow: /
+User-agent: Mozilla/5.0 (Macintosh; U; *Mac OS X; *) AppleWebKit/* (*) Pandora/2.*
+Disallow: /
+User-agent: Mozilla/5.0 (SnapPreviewBot) Gecko/* Firefox/*
+Disallow: /
+User-agent: Mozilla/5.0 (Twiceler*)
+Disallow: /
+User-agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) Speedy Spider (http://www.entireweb.com/about/search_tech/speedy_spider/)
+Disallow: /
+User-agent: Mozilla/5.0 gURLChecker/*
+Disallow: /
+User-agent: mp3Spider cn-search-devel at yahoo-inc dot com
+Disallow: /
+User-agent: MQbot*
+Disallow: /
+User-agent: MSProxy/*
+Disallow: /
+User-agent: Myzilla
+Disallow: /
+User-agent: naoFavicon4IE*
+Disallow: /
+User-agent: Net Vampire/*
+Disallow: /
+User-agent: Net_Vampire*
+Disallow: /
+User-agent: NetAnts*
+Disallow: /
+User-agent: NetCarta_WebMapper/*
+Disallow: /
+User-agent: Netchart Adv Crawler*
+Disallow: /
+User-agent: NetID.com Bot*
+Disallow: /
+User-agent: Netprospector*
+Disallow: /
+User-agent: NetPumper*
+Disallow: /
+User-agent: NetSucker*
+Disallow: /
+User-agent: NetZip Downloader*
+Disallow: /
+User-agent: NewsGator/*
+Disallow: /
+User-agent: NextGenSearchBot*(for information visit *)
+Disallow: /
+User-agent: NexTools WebAgent*
+Disallow: /
+User-agent: NG-Search/*
+Disallow: /
+User-agent: ng/*
+Disallow: /
+User-agent: nicebot
+Disallow: /
+User-agent: Nozilla/P.N (Just for IDS woring)
+Disallow: /
+User-agent: NP/*
+Disallow: /
+User-agent: NPBot*
+Disallow: /
+User-agent: NSO_Debugger_User/2.0
+Disallow: /
+User-agent: Nudelsalat/*
+Disallow: /
+User-agent: Nutch/0.? (OpenX Spider)
+Disallow: /
+User-agent: Nutscrape
+Disallow: /
+User-agent: Nutscrape/* (CP/M; 8-bit*)
+Disallow: /
+User-agent: NV32ts
+Disallow: /
+User-agent: oBot
+Disallow: /
+User-agent: OCN-SOC/*
+Disallow: /
+User-agent: Offline Downloader*
+Disallow: /
+User-agent: Offline Explorer*
+Disallow: /
+User-agent: online link validator (http://www.dead-links.com/)
+Disallow: /
+User-agent: Open Web Analytics Bot*
+Disallow: /
+User-agent: Oracle Enterprise Search
+Disallow: /
+User-agent: OSSProxy*
+Disallow: /
+User-agent: OutfoxBot/*
+Disallow: /
+User-agent: P3P Client
+Disallow: /
+User-agent: PageDown*
+Disallow: /
+User-agent: Pageload*
+Disallow: /
+User-agent: PageNest/*
+Disallow: /
+User-agent: Pajaczek/*
+Disallow: /
+User-agent: panscient.com
+Disallow: /
+User-agent: pavuk/*
+Disallow: /
+User-agent: PEAR HTTP_Request*
+Disallow: /
+User-agent: Pete-Spider/1.*
+Disallow: /
+User-agent: PHP*
+Disallow: /
+User-agent: PicaLoader*
+Disallow: /
+User-agent: PigBlock (Windows NT 5.1; U)*
+Disallow: /
+User-agent: pixfinder/*
+Disallow: /
+User-agent: PlantyNet_WebRobot*
+Disallow: /
+User-agent: PMAFind
+Disallow: /
+User-agent: Pockey*
+Disallow: /
+User-agent: POE-Component-Client-HTTP/*
+Disallow: /
+User-agent: polybot?*
+Disallow: /
+User-agent: Privoxy/*
+Disallow: /
+User-agent: ProWebWalker*
+Disallow: /
+User-agent: ProxyTester*
+Disallow: /
+User-agent: Prozilla*
+Disallow: /
+User-agent: psbot/* (?http://www.picsearch.com/bot.html)
+Disallow: /
+User-agent: PycURL/*
+Disallow: /
+User-agent: Python*
+Disallow: /
+User-agent: QuickFinder Crawler
+Disallow: /
+User-agent: Radiation Retriever*
+Disallow: /
+User-agent: RealDownload/*
+Disallow: /
+User-agent: RedCarpet/*
+Disallow: /
+User-agent: RepoMonkey*
+Disallow: /
+User-agent: RPT-HTTPClient/*
+Disallow: /
+User-agent: rssImagesBot/0.1 (*http://herbert.groot.jebbink.nl/?app=rssImages)
+Disallow: /
+User-agent: SBL-BOT*
+Disallow: /
+User-agent: ScollSpider/2.*
+Disallow: /
+User-agent: ScoutAbout*
+Disallow: /
+User-agent: searchbot admin@google.com
+Disallow: /
+User-agent: sEasyDL/*
+Disallow: /
+User-agent: Seeker.lookseek.com
+Disallow: /
+User-agent: SeznamBot/*
+Disallow: /
+User-agent: shaboyi spider
+Disallow: /
+User-agent: shareaza*
+Disallow: /
+User-agent: Shelob (shelob@gmx.net)
+Disallow: /
+User-agent: shelob v1.*
+Disallow: /
+User-agent: sherlock/*
+Disallow: /
+User-agent: Shim?Crawler*
+Disallow: /
+User-agent: ShowXML/1.0 libwww/5.4.0
+Disallow: /
+User-agent: SilentSurf*
+Disallow: /
+User-agent: Site Valet Online*
+Disallow: /
+User-agent: SiteParser/*
+Disallow: /
+User-agent: SiteSnagger*
+Disallow: /
+User-agent: SiteSucker/*
+Disallow: /
+User-agent: SiteWinder*
+Disallow: /
+User-agent: SlySearch/*
+Disallow: /
+User-agent: SmallProxy*
+Disallow: /
+User-agent: SmartDownload/*
+Disallow: /
+User-agent: sna-0.0.*
+Disallow: /
+User-agent: Snapbot/*
+Disallow: /
+User-agent: Snoopy*
+Disallow: /
+User-agent: SOFTWING_TEAR_AGENT*
+Disallow: /
+User-agent: Sogou develop spider/*
+Disallow: /
+User-agent: Sogou head spider*
+Disallow: /
+User-agent: sogou js robot(*)
+Disallow: /
+User-agent: Sogou Orion spider/*
+Disallow: /
+User-agent: Sogou Pic Agent
+Disallow: /
+User-agent: Sogou Pic Spider/*
+Disallow: /
+User-agent: Sogou Push Spider/*
+Disallow: /
+User-agent: sogou spider
+Disallow: /
+User-agent: sogou web spider*
+Disallow: /
+User-agent: Sogou-Test-Spider/*
+Disallow: /
+User-agent: sohu*
+Disallow: /
+User-agent: Space*Bison/*
+Disallow: /
+User-agent: SpankBot*
+Disallow: /
+User-agent: SpeedDownload/*
+Disallow: /
+User-agent: Speedy Spider (http://www.entireweb.com/about/search_tech/speedy_spider/)
+Disallow: /
+User-agent: spider (tspyyp@tom.com)
+Disallow: /
+User-agent: Sqeobot/0.*
+Disallow: /
+User-agent: SquigglebotBot/*
+Disallow: /
+User-agent: Star*Downloader/*
+Disallow: /
+User-agent: Steeler/*
+Disallow: /
+User-agent: Strategic Board Bot (?http://www.strategicboard.com)
+Disallow: /
+User-agent: Sunrise/0.*
+Disallow: /
+User-agent: SuperBot/*
+Disallow: /
+User-agent: SurveyBot/*
+Disallow: /
+User-agent: Theme Spider*
+Disallow: /
+User-agent: TMCrawler
+Disallow: /
+User-agent: Toata dragostea*
+Disallow: /
+User-agent: TurnitinBot/*
+Disallow: /
+User-agent: TutorGigBot/*
+Disallow: /
+User-agent: Tutorial Crawler*
+Disallow: /
+User-agent: Twingly Recon
+Disallow: /
+User-agent: Twisted PageGetter
+Disallow: /
+User-agent: Twitturly*
+Disallow: /
+User-agent: UofTDB_experiment* (leehyun@cs.toronto.edu)
+Disallow: /
+User-agent: URI::Fetch/*
+Disallow: /
+User-agent: URL2File/*
+Disallow: /
+User-agent: User*Agent:*
+Disallow: /
+User-agent: USER_AGENT
+Disallow: /
+User-agent: USyd-NLP-Spider*
+Disallow: /
+User-agent: UtilMind HTTPGet
+Disallow: /
+User-agent: VCI WebViewer*
+Disallow: /
+User-agent: VengaBot/*
+Disallow: /
+User-agent: virus_detector*
+Disallow: /
+User-agent: vobsub
+Disallow: /
+User-agent: wadaino.jp-crawler*
+Disallow: /
+User-agent: WAP_Browser/5.0 (compatible; YodaoBot/1.*)
+Disallow: /
+User-agent: Web Downloader*
+Disallow: /
+User-agent: Web Downloader/*
+Disallow: /
+User-agent: Web Image Collector*
+Disallow: /
+User-agent: Web Magnet*
+Disallow: /
+User-agent: WebAlta Crawler/*
+Disallow: /
+User-agent: WebAuto/*
+Disallow: /
+User-agent: webbandit/*
+Disallow: /
+User-agent: Webclipping.com
+Disallow: /
+User-agent: webcollage*
+Disallow: /
+User-agent: WebCopier*
+Disallow: /
+User-agent: WebCorp/*
+Disallow: /
+User-agent: WebDownloader*
+Disallow: /
+User-agent: webfetch/*
+Disallow: /
+User-agent: WebReaper*
+Disallow: /
+User-agent: WebRipper
+Disallow: /
+User-agent: WebSauger*
+Disallow: /
+User-agent: Website Downloader*
+Disallow: /
+User-agent: Website eXtractor*
+Disallow: /
+User-agent: WebStripper*
+Disallow: /
+User-agent: WebZIP*
+Disallow: /
+User-agent: West Wind Internet Protocols*
+Disallow: /
+User-agent: WIRE/* (Linux*Bot,Robot,Spider,Crawler)
+Disallow: /
+User-agent: WordPress-B-/2.*
+Disallow: /
+User-agent: WordPress-Do-P-/2.*
+Disallow: /
+User-agent: Yahoo-MMCrawler*
+Disallow: /
+User-agent: YodaoBot/*
+Disallow: /
+User-agent: YodaoBot/1.* (*)
+Disallow: /
+User-agent: Mozilla/3.Mozilla/2.01
+Disallow: /
+User-agent: Googlebot-richsnippets
+Disallow: /
+User-agent: Google Rich Snippets Testing Tool
+Disallow: /
+User-agent: Mozilla rv:1.7.12
+Disallow: /
+User-agent: Norton Safe Web
+Disallow: /
+User-agent: Google-Structured-Data-Testing-Tool
+Disallow: /
+User-agent: trendiction Bot
+Disallow: /
+User-agent: Microsoft.URL
+Disallow: /
+User-agent: Microsoft_URL_Control
+Disallow: /
+User-agent: GrapeshotCrawler
+Disallow: /
+User-agent: Dalvik
+Disallow: /
+User-agent: PhantomJS
+Disallow: /
+User-agent: Python-urllib
+Disallow: /
+User-agent: Yahoo Link Preview
+Disallow: /
+User-agent: Yahoo! Slurp
+Disallow: /
+User-agent: Operabot
+Disallow: /
+User-agent: SpiderMan Mozilla
+Disallow: /
+User-agent: X09Mozilla
+Disallow: /
+User-agent: X22Mozilla
+Disallow: /
+User-agent: Schmozillav
+Disallow: /
+User-agent: IEMozilla
+Disallow: /
+User-agent: *
+Disallow: /?
+Disallow: /*?*
