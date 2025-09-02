@@ -4,9 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"math"
-	"strconv"
-	"strings"
-	"time"
 )
 
 // BehavioralData represents data collected from JavaScript behavioral checks
@@ -216,9 +213,9 @@ func (ba *BehavioralAnalyzer) GenerateBehavioralJS(sessionID string) string {
             ctx.fillStyle = '#f60';
             ctx.fillRect(125, 1, 62, 20);
             ctx.fillStyle = '#069';
-            ctx.fillText('BotDetect 🤖', 2, 15);
+            ctx.fillText('BotDetect ðŸ¤–', 2, 15);
             ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
-            ctx.fillText('BotDetect 🤖', 4, 17);
+            ctx.fillText('BotDetect ðŸ¤–', 4, 17);
             
             return canvas.toDataURL();
         } catch (e) {
@@ -612,7 +609,7 @@ func (ba *BehavioralAnalyzer) calculateMouseEntropy(movements []MouseEvent) floa
 		dx := movements[i].X - movements[i-1].X
 		dy := movements[i].Y - movements[i-1].Y
 		distance := math.Sqrt(dx*dx + dy*dy)
-		distances.append(distance)
+		distances = append(distances, distance)
 	}
 	
 	if len(distances) == 0 {

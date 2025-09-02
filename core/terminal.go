@@ -1575,13 +1575,13 @@ func (t *Terminal) cmdBotDetection(args []string) {
     
     switch args[0] {
     case "enable":
-        t.proxy.EnableBotDetection()
+        t.p.EnableBotDetection()
         log.Info("Bot detection enabled")
     case "disable":
-        t.proxy.DisableBotDetection()
+        t.p.DisableBotDetection()
         log.Info("Bot detection disabled")
     case "stats":
-        stats := t.proxy.GetBotDetectionStats()
+        stats := t.p.GetBotDetectionStats()
         t.printBotDetectionStats(stats)
     case "config":
         t.printBotDetectionConfig()
