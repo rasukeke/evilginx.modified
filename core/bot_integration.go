@@ -34,6 +34,7 @@ type SessionBotData struct {
 	BehavioralDataCount int
 	IsBlocked           bool
 	BlockReason         string
+  HumanConfirmed      bool  // ? new flag
 }
 
 // BotDetectionConfig contains configuration for bot detection
@@ -55,11 +56,11 @@ func NewBotDetectionManager() *BotDetectionManager {
 	config := &BotDetectionConfig{
 		EnableJA4Detection:        true,
 		EnableBehavioralDetection: true,
-		JA4BlockThreshold:         0.7,
-		BehavioralBlockThreshold:  0.6,
-		CombinedBlockThreshold:    0.6,
+		JA4BlockThreshold:         0.6,
+		BehavioralBlockThreshold:  0.5,
+		CombinedBlockThreshold:    0.5,
 		BlockAction:               "block",
-		RedirectURL:               "https://www.google.com",
+		RedirectURL:               "",
 		LogBotActivity:            true,
 		AlertOnBotDetection:       true,
 		SessionTimeout:            30,
@@ -97,6 +98,15 @@ func (bdm *BotDetectionManager) AnalyzeRequest(req *http.Request, clientHello *t
 	}
 
 	sessionData := bdm.sessionBotData[sessionID]
+
+// ? skip detection if user already confirmed
+if sessionData.HumanConfirmed {
+    return &BotDetectionResult{
+        IsBot:       false,
+        Confidence:  0.0,
+        BlockAction: "allow",
+    }
+}
 
 	// Perform JA4 analysis if enabled
 	if bdm.config.EnableJA4Detection {
@@ -204,7 +214,15 @@ func (bdm *BotDetectionManager) ProcessBehavioralData(jsonData string) *BotDetec
 
 	sessionData := bdm.sessionBotData[sessionID]
 	sessionData.BehavioralDataCount++
-
+ 
+// ? Skip detection if this session was already confirmed as human
+if sessionData.HumanConfirmed {
+    return &BotDetectionResult{
+        IsBot:       false,
+        Confidence:  0.0,
+        BlockAction: "allow",
+    }
+}
 	// Analyze behavioral data
 	behavioralResult := bdm.behavioralAnalyzer.AnalyzeBehavioralData(behavioralData)
 	sessionData.BehavioralResult = behavioralResult
@@ -424,6 +442,26 @@ func (bdm *BotDetectionManager) IsEnabled() bool {
 	defer bdm.mutex.RUnlock()
 	return bdm.enabled
 }
+
+// DisableForSession disables bot detection for a specific session
+func (bdm *BotDetectionManager) DisableForSession(sessionID string) {
+    bdm.mutex.Lock()
+    defer bdm.mutex.Unlock()
+
+    if session, exists := bdm.sessionBotData[sessionID]; exists {
+        session.HumanConfirmed = true
+        session.IsBlocked = false
+        session.BlockReason = ""
+    } else {
+        bdm.sessionBotData[sessionID] = &SessionBotData{
+            SessionID:      sessionID,
+            CreatedAt:      time.Now(),
+            LastUpdated:    time.Now(),
+            HumanConfirmed: true,
+        }
+    }
+}
+
 
 // GetStats returns bot detection statistics
 func (bdm *BotDetectionManager) GetStats() map[string]interface{} {

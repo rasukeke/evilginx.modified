@@ -345,13 +345,13 @@ func (jd *JA4Detector) DetectBot(ja4 *JA4Fingerprint, headers map[string][]strin
 	result.Confidence = confidence
 	
 	// Determine if it's a bot and what action to take
-	if confidence >= 0.8 {
+	if confidence >= 0.6 {
 		result.IsBot = true
 		result.BlockAction = "block"
-	} else if confidence >= 0.6 {
+	} else if confidence >= 0.4 {
 		result.IsBot = true
 		result.BlockAction = "rate_limit"
-	} else if confidence >= 0.4 {
+	} else if confidence >= 0.2 {
 		result.IsBot = false // Suspicious but not definitive
 		result.BlockAction = "monitor"
 	} else {

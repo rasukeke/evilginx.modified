@@ -97,7 +97,7 @@ func NewBehavioralAnalyzer() *BehavioralAnalyzer {
 		MaxPageLoadTime:      30000, // milliseconds
 		RequiredJSFeatures:   []string{"canvas", "webgl", "audio"},
 		SuspiciousIndicators: []string{"webdriver", "phantom", "selenium", "chrome.runtime"},
-		BotThreshold:         0.6,
+		BotThreshold:         0.5,
 	}
 	
 	return &BehavioralAnalyzer{
@@ -582,12 +582,12 @@ func (ba *BehavioralAnalyzer) AnalyzeBehavioralData(data *BehavioralData) *BotDe
 	// Determine action based on confidence
 	if confidence >= ba.config.BotThreshold {
 		result.IsBot = true
-		if confidence >= 0.8 {
+		if confidence >= 0.6 {
 			result.BlockAction = "block"
 		} else {
 			result.BlockAction = "rate_limit"
 		}
-	} else if confidence >= 0.4 {
+	} else if confidence >= 0.3 {
 		result.IsBot = false
 		result.BlockAction = "monitor"
 	} else {
