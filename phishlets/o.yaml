@@ -219,7 +219,7 @@ force_post:
     type: 'post'
 
 auth_urls:
-  - "/mail/"
+#  - "/mail/"
   - "/mail/0/"
   - '/kmsi*'
 
